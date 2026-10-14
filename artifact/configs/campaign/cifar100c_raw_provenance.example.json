@@ -1,0 +1,7 @@
+{
+  "schema_version": "marginal_alignment.campaign.cifar100c_raw_provenance.v1",
+  "dataset": "CIFAR-100-C",
+  "source_url": "https://zenodo.org/records/3555552",
+  "archive_file": "/path/to/CIFAR-100-C.tar",
+  "archive_sha256": "REPLACE_WITH_64_HEX_SHA256"
+}

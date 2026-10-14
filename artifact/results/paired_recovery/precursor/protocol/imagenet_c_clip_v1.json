@@ -1,0 +1,154 @@
+{
+  "schema_version": "marginal_alignment.paired_recovery_bounds.study.v1",
+  "status": "PRESPECIFIED_BEFORE_NEW_RECOVERY_BOUND_OUTCOMES",
+  "study_id": "imagenet_c_clip_paired_conformal_recovery_bounds_20260913_v1",
+  "date_utc": "2026-09-13",
+  "scientific_question": "Can calibrated paired correspondence locality turn method-specific clean-prediction recovery error from an unconstrained label-count bound into an informative corruption-specific upper bound?",
+  "analysis_timing": {
+    "classification": "additive_prospectively_locked_feasibility_study",
+    "historical_results_inspected": true,
+    "new_study_outcomes_inspected_before_lock": false,
+    "failure_policy": "report_incomplete_or_uninformative_without_changing_encoder_corruptions_batch_count_batch_size_delta_geometry_methods_or_optimizer"
+  },
+  "dataset": "imagenet_c",
+  "encoder": {
+    "id": "clip",
+    "model_id": "openai/clip-vit-large-patch14",
+    "feature_dimension": 768,
+    "feature_layer": "vision_model.post_layernorm+visual_projection",
+    "pooling": "projected_class_token"
+  },
+  "corruptions": [
+    {
+      "name": "gaussian_noise",
+      "severity": 5,
+      "split_seed": 2026091301,
+      "store_manifest_file_sha256": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "target_features_sha256": "7cc4cb737b62f24d39d366bf8e80ab99cb456620d6cbb0209f8fd018d020f294"
+    },
+    {
+      "name": "motion_blur",
+      "severity": 5,
+      "split_seed": 2026091302,
+      "store_manifest_file_sha256": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b",
+      "target_features_sha256": "d4f8d1ade4686e1eb044fb5a30c3adf7a31f24ec3fa6ce68ed1943fb374d37d4"
+    }
+  ],
+  "shared_store_contract": {
+    "reference_features_sha256": "96187f2f99167fc9ca74b6f56492c797bda368fe63e393306f11cc3dde2c5904",
+    "endpoint_ids_sha256": "89ce53cfe096bf287b73abcf28ce5b63d128e25fc7dffb2d58dfa7a1a188d5c3",
+    "head_weight_sha256": "75e85e3c84ee20261f077b09c31c486fb5d8c653798ddc53cad05266a5a30b8f",
+    "head_bias_sha256": "6f91feeaca3770e96c6aa0ee64c27f0ee881432458ed18ae54dcba524e9b301e",
+    "head_fit_ids_sha256": "2376d21155911f1c97109f7c8d80d2f032b8cf60bf6fb51125bc7c96e507e532",
+    "endpoint_rows": 50000,
+    "head_fit_rows": 25000,
+    "eligible_identity_pairs_after_head_fit_exclusion": 25000,
+    "pairing_status": "available",
+    "pairing_provenance_kind": "natural_clean_corruption_identity"
+  },
+  "external_input_manifest": {
+    "source_path": "results/campaign/external_input_manifest.json",
+    "file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "native_feature_store_count": 306
+  },
+  "partition": {
+    "selection_inputs": "authenticated_opaque_pair_ids_only_no_features_labels_or_predictions",
+    "endpoint_order": "reference_and_target_orders_independently_permuted_with_locked_rng_true_assignment_withheld_until_post_bound_scoring",
+    "map_fit_rows": 4096,
+    "calibration_batches": 29,
+    "evaluation_batches": 20,
+    "batch_rows": 256,
+    "required_eligible_pairs": 16640,
+    "unused_eligible_pairs": 8360,
+    "roles_disjoint_within_each_corruption": true,
+    "cross_corruption_identity_reuse": "allowed_but_each_corruption_has_its_own_locked_partition_and_calibration",
+    "head_fit_identities_excluded": true
+  },
+  "methods": {
+    "ordered": ["identity", "diagonal", "bures"],
+    "identity": {"implementation": "identity", "fit_information": "none"},
+    "diagonal": {
+      "implementation": "coordinate_mean_and_standard_deviation_matching",
+      "fit_information": "assignment_erased_paired_endpoint_sets",
+      "standard_deviation_floor": 1e-6
+    },
+    "bures": {
+      "implementation": "symmetric_bures_covariance_gauge",
+      "fit_information": "assignment_erased_paired_endpoint_sets",
+      "covariance_estimator": "oas",
+      "covariance_relative_floor": 1e-6
+    }
+  },
+  "common_cost_geometry": {
+    "name": "full_reference_oas_mahalanobis_after_bures",
+    "fit_rows": 4096,
+    "fit_information": "assignment_erased_paired_endpoint_sets",
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "cost": "total_dimension_normalized_squared_reference_oas_mahalanobis_after_bures",
+    "batch_normalized_score": "(C_pi-C_min)/(E_uniform_bijection_C-C_min)",
+    "one_cost_matrix_and_one_feasible_correspondence_set_shared_by_all_methods_in_a_batch": true,
+    "method_predictions_never_enter_cost_or_feasible_set": true
+  },
+  "conformal": {
+    "kind": "corruption_specific_split_conformal_on_batch_scores",
+    "delta": 0.1,
+    "calibration_count": 29,
+    "order_statistic": "k=ceil((m+1)*(1-delta))",
+    "rank_one_indexed": 27,
+    "when_k_exceeds_m": "qhat_is_positive_infinity_exactly",
+    "tie_rule": "ordinary_nonstrict_score_leq_qhat_coverage_event",
+    "coverage_target": 0.9,
+    "coverage_scope": "one_exchangeable_future_batch_per_corruption_conditional_on_independent_map_fit",
+    "simultaneous_methods": "same_true_pairing_feasibility_event_implies_all_three_method_bounds_no_methodwise_union_bound"
+  },
+  "optimization": {
+    "estimand": "supremum_over_cost_feasible_bijections_of_method_prediction_disagreement_with_clean_reference_prediction",
+    "lower_bound": "best_integer_feasible_assignment_from_minimum_cost_greedy_swaps_and_feasible_lagrangian_assignments",
+    "upper_bound": "minimum_of_exact_unconstrained_label_count_bound_and_sampled_lagrangian_assignment_upper_bounds",
+    "dual_bisection_iterations": 56,
+    "formal_real_arithmetic_certificate_claimed": false,
+    "floating_point_solver_model": "scipy_linear_sum_assignment",
+    "exact_diagnostic": {
+      "evaluation_batch_index": 0,
+      "rows": 16,
+      "methods": ["identity", "diagonal", "bures"],
+      "solver": "scipy_optimize_milp_highs",
+      "relative_mip_gap": 0.0,
+      "time_limit_seconds": 300.0,
+      "role": "implementation_diagnostic_not_a_replacement_for_full_batch_numerical_bounds"
+    }
+  },
+  "reporting": {
+    "required_batch_fields": [
+      "true_correspondence_feasible",
+      "simultaneous_method_bound_coverage",
+      "true_method_error",
+      "bound_lower",
+      "bound_upper",
+      "bound_width",
+      "upper_bound_slack_over_true_error",
+      "unconstrained_label_count_bound",
+      "certified_tightening_over_unconstrained"
+    ],
+    "required_summaries": "each_corruption_each_method_and_pooled_descriptive_with_mean_min_max",
+    "coverage_alone_is_sufficient": false,
+    "zero_silent_drops": true,
+    "not_external_target_label_accuracy": true,
+    "not_pure_marginal": true,
+    "not_natural_shift": true,
+    "not_unpaired": true,
+    "no_population_claim_over_corruptions": true
+  },
+  "execution": {
+    "cpu_only": true,
+    "parallel_workers": 2,
+    "parallelization_unit": "corruption",
+    "gpu_jobs_may_run_concurrently": true,
+    "numerical_threads_per_worker": 1,
+    "resume_unit": "one_256_row_evaluation_batch_containing_all_three_methods",
+    "monitor_policy": "counts_and_process_health_only_no_scores_bounds_errors_coverage_or_aggregates",
+    "result_verification": "rebuild_costs_predictions_true_scores_and_primal_dual_certificate_values_from_authenticated_store_arrays"
+  }
+}

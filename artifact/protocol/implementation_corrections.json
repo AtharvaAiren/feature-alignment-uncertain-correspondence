@@ -1,0 +1,85 @@
+{
+  "schema_version": "marginal_alignment.campaign.implementation_corrections.v1",
+  "corrections": [
+    {
+      "id": "bures_middle_square_root_factor_svd",
+      "date_utc": "2026-08-22",
+      "trigger_stage": "real",
+      "observed_failure": "numpy.linalg.LinAlgError: matrix must be positive definite while taking the square root of the Bures middle matrix",
+      "inspection_before_correction": "Only the failure traceback and execution state were inspected; no partial condition outcomes, aggregate real results, inference results, or paper outputs were inspected.",
+      "old_numerical_evaluation": "Form M = Cs^(1/2) Cr Cs^(1/2), diagonalize M, and reject any computed eigenvalue <= 0.",
+      "corrected_numerical_evaluation": "Let B = Cr^(1/2) Cs^(1/2), compute B = U diag(s) V^T by SVD, and evaluate M^(1/2) = V diag(s) V^T without explicitly forming the ill-conditioned Gram matrix B^T B.",
+      "mathematical_identity": "B^T B = Cs^(1/2) Cr Cs^(1/2), so the corrected evaluation is the same principal Bures square root in exact arithmetic.",
+      "scientific_protocol_change": false,
+      "estimator_or_regularization_change": false,
+      "additional_jitter_or_eigenvalue_clipping": false,
+      "restart_policy": "The source hash changes, invalidating every prior real-unit fingerprint. A fresh run directory recomputes all stages and real units; partial unit results are not carried across the correction."
+    },
+    {
+      "id": "symmetric_bures_rank_restriction_eigendecomposition",
+      "date_utc": "2026-08-22",
+      "trigger_stage": "real",
+      "observed_failure": "numpy.linalg.LinAlgError: SVD did not converge while rank-restricting A-I for method bures_rank4_oas at n=64 and d=768",
+      "inspection_before_correction": "Only the exception context and execution state were inspected; no partial unit outcomes, real aggregates, inference results, or paper outputs were inspected.",
+      "old_numerical_evaluation": "Apply a generic dense SVD to the symmetric Bures identity correction A-I and retain its first r singular triplets.",
+      "corrected_numerical_evaluation": "Apply a symmetric eigendecomposition to A-I, order eigenpairs by absolute eigenvalue, and retain the first r eigenpairs.",
+      "mathematical_identity": "For symmetric A-I, retaining the eigenpairs with largest absolute eigenvalues is the Frobenius-optimal rank-r truncated SVD, with singular values equal to absolute eigenvalues.",
+      "scientific_protocol_change": false,
+      "rank_or_capacity_change": false,
+      "estimator_or_regularization_change": false,
+      "restart_policy": "The source hash changes again, invalidating all prior real-unit fingerprints. A fresh run directory recomputes every real unit under the corrected implementation while retaining the failed run unchanged for forensics."
+    },
+    {
+      "id": "bures_rank_boundary_identifiability_amendment",
+      "date_utc": "2026-08-22",
+      "trigger_stage": "real",
+      "observed_issue": "At n much smaller than d, OAS endpoint covariances contain a large shared isotropic subspace. Some requested rank cutoffs split a materially nonzero repeated eigenspace of the Bures correction, so the selected downstream subspace is not intrinsically identified and can depend on the numerical eigenbasis.",
+      "inspection_before_amendment": "Only numerical failure traces, estimator algebra, and controlled spectrum diagnostics were inspected; no partial condition outcomes, real aggregates, inference results, or paper outputs were inspected.",
+      "protocol_amendment": "Remove the extra rank-256 diagnostic, retain rank-4 over the full finite-sample grid, evaluate rank-64 only for calibration_size >= 1024, and fail closed whenever a retained-rank boundary splits a materially nonzero repeated Bures eigenspace.",
+      "scientific_rationale": "A rank truncation through a repeated nonzero eigenspace has no unique rotation-equivariant downstream value. Restricting rank-64 to sample sizes at least as large as the encoder dimensions and rejecting unresolved cutoff ties prevents an arbitrary LAPACK basis from becoming an experimental treatment.",
+      "scientific_protocol_change": true,
+      "scope": "Secondary covariance rank/shrinkage diagnostics only. Primary endpoints, data, seeds, metrics, methods, inference contrasts, and claim policies are unchanged.",
+      "restart_policy": "Start in a fresh run directory under the amended lock and corrected source hash. Reuse the sealed 306 feature stores, but do not carry scientific-stage outputs or real-unit envelopes from either failed run."
+    },
+    {
+      "id": "paired_readout_gauge_nonidentified_completion_withdrawal",
+      "date_utc": "2026-08-23",
+      "trigger_stage": "real",
+      "observed_failure": "numpy.linalg.LinAlgError: SVD did not converge for paired_readout_gauge at pair_budget=64 and feature_dimension=768",
+      "inspection_before_amendment": "Only the complete failure traceback, estimator algebra, execution state, and synthetic numerical stress tests were inspected; no partial real-condition values, aggregates, inference results, or paper outputs were inspected.",
+      "root_cause": "The task-weighted cross matrix has rank at most min(centered_pair_rank, centered_readout_rank). At 64 pairs in 768 dimensions it is necessarily rank deficient, so the full orthogonal Procrustes completion is not identified. Different valid nullspace completions can produce different downstream maps even when they attain the same fitted objective.",
+      "rejected_fix": "Do not substitute a different SVD driver, QR basis, jitter, or arbitrary polar completion and call it an algebraically equivalent numerical repair; that would silently select a new estimator in an unidentified subspace.",
+      "protocol_amendment": "Withdraw paired_readout_gauge and its shuffled variant from the real campaign. Use paired ridge and rank-64 reduced-rank ridge for the dose curve, each with an estimator-matched shuffled control. Retain full paired Procrustes and its shuffled control only in the 4096-pair confirmatory suite, with a mandatory full-centered-cross-rank gate. Fail closed if the reduced-rank ridge cutoff splits a materially nonzero repeated singular subspace. Use paired reduced-rank ridge versus shuffled pairs and assignment-erased endpoint-matched Bures for the two locked correspondence contrasts.",
+      "scientific_protocol_change": true,
+      "scope": "Correspondence diagnostics and the estimator used by the two correspondence contrasts. The primary marginal endpoint, datasets, encoders, corruptions, severities, seeds, metrics, number of contrasts, and claim policy are unchanged.",
+      "superseded_in_part_by": "full_procrustes_centered_cross_rank_nonidentification_withdrawal",
+      "restart_policy": "Start a new run directory under the amended lock. Reuse the sealed 306 feature stores, but do not reuse scientific-stage outputs or real-unit envelopes from any failed-source run."
+    },
+    {
+      "id": "full_procrustes_centered_cross_rank_nonidentification_withdrawal",
+      "date_utc": "2026-08-23",
+      "trigger_stage": "real",
+      "observed_failure": "The fail-closed full-rank gate rejected paired_procrustes in correspondence_confirmatory for CIFAR-100-C brightness, DINOv3, severity 5: centered cross rank 1023 < feature dimension 1024 at pair_budget=4096.",
+      "inspection_before_amendment": "Only the complete failure traceback, estimator algebra, and execution state were inspected; no partial real-condition values, aggregate results, inference results, or paper outputs were inspected.",
+      "root_cause": "A full orthogonal Procrustes map is uniquely identified only when its centered cross matrix has full feature rank. Having more pairs than dimensions is necessary but not sufficient. In the observed condition the one-dimensional nullspace leaves the orthogonal completion unidentified, so different valid completions can change held-out predictions while attaining the same paired objective.",
+      "rejected_fix": "Do not use another SVD driver, QR basis, jitter, pseudoinverse, or a coordinate-dependent nullspace completion. Those choices would define a new estimator after observing the nonidentification failure.",
+      "protocol_amendment": "Withdraw paired_procrustes and paired_procrustes_shuffled from the correspondence-confirmatory suite for every dataset, encoder, corruption, severity, and seed. Retain endpoint-matched assignment-erased Bures and paired rank-64 reduced-rank ridge with its estimator-matched shuffled control. The two locked correspondence contrasts were already reduced-rank ridge versus shuffled pairs and reduced-rank ridge versus endpoint-matched Bures, so the inferential family is unchanged.",
+      "scientific_protocol_change": true,
+      "scope": "Secondary full-Procrustes diagnostic rows only. Primary marginal endpoints, data, encoders, corruptions, severities, split seeds, metrics, the stable correspondence estimators, both locked correspondence contrasts, multiplicity correction, and claim policy are unchanged.",
+      "restart_policy": "Start a fresh run directory under the amended lock and source hash. Reuse the sealed 306 feature stores, but do not carry any scientific-stage output or real-unit envelope from the failed correspondence-v3 run."
+    },
+    {
+      "id": "complete_script_test_dependency_source_closure",
+      "date_utc": "2026-08-24",
+      "trigger_stage": "tests",
+      "observed_failure": "The fresh correspondence-v5 release stopped during pytest collection because tests/test_prepare_cifar_c.py imports scripts/prepare_cifar_c.py, but the release upload included scripts/campaign and scripts/run_campaign.sh only.",
+      "inspection_before_correction": "Only the launcher tail, failed tests-stage record, pytest collection report, and deployed test inventory were inspected. The real stage had not started, zero real-condition unit envelopes existed, and no scientific outcomes or aggregates were produced or inspected.",
+      "root_cause": "The release transfer closure and SOURCE_PATTERNS covered campaign subdirectory scripts but omitted executable root-level script dependencies imported by the complete locked tests tree.",
+      "corrected_implementation": "Authenticate every Python and shell file below scripts with recursive SOURCE_PATTERNS, transfer the complete scripts tree into a fresh release, and regression-test that every such script is present in the source manifest, including scripts/prepare_cifar_c.py.",
+      "scientific_protocol_change": false,
+      "config_or_lock_change": false,
+      "data_model_method_seed_or_metric_change": false,
+      "restart_policy": "Preserve the failed v5 release and run unchanged. Deploy the complete authenticated source closure into a fresh v6 release and fresh run directory. Reuse only the already sealed and independently verified 306 feature stores."
+    }
+  ]
+}

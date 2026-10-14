@@ -1,0 +1,91 @@
+{
+  "schema_version": "marginal_alignment.paired_recovery_followup.lock.v1",
+  "status": "FROZEN_BEFORE_FOLLOWUP_OUTCOMES",
+  "study_id": "imagenet_c_paired_recovery_followup_20260914_v1",
+  "date_utc": "2026-09-14",
+  "config": "configs/paired_recovery_followup/followup_v1.json",
+  "config_file_sha256": "ee07c2d90d2902fd1cf1101f6e3cc82d92af55927ce76c70d8d26be81cccf253",
+  "prospective_disclosure": "The completed 2026-09-13 paired-recovery results and the 2026-09-14 audit were inspected before design. No empirical output from these new partitions, direct baselines, signed contrasts, column-permuted controls, or ViT-B/16 cells was computed or inspected before this lock. Synthetic algebraic tests are not empirical outcomes.",
+  "source_base": {
+    "repository": "beyond-marginals",
+    "branch": "main",
+    "git_commit": "fd511831aa2fab9e1c88a6b8358a5620452708ae",
+    "paired_recovery_source_archive_sha256": "bb2b20ae665f3617eca20258a66920eb63decfd5d34882ec27506029b6273345",
+    "older_iclr_experiments_worktree_excluded": true
+  },
+  "direct_baseline_disclosure": "The direct comparator matches the raw fit/calibration/evaluation identity budget, but it uses true fit-role pairing to construct method centers and scales after maps are frozen. Geometric map fitting erases that assignment, so usable information is not identical.",
+  "external_inputs": {
+    "external_input_manifest_file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "native_feature_store_count": 306,
+    "store_manifest_file_sha256s": {
+      "clip/gaussian_noise/severity_5": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "clip/motion_blur/severity_5": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b",
+      "vitb16/gaussian_noise/severity_5": "d2b4bf1c82c58c96267b7e62f4ef34d76b0156002f3e0377692316bd22345d4a",
+      "vitb16/motion_blur/severity_5": "20d78a78701a4fcfa8184e6c49d3aa122b25580e26a2cceec4933373e2ce0f05"
+    }
+  },
+  "locked_axes": {
+    "primary_encoder": "clip",
+    "primary_split_repetitions": 3,
+    "secondary_encoder": "vitb16",
+    "secondary_split_repetitions": 1,
+    "corruptions": ["gaussian_noise", "motion_blur"],
+    "severity": 5,
+    "methods": ["identity", "diagonal", "bures"],
+    "signed_contrasts": ["diagonal_minus_identity", "bures_minus_identity", "bures_minus_diagonal"],
+    "map_fit_rows": 4096,
+    "calibration_batches": 29,
+    "evaluation_batches": 20,
+    "batch_rows": 256,
+    "delta": 0.1,
+    "direct_standardization_batches": 16,
+    "direct_scale_floor": 0.00390625,
+    "geometry_control": "cost_columns_only_with_separate_recalibration"
+  },
+  "unit_accounting": {
+    "cells": 8,
+    "evaluation_batch_units": 160,
+    "absolute_certificates": 960,
+    "signed_contrast_certificates": 960,
+    "total_assignment_certificates": 1920,
+    "exact_milp_diagnostics": 96
+  },
+  "runtime_contract": {
+    "cpu_only": true,
+    "parallel_workers": 2,
+    "cuda_visible_devices": "",
+    "numerical_threads_per_worker": 1,
+    "python_minimum": "3.10",
+    "numpy_minimum": "1.24",
+    "scipy_minimum": "1.11"
+  },
+  "failure_policy": "Any source, config, manifest, array, partition, control, direct-score, reward, unit, exact-diagnostic, certificate, aggregation, or reconstruction failure makes the full study incomplete; do not retune or silently drop or replace a cell.",
+  "source_files": {
+    "configs/paired_recovery_followup/followup_v1.json": "ee07c2d90d2902fd1cf1101f6e3cc82d92af55927ce76c70d8d26be81cccf253",
+    "protocol/paired_recovery_followup/FOLLOWUP_PROTOCOL_20260914.md": "2683070dbf36677fdc8d0ee15adf6bf5c036027f67f29138b70d9786216a823e",
+    "scripts/paired_recovery_followup/run_study.py": "f49e8ed4c83b213f66ca8ee440372690b10158e14d3d893615976d1695050756",
+    "scripts/paired_recovery_followup/verify_results.py": "0e8e71704fdcfdd883a695c10a9a9a75796fa2e6feafb551a4c4cc315dba4be4",
+    "src/marginal_alignment/campaign/artifacts.py": "efd5d58653751e5979199751141b6759c229ccb1f2cf7b135658f2142b1ec4c8",
+    "src/marginal_alignment/campaign/feature_store.py": "f4e432230393901c782bd0bfe84b9aaff444c462fc5d31daa61ddf145d1e45b7",
+    "src/marginal_alignment/campaign/maps.py": "b47883cdbe14856dc58e3cec3e530e6213252941ff19187c4cd61a6b80fa0bce",
+    "src/marginal_alignment/campaign/split_plan.py": "84e5693d6d27d587b58ec0981ae4fa0c2dfb7b22084c636f408970cc30978d5d",
+    "src/marginal_alignment/linalg.py": "f7574cbd8cb4fb7ca499f79268472020066a0492e02dd3a7b9ac44cfc0079815",
+    "src/marginal_alignment/paired_recovery_bounds/conformal.py": "21f2c550124e6244464cf60fe0455a3a224b536f4902aa2ec7affd45bc854525",
+    "src/marginal_alignment/paired_recovery_bounds/geometry.py": "63b1d24eb9e3a8f9ba7c6e7b363552a8cfd99106bbbc8529f40186b0ca930559",
+    "src/marginal_alignment/paired_recovery_bounds/optimization.py": "a52bab249431380dc1b48a148a75626693b59e9e817c517ee7fc5b541c389a0e",
+    "src/marginal_alignment/paired_recovery_bounds/splitting.py": "b3c05234dfdf123a9dc9fc940c790953ab6bbfe5606cad246088179b75276422",
+    "src/marginal_alignment/paired_recovery_followup/__init__.py": "98bb00e2fd433096249e43946572fd6d193dbd6c5cd13a21d1fa6a3fbe687bdf",
+    "src/marginal_alignment/paired_recovery_followup/calibration.py": "d692757e481dc259970c5d313c00eec92846eba689909e630c676e11016b09d3",
+    "src/marginal_alignment/paired_recovery_followup/controls.py": "e032e7b13e3964717dc6eab20f0c84866bc4f984e262647bebd03060382a6258",
+    "src/marginal_alignment/paired_recovery_followup/protocol.py": "7143be557fa8560b813761d143a7f3fae2f00ad2f83e6783be7a453d8c8dae51",
+    "src/marginal_alignment/paired_recovery_followup/runner.py": "799159890bd353c4dbb30e9641d9ac00a1ecc1c872abf429994d5b84f5c6ece3",
+    "src/marginal_alignment/paired_recovery_followup/signed_optimization.py": "ad53edc700fb40e31e28acf66c46fcd335ef9466ce08940bdefcee5d4366dc5f",
+    "tests/paired_recovery_followup/test_calibration.py": "eb896dca7a4bc7546e951b4d9394f553ee8e8b1e863976d40e72aa4d71547d9b",
+    "tests/paired_recovery_followup/test_controls.py": "3c1add06e95c51d0a2767449eaea97519d2476795e11a64ea74e4b5c94425121",
+    "tests/paired_recovery_followup/test_protocol.py": "8019cbc01241b58c1a2def04763128ae8624eee3708334e11d30ac3354dda733",
+    "tests/paired_recovery_followup/test_runner_synthetic.py": "126e455c72b03091b7ca6e14c82f272973d0b8a8ef868fad24b38cb48bec279d",
+    "tests/paired_recovery_followup/test_signed_optimization.py": "a1a743024995204f991d339f4749034cd67cf5d140470a11590fc76d9034c892"
+  },
+  "manifest_sha256": "eb02c7d3cb16ce29c650f26cdfe7dc4ce53185ad40c8c077577e0b2b0fa61788"
+}

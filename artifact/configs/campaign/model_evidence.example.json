@@ -1,0 +1,12 @@
+{
+  "schema_version": "marginal_alignment.campaign.model_evidence.v1",
+  "encoder_id": "REPLACE_WITH_dinov3_clip_OR_vitb16",
+  "model_id": "REPLACE_WITH_LOCKED_CONFIG_MODEL_ID",
+  "checkpoint_sha256": "REPLACE_WITH_CONTENT_SHA256_OR_HASH_OF_SORTED_SHARD_RECORDS",
+  "architecture_config_sha256": "REPLACE_WITH_CANONICAL_MODEL_CONFIG_SHA256",
+  "preprocessing_sha256": "REPLACE_WITH_CANONICAL_PREPROCESSING_JSON_SHA256",
+  "feature_layer": "REPLACE_WITH_LOCKED_CONFIG_FEATURE_LAYER",
+  "pooling": "REPLACE_WITH_LOCKED_CONFIG_POOLING",
+  "expected_dimension": 0,
+  "evidence_note": "Only use this sidecar when every value is backed by the original extraction record; do not reconstruct it from a directory name."
+}

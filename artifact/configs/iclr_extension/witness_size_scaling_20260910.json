@@ -1,0 +1,143 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.witness_size_scaling.v1",
+  "status": "PRESPECIFIED_POST_HOC_REVIEWER_MOTIVATED_BEFORE_SCALING_OUTCOMES",
+  "scientific_result": false,
+  "date_utc": "2026-09-10",
+  "extension_id": "witness_size_scaling_nested_disjoint_v1",
+  "analysis_timing": {
+    "classification": "post_hoc_reviewer_motivated_supportive",
+    "prior_outcomes_inspected": true,
+    "disclosure": "The completed R5 and reviewer-follow-up outcomes, including the common-random-gap and pair-structure results, were inspected before this scaling protocol was written.",
+    "freeze_policy": "Freeze the complete maximum-size endpoint selection and all literal prefixes before reading any scaling outcome. Failures narrow the claim and never trigger size, condition, encoder, seed, or endpoint changes.",
+    "claim_scope": "fixed_panel_descriptive_scaling_result_not_population_inference"
+  },
+  "scientific_question": "At fixed common random-gap share q=0.05, does unpaired ambiguity shrink as the number of witness rows and observed class coverage increase?",
+  "common_protocol": {
+    "encoders": [
+      "clip",
+      "dinov3"
+    ],
+    "split_seeds": [
+      201,
+      202,
+      203
+    ],
+    "calibration_rows": 3840,
+    "witness_sizes": [
+      1024,
+      4096,
+      8192
+    ],
+    "maximum_witness_rows": 8192,
+    "shared_random_gap_q": 0.05,
+    "exact_validation_rows": 64,
+    "exact_milp_time_limit_seconds": 900.0,
+    "exact_reported_mip_gap_tolerance": 1e-12,
+    "cost_geometry": "full_reference_oas_mahalanobis_after_bures",
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "maximum_primal_dual_gap": 0.01,
+    "maximum_dual_bisection_iterations": 48,
+    "early_stop_policy": "stop_at_the_first_evaluation_with_a_valid_primal_dual_gap_at_most_0.01",
+    "primal_initializer": "minimum_cost_assignment_no_python_greedy_pair_set",
+    "assignment_tie_relative_tolerance": 1e-12,
+    "random_cost_moment_block_rows": 256,
+    "selection_policy": "one_maximum_selection_frozen_first_then_smaller_witnesses_are_literal_prefixes_after_an_identical_3840_row_calibration_segment",
+    "geometry_reuse_policy": "fit_one_geometry_per_condition_encoder_seed_from_the_common_calibration_and_reuse_it_across_all_three_witness_sizes",
+    "selected_disagreement_role": "integer_feasible_lower_bound_on_maximum_disagreement",
+    "upper_bound_role": "sampled_lagrangian_computational_upper_bound_under_the_locked_floating_point_solver_model",
+    "exact_validation_role": "tractable_64_row_implementation_diagnostic_not_an_exact_solution_of_any_full_witness_problem",
+    "formal_real_arithmetic_certificate_claimed": false,
+    "external_ground_truth_labels_used_for_geometry_or_optimization": false,
+    "frozen_readout_predictions_used_as_optimization_reward": true
+  },
+  "panels": {
+    "imagenet_sketch_natural_unpaired": {
+      "dataset": "imagenet_sketch",
+      "endpoint_arm": "natural_unpaired",
+      "expected_conditions": 1,
+      "expected_groups": 6,
+      "expected_certificate_rows": 18
+    },
+    "imagenet_c_disjoint_unpaired": {
+      "dataset": "imagenet_c",
+      "endpoint_arm": "identity_disjoint_unpaired",
+      "severity": 5,
+      "corruptions": [
+        "brightness",
+        "contrast",
+        "defocus_blur",
+        "elastic_transform",
+        "fog",
+        "frost",
+        "gaussian_noise",
+        "glass_blur",
+        "impulse_noise",
+        "jpeg_compression",
+        "motion_blur",
+        "pixelate",
+        "shot_noise",
+        "snow",
+        "zoom_blur"
+      ],
+      "eligible_identity_pairs": 25000,
+      "required_identity_pairs_at_maximum": 24064,
+      "remaining_eligible_identity_pairs": 936,
+      "mathematical_maximum_witness_rows": 8660,
+      "expected_conditions": 15,
+      "expected_groups": 90,
+      "expected_certificate_rows": 270
+    }
+  },
+  "reporting": {
+    "primary_profile": "maximum_disagreement_lower_and_upper_bounds_by_witness_size",
+    "class_coverage": "postfreeze_descriptive_unique_class_and_rows_per_observed_class_summary_for_both_witness_endpoints",
+    "summary_unit": "fixed_condition_encoder_seed_cell",
+    "aggregation": "report_each_cell_then_equal_weight_descriptive_means_and_min_max_ranges_by_panel_encoder_and_size",
+    "trend": "within_cell_pairwise_numerical_bracket_differences_[L_right-U_left,U_right-L_left]",
+    "trend_classification": "certified_decrease_only_if_U_right_minus_L_left_is_strictly_below_zero; certified_increase_only_if_L_right_minus_U_left_is_strictly_above_zero; otherwise_inconclusive",
+    "point_estimate_trend_claimed": false,
+    "lines_between_sizes": "visual_guides_only",
+    "inference": "none_fixed_panel_descriptive_only",
+    "external_1024_result_policy": "The completed reviewer follow-up is not used as the scaling baseline. It may be reported only as a separately labeled descriptive consistency check after exact estimand compatibility is established; endpoint equality is not assumed."
+  },
+  "information_and_leakage_contract": {
+    "selection_inputs": "authenticated_features_and_opaque_sample_ids_only",
+    "imagenet_c_pairing": "used_only_before_outcomes_to_exclude_head_fit_identities_and_construct_two_disjoint_identity_blocks",
+    "ground_truth_class_values": "label_memmaps_may_be_opened_during_store_authentication_but_values_are_not_sliced_or_interpreted_for_selection_geometry_cost_reward_or_assignment_and_are_sliced_and_interpreted_only_after_all_three_certificates_are_frozen",
+    "maximum_size_choice": "8192_is_the_largest_power_of_two_below_the_8660_row_identity_disjoint_limit",
+    "size_selection": "all_three_sizes_fixed_before_scaling_outcomes",
+    "old_1024_outcomes": "not_used_to_choose_or_modify_endpoint_prefixes_or_the_grid"
+  },
+  "resource_contract": {
+    "cpu_only": true,
+    "parallel_workers": 2,
+    "maximum_concurrent_campaigns": 1,
+    "dense_cost_bytes_at_8192_float64": 536870912,
+    "conservative_peak_gib_per_worker": 12,
+    "required_memavailable_gib_before_launch": 28,
+    "peak_estimate_includes": "cost_boolean_reward_normalized_cost_reused_lagrangian_objective_LAP_scratch_and_feature_arrays; no Python greedy pair set is constructed",
+    "random_moment_policy": "blockwise_algebraic_identity_without_a_second_dense_centered_matrix",
+    "resume_policy": "completed_group_manifests_are_revalidated_and_reused"
+  },
+  "expected_counts": {
+    "conditions": 16,
+    "groups": 96,
+    "fresh_1024_certificates": 96,
+    "fresh_4096_certificates": 96,
+    "fresh_8192_certificates": 96,
+    "total_fresh_certificates": 288,
+    "nested_prefix_relations_per_group": 2,
+    "external_completed_1024_certificates_used_as_baseline": 0
+  },
+  "failure_and_reporting_policy": {
+    "zero_silent_drops": true,
+    "all_288_fresh_certificates_required_for_complete_status": true,
+    "every_certificate_requires_gap_at_most_0.01": true,
+    "every_64_row_diagnostic_requires_a_proven_optimum_and_containment_inside_its_numerical_bounds": true,
+    "failed_or_missing_row_policy": "Preserve the failure and report the scaling panel incomplete; do not average around, replace, or retune a failed row.",
+    "not_a_realized_world_performance_bound": true,
+    "not_a_population_claim": true,
+    "not_a_claim_that_rows_per_class_is_the_only_cause_of_any_trend": true
+  }
+}

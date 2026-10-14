@@ -1,0 +1,179 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.play3_optimization_gate.v1",
+  "status": "READY_TO_FREEZE_BEFORE_NEW_OUTCOMES",
+  "date_utc": "2026-09-03",
+  "extension_id": "play3_v2_optimization_and_natural_shift_breadth",
+  "lineage": {
+    "completed_play3_v1_config": "configs/iclr_extension/play3_natural.json",
+    "completed_play3_v1_config_file_sha256": "f9c34a5e97898bb654418861605db35e15c322bfaa56b4f4cba6317a7d4a16d6",
+    "completed_play3_v1_lock": "protocol/iclr_extension_play3_lock.json",
+    "completed_play3_v1_lock_file_sha256": "033f8411a5636aaa605ce31fa12ee1ebfbd9588b1c67178e22d342f069e058fa",
+    "completed_extension_master_lock": "protocol/iclr_extension_master_lock.json",
+    "completed_extension_master_lock_file_sha256": "2d79054d35a16796246d7ee0961f2477c32c4cb7d7bcb52fca7cb8142c16036e",
+    "relationship": "additive_post_result_certificate_and_breadth_extension_no_v1_rewrite",
+    "prior_outcome_disclosure": "ImageNet-Sketch v1 outcomes and the original full-Mahalanobis geometry were inspected before this gate; ImageNet-V2 and ImageNet-R witness outcomes were not inspected"
+  },
+  "scientific_question": "Does large task disagreement persist across three natural shifts and three prespecified locality geometries, and is the floating-point maximum-disagreement search numerically bracketed to within five percentage points?",
+  "datasets": {
+    "imagenet_sketch": {
+      "variant": "official_repository_deterministic_50_per_wnid_subset",
+      "expected_reference_rows_after_intersection_and_head_fit_exclusion": 25000,
+      "expected_target_rows": 50000,
+      "expected_target_classes": 1000,
+      "class_intersection_policy": "all_official_imagenet_1k_wnids",
+      "store_provenance_metadata_key": "imagenet_sketch_provenance",
+      "expected_provenance_schema": "marginal_alignment.iclr_extension.imagenet_sketch_provenance.v2",
+      "outcome_status_at_protocol_authoring": "v1_outcomes_previously_inspected"
+    },
+    "imagenet_v2": {
+      "variant": "matched-frequency-format-val",
+      "expected_reference_rows_after_intersection_and_head_fit_exclusion": 25000,
+      "expected_target_rows": 10000,
+      "expected_target_classes": 1000,
+      "class_intersection_policy": "all_official_imagenet_1k_wnids",
+      "store_provenance_metadata_key": "natural_shift_provenance",
+      "expected_provenance_schema": "marginal_alignment.iclr_extension.natural_shift_provenance.v1",
+      "outcome_status_at_protocol_authoring": "witness_outcomes_not_inspected"
+    },
+    "imagenet_r": {
+      "variant": "official_imagenet-r_renditions",
+      "expected_reference_rows_after_intersection_and_head_fit_exclusion": 5000,
+      "expected_target_rows": 30000,
+      "expected_target_classes": 200,
+      "class_intersection_policy": "official_imagenet_r_200_wnid_intersection",
+      "store_provenance_metadata_key": "natural_shift_provenance",
+      "expected_provenance_schema": "marginal_alignment.iclr_extension.natural_shift_provenance.v1",
+      "outcome_status_at_protocol_authoring": "witness_outcomes_not_inspected",
+      "reference_row_constraint_note": "The frozen head uses 25 of 50 ImageNet validation images per class; excluding those head-fit IDs leaves exactly 200*25=5000 reference rows, so the additive gate prespecifies 3840 calibration plus 1024 witness rows (4864 total)."
+    }
+  },
+  "encoders": [
+    "dinov3",
+    "clip"
+  ],
+  "encoder_contracts": {
+    "dinov3": {
+      "model_id": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "expected_dimension": 1024,
+      "feature_layer": "last_hidden_state[:,0]",
+      "pooling": "class_token"
+    },
+    "clip": {
+      "model_id": "openai/clip-vit-large-patch14",
+      "expected_dimension": 768,
+      "feature_layer": "vision_model.post_layernorm+visual_projection",
+      "pooling": "projected_class_token"
+    }
+  },
+  "cost_geometries": [
+    "full_reference_oas_mahalanobis_after_bures",
+    "diagonal_reference_oas_standardized_after_bures",
+    "uncentered_l2_normalized_cosine_after_bures"
+  ],
+  "certificate_protocol": {
+    "information_scope": "unpaired_features_frozen_readout_and_prespecified_public_wnid_support;_authenticated_sample_ids_used_only_for_indexed_atom_administration_and_exact_duplicate_feature_ties;_row_level_wnids_withheld_from_assignment_optimization",
+    "external_ground_truth_labels_used_for_optimization": false,
+    "frozen_readout_predictions_used_for_optimization": true,
+    "formal_real_arithmetic_certificate_claimed": false,
+    "floating_point_solver_not_formally_verified": true,
+    "calibration_rows": 3840,
+    "witness_rows": 1024,
+    "exact_validation_rows": 64,
+    "maximum_exact_milp_binary_variables": 4096,
+    "split_seeds": [
+      201,
+      202,
+      203
+    ],
+    "cost_budgets_relative": [
+      0.01,
+      0.05,
+      0.1
+    ],
+    "primary_cost_budget_relative": 0.05,
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "greedy_neighbors": 1024,
+    "dual_bisection_iterations": 48,
+    "assignment_tie_relative_tolerance": 1e-12,
+    "maximum_primal_dual_gap": 0.05,
+    "exact_solver": "scipy_optimize_milp_highs",
+    "exact_solver_relative_mip_gap": 0.0,
+    "exact_milp_time_limit_seconds": 900.0,
+    "restart_policy": "not_applicable_deterministic_single_schedule_no_random_initialization",
+    "rerun_stability_check": "full_reconstruction_requires_bitwise_identical_assignments_and_summaries_under_the_locked_runtime",
+    "duplicate_feature_row_policy": "preserve_indexed_atoms_with_authenticated_unique_sample_ids_used_only_for_exact_feature_ties",
+    "sample_identifier_semantic_parsing": "forbidden",
+    "sample_identifier_integrity_policy": "included_in_indexed_atom_digest_and_serialized_inverse_maps",
+    "sample_identifier_posthoc_tie_caveat": "for_exact_duplicate_feature_rows_only_the_opaque_id_tie_order_can_change_which_indexed_boundary_atom_receives_an_assignment_and_thus_its_posthoc_wnid_attribution_but_not_feature_cost_or_prediction_reward",
+    "grouped_compute_policy": "split_and_bures_once_per_dataset_encoder_seed;_cost_once_per_geometry;_three_budgets_reuse_the_prepared_dense_problem",
+    "store_preparation_metadata_key": "optimization_gate_preparation",
+    "class_intersection_store_metadata_key": "class_intersection",
+    "class_intersection_order": "lexicographic_wnid",
+    "reference_wnids_role_field": "reference_wnids_role",
+    "target_wnids_role_field": "target_wnids_role",
+    "assignment_artifact_policy": "serialize_world_zero_world_one_and_exact_subset_assignments_as_hash_bound_npy"
+  },
+  "inference": {
+    "cluster": "imagenet_wnid",
+    "display_label": "descriptive conditional WNID-cluster resampling interval, assignments fixed/no optimizer refit",
+    "estimand": "selected_in_sample_witness_disagreement_conditional_on_each_serialized_optimized_assignment",
+    "optimizer_refit_within_bootstrap": false,
+    "interpretation": "descriptive_conditional_cluster_resampling_interval_not_a_sampling_valid_confidence_interval_for_the_population_optimized_functional",
+    "gate_kind": "prespecified_robustness_screen_not_population_or_confirmatory_inference",
+    "split_seed_policy": "sum_sufficient_statistics_within_wnid_before_cluster_resampling",
+    "encoders_geometries_and_budgets_nested_within_dataset_wnid_panel": true,
+    "rng": "numpy.random.Generator(PCG64)",
+    "seed": 20260903,
+    "replicates": 10000,
+    "nominal_resampling_interval_level": 0.95,
+    "interval": "descriptive_conditional_percentile",
+    "zero_silent_drops": true
+  },
+  "execution": {
+    "panel_shard_count": 4,
+    "verification_shard_count": 4,
+    "aggregate_requires_complete_full_reconstruction_verification": true,
+    "compute_accounting": {
+      "schema_version": "marginal_alignment.iclr_extension.play3_optimization_compute_timing.v1",
+      "clock": "time.perf_counter_ns_monotonic",
+      "shared_event_policy": "one_event_per_actual_dataset_encoder_seed_group_computation_copied_to_its_unit_records_and_deduplicated_by_authenticated_event_id",
+      "retry_policy": "distinct_successful_recomputations_reaching_at_least_one_published_unit_are_counted_once_each;_failed_or_interrupted_computations_publishing_no_unit_are_not_observable_here",
+      "peak_rss_status": "MISSING_NOT_PORTABLY_AUTHENTICATED_BY_THIS_RUNNER",
+      "manifest_publication_timing_status": "MISSING_SELF_REFERENTIAL_MANIFEST_CANNOT_AUTHENTICATE_POST_WRITE_DURATION"
+    },
+    "numerical_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "BLIS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "gate_decisions": {
+    "required_scientific_gate_keys": [
+      "optimization_all_1_5_10_percent_units",
+      "exact_64_row_all_units",
+      "breadth_1_percent__common_encoders",
+      "breadth_5_percent__common_encoders",
+      "geometry_gate"
+    ],
+    "optimization_gate": "Every 1024-row unit at each of the locked 0.01, 0.05, and 0.10 cost anchors must report a floating-point numerical primal-dual disagreement gap at most 0.05; no aggregate average may hide a failed unit, and no formally verified real-arithmetic optimum is claimed.",
+    "exact_validation_gate": "Every prespecified 64-row diagnostic validation must terminate with a proven MILP optimum at requested relative gap zero and that optimum must lie inside the corresponding 64-row primal-dual interval. This validates the bound implementation on a tractable subproblem and does not make the 1024-row search exact.",
+    "breadth_primary_geometry": "full_reference_oas_mahalanobis_after_bures",
+    "breadth_gate_1_percent": "Prespecified robustness screen: under the locked primary geometry, both encoders' lower endpoints for the descriptive conditional WNID-cluster resampling interval, assignments fixed/no optimizer refit, exceed 0.25 on the same at least two of three natural shifts; this is not a population or confirmatory confidence claim.",
+    "breadth_gate_5_percent": "Prespecified robustness screen: under the locked primary geometry, both encoders' lower endpoints for the descriptive conditional WNID-cluster resampling interval, assignments fixed/no optimizer refit, exceed 0.50 on the same at least two of three natural shifts; this is not a population or confirmatory confidence claim.",
+    "geometry_gate": "At the primary 0.05 cost anchor, both encoders exceed 0.50 on the same at least two of three shifts for at least two of the three locked cost geometries.",
+    "failure_policy": "Report a failed gate and narrow the manuscript claim; do not tune budgets, geometry normalization, seeds, or row selection after outcomes."
+  },
+  "reporting": {
+    "selected_two_world_value": "exact_equal_prior_randomized_minimax_recovery_for_the_two_serialized_assignments",
+    "maximum_disagreement_primal": "integer_feasible_lower_bound",
+    "maximum_disagreement_dual": "sampled_lagrangian_computational_upper_bound_under_recorded_floating_point_solver_model_also_valid_for_lp_relaxation",
+    "gap_units": "absolute_disagreement_and_percentage_points",
+    "not_external_label_accuracy": true,
+    "not_a_realized_world_performance_bound": true,
+    "zero_silent_drops": true
+  }
+}

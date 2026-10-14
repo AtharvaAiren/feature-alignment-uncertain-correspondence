@@ -1,0 +1,198 @@
+{
+  "schema_version": "marginal_alignment.paired_recovery_followup.study.v1",
+  "status": "PRESPECIFIED_BEFORE_FOLLOWUP_OUTCOMES",
+  "study_id": "imagenet_c_paired_recovery_followup_20260914_v1",
+  "date_utc": "2026-09-14",
+  "scientific_question": "Does calibrated correspondence geometry add batch-specific recovery information beyond direct paired-error calibration, and can a common feasible correspondence set certify signed differences between fixed corrections?",
+  "analysis_timing": {
+    "classification": "outcome_informed_prospectively_frozen_followup",
+    "historical_paired_recovery_results_inspected": true,
+    "historical_result_archive_sha256": "de3550bf108b6b222d4fe8d70b528648657bec8274c521cef5abd761a5b37753",
+    "new_followup_outcomes_inspected_before_lock": false,
+    "synthetic_algebraic_tests_are_not_empirical_outcomes": true,
+    "failure_policy": "Report incomplete or uninformative without changing methods, contrasts, encoders, corruptions, repetitions, batch counts, delta, direct standardization, control randomization, geometry, or optimizer."
+  },
+  "source_base": {
+    "repository": "beyond-marginals",
+    "branch": "main",
+    "git_commit": "fd511831aa2fab9e1c88a6b8358a5620452708ae",
+    "paired_recovery_source_archive_sha256": "bb2b20ae665f3617eca20258a66920eb63decfd5d34882ec27506029b6273345",
+    "paired_recovery_source_lock_manifest_sha256": "6e50c546da7c633ff8053d05caba0c0cbf58b98d8c2eb9a447f6e6f077f4b892",
+    "older_iclr_experiments_worktree_is_not_source_base": true
+  },
+  "dataset": "imagenet_c",
+  "severity": 5,
+  "corruptions": ["gaussian_noise", "motion_blur"],
+  "methods": ["identity", "diagonal", "bures"],
+  "signed_contrasts": [
+    {"id": "diagonal_minus_identity", "method_a": "diagonal", "method_c": "identity"},
+    {"id": "bures_minus_identity", "method_a": "bures", "method_c": "identity"},
+    {"id": "bures_minus_diagonal", "method_a": "bures", "method_c": "diagonal"}
+  ],
+  "cells": [
+    {"encoder": "clip", "corruption": "gaussian_noise", "repetition": 1, "split_seed": 2026091401, "control_seed": 3026091401, "phase": "primary"},
+    {"encoder": "clip", "corruption": "motion_blur", "repetition": 1, "split_seed": 2026091411, "control_seed": 3026091411, "phase": "primary"},
+    {"encoder": "clip", "corruption": "gaussian_noise", "repetition": 2, "split_seed": 2026091402, "control_seed": 3026091402, "phase": "primary"},
+    {"encoder": "clip", "corruption": "motion_blur", "repetition": 2, "split_seed": 2026091412, "control_seed": 3026091412, "phase": "primary"},
+    {"encoder": "clip", "corruption": "gaussian_noise", "repetition": 3, "split_seed": 2026091403, "control_seed": 3026091403, "phase": "primary"},
+    {"encoder": "clip", "corruption": "motion_blur", "repetition": 3, "split_seed": 2026091413, "control_seed": 3026091413, "phase": "primary"},
+    {"encoder": "vitb16", "corruption": "gaussian_noise", "repetition": 1, "split_seed": 2026091401, "control_seed": 3026091401, "phase": "secondary_matched_breadth"},
+    {"encoder": "vitb16", "corruption": "motion_blur", "repetition": 1, "split_seed": 2026091411, "control_seed": 3026091411, "phase": "secondary_matched_breadth"}
+  ],
+  "partition": {
+    "selection_inputs": "authenticated_opaque_pair_ids_only_no_features_labels_predictions_costs_or_prior_outcomes",
+    "map_fit_rows": 4096,
+    "direct_standardization_batches_within_map_fit_role": 16,
+    "calibration_batches": 29,
+    "evaluation_batches": 20,
+    "batch_rows": 256,
+    "required_eligible_pairs": 16640,
+    "unused_eligible_pairs": 8360,
+    "roles_disjoint_within_cell": true,
+    "identity_reuse_across_repetitions": "allowed_and_not_interpreted_as_new_datasets",
+    "cross_encoder_repetition_1_identity_partition": "matched_by_equal_split_seeds",
+    "head_fit_identities_excluded": true,
+    "endpoint_order": "reference_and_target_orders_independently_permuted_with_locked_rng; evaluation_assignment_values_not_consumed_by_bound_construction_and_first_consumed_scientifically_in_post_bound_scoring; opaque_assignment_hashes_may_be_serialized_during_partition_setup"
+  },
+  "direct_recovery_baseline": {
+    "kind": "split_conformal_shared_max_standardized_method_error",
+    "centers": "arithmetic_mean_of_16_map_fit_role_batch_errors_after_correction_maps_are_frozen",
+    "scales": "sample_standard_deviation_ddof_1_of_16_map_fit_role_batch_errors",
+    "scale_floor": 0.00390625,
+    "score": "max_a((e_a-c_a)/s_a)",
+    "upper_bound": "clip_[0,1](c_a+s_a*qhat_direct)",
+    "same_raw_fit_calibration_and_evaluation_identity_budget_as_geometry_method": true,
+    "usable_information_is_not_identical": true,
+    "fit_role_pairing_advantage": "direct_baseline_uses_true_fit_role_pairs_for_centers_and_scales_after_maps_are_frozen_whereas_geometric_map_fit_erases_assignment",
+    "population_mean_confidence_interval_is_not_a_comparator": true
+  },
+  "common_cost_geometry": {
+    "name": "full_reference_oas_mahalanobis_after_bures",
+    "fit_rows": 4096,
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "diagonal_standard_deviation_floor": 1e-6,
+    "cost": "total_dimension_normalized_squared_reference_oas_mahalanobis_after_bures",
+    "batch_normalized_score": "(C_pi-C_min)/(E_uniform_bijection_C-C_min)",
+    "one_cost_matrix_and_one_feasible_set_shared_by_all_absolute_and_signed_objectives": true
+  },
+  "column_permuted_geometry_control": {
+    "enabled": true,
+    "operation": "permute_only_columns_of_each_cost_matrix",
+    "physical_reference_features_predictions_and_rewards_permuted": false,
+    "true_correspondence_permuted": false,
+    "permutation_rng": "PCG64_seeded_by_first_128_bits_of_SHA256(decimal_control_seed+NUL+role_key)",
+    "role_keys": "map_fit_is_not_controlled; calibration/{batch_index}; evaluation/{batch_index}; exact/{batch_index}",
+    "threshold": "recalibrated_from_the_29_column_permuted_calibration_scores",
+    "original_threshold_reused": false,
+    "minimum_and_uniform_random_expected_bijection_cost_invariance_checked": true
+  },
+  "conformal": {
+    "delta": 0.1,
+    "calibration_count": 29,
+    "rank_rule": "ceil((m+1)*(1-delta))",
+    "rank_one_indexed": 27,
+    "when_rank_exceeds_calibration_count": "positive_infinity",
+    "coverage_scope": "one_future_exchangeable_batch_within_one_encoder_corruption_repetition_conditional_on_maps_fitted_on_the_disjoint_fit_role",
+    "geometry_and_column_control_have_separate_coverage_events": true,
+    "no_joint_coverage_claim_across_repetitions_encoders_corruptions_or_bound_families": true
+  },
+  "optimization": {
+    "absolute_objectives_per_geometry": 3,
+    "signed_objectives_per_geometry": 3,
+    "signed_reward": "indicator(error_method_a)-indicator(error_method_c)_under_one_common_correspondence",
+    "signed_rewards_clipped": false,
+    "certified_improvement_rule": "signed_upper_bound_strictly_less_than_zero",
+    "dual_bisection_iterations": 56,
+    "floating_point_solver_model": "scipy_linear_sum_assignment",
+    "formal_real_arithmetic_certificate_claimed": false,
+    "exact_diagnostic": {
+      "evaluation_batch_index": 0,
+      "rows": 16,
+      "all_absolute_and_signed_objectives": true,
+      "both_geometries": true,
+      "solver": "scipy_optimize_milp_highs",
+      "relative_mip_gap": 0.0,
+      "time_limit_seconds": 300.0
+    }
+  },
+  "encoders": {
+    "clip": {
+      "role": "primary_three_split_replications",
+      "model_id": "openai/clip-vit-large-patch14",
+      "feature_dimension": 768,
+      "feature_layer": "vision_model.post_layernorm+visual_projection",
+      "pooling": "projected_class_token",
+      "reference_features_sha256": "96187f2f99167fc9ca74b6f56492c797bda368fe63e393306f11cc3dde2c5904",
+      "head_weight_sha256": "75e85e3c84ee20261f077b09c31c486fb5d8c653798ddc53cad05266a5a30b8f",
+      "head_bias_sha256": "6f91feeaca3770e96c6aa0ee64c27f0ee881432458ed18ae54dcba524e9b301e",
+      "stores": {
+        "gaussian_noise": {"manifest_file_sha256": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b", "target_features_sha256": "7cc4cb737b62f24d39d366bf8e80ab99cb456620d6cbb0209f8fd018d020f294"},
+        "motion_blur": {"manifest_file_sha256": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b", "target_features_sha256": "d4f8d1ade4686e1eb044fb5a30c3adf7a31f24ec3fa6ce68ed1943fb374d37d4"}
+      }
+    },
+    "vitb16": {
+      "role": "secondary_one_matched_split_only_after_authenticated_prerequisite_check",
+      "selection_reason": "already_cached_paired_encoder_with_same_768_dimension_lower_compute_than_the_1024_dimension_dinov3_alternative",
+      "selection_used_followup_outcomes": false,
+      "model_id": "vit_base_patch16_224.augreg_in21k_ft_in1k",
+      "feature_dimension": 768,
+      "feature_layer": "forward_head(pre_logits=True)",
+      "pooling": "class_token",
+      "reference_features_sha256": "f3fceae87b21debb914048463090c738882f46daca1151e90b5114b2afd23fba",
+      "head_weight_sha256": "1dac3b4172e861691de91ecd2b2083c87aa39a7341d13eee05455fca1817bc91",
+      "head_bias_sha256": "66fe5ada6883c04fe3b88042ac6a2449afdc8b666b0881696423161561869c7c",
+      "stores": {
+        "gaussian_noise": {"manifest_file_sha256": "d2b4bf1c82c58c96267b7e62f4ef34d76b0156002f3e0377692316bd22345d4a", "target_features_sha256": "8e5eec7f202fcf31ee417f14e49bd03bb0aaa5aff8e67342d590fc582e637a29"},
+        "motion_blur": {"manifest_file_sha256": "20d78a78701a4fcfa8184e6c49d3aa122b25580e26a2cceec4933373e2ce0f05", "target_features_sha256": "db834d667ed38a30da213edcde28e11924327549feaa1ccf5094a04c2c60cfb7"}
+      }
+    }
+  },
+  "shared_store_contract": {
+    "endpoint_ids_sha256": "89ce53cfe096bf287b73abcf28ce5b63d128e25fc7dffb2d58dfa7a1a188d5c3",
+    "head_fit_ids_sha256": "2376d21155911f1c97109f7c8d80d2f032b8cf60bf6fb51125bc7c96e507e532",
+    "endpoint_rows": 50000,
+    "head_fit_rows": 25000,
+    "eligible_identity_pairs_after_head_fit_exclusion": 25000,
+    "pairing_provenance_kind": "natural_clean_corruption_identity"
+  },
+  "external_input_manifest": {
+    "source_path": "inputs/EXTERNAL_INPUT_MANIFEST.json",
+    "file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "native_feature_store_count": 306
+  },
+  "unit_accounting": {
+    "cells": 8,
+    "primary_clip_cells": 6,
+    "secondary_vitb16_cells": 2,
+    "evaluation_batch_units": 160,
+    "absolute_certificates": 960,
+    "signed_contrast_certificates": 960,
+    "total_assignment_certificates": 1920,
+    "calibration_cost_problems_across_both_geometries": 464,
+    "evaluation_cost_problems_across_both_geometries": 320,
+    "exact_milp_diagnostics": 96
+  },
+  "reporting": {
+    "primary": "clip_three_split_distribution_of_threshold_coverage_slack_tightening_and_signed_certification",
+    "secondary": "vitb16_single_matched_partition_descriptive_breadth",
+    "compare_geometry_to_direct": ["joint_method_coverage_per_batch", "upper_bound_slack", "batch_to_batch_variation"],
+    "compare_original_to_column_control": ["calibrated_threshold", "upper_bound_slack", "tightening", "signed_upper_bounds"],
+    "replications_are_not_new_datasets": true,
+    "fixed_two_corruption_panel_is_not_a_corruption_population": true,
+    "ground_truth_class_labels_used": false,
+    "zero_silent_drops": true
+  },
+  "execution": {
+    "cpu_only": true,
+    "parallel_workers": 2,
+    "phase_order": ["all_primary_clip_cells", "secondary_vitb16_cells"],
+    "numerical_threads_per_worker": 1,
+    "resume_unit": "one_evaluation_batch_with_all_objectives_and_both_geometries",
+    "monitor_policy": "counts_process_health_and_wall_clock_progress_only_no_scientific_outcomes; runtime_is_operational_not_a_scientific_family_comparison",
+    "planning_wall_time": "8_to_32_hours_plus_margin; conservative_48_hour_envelope",
+    "planning_peak_memory": "below_3_GiB_for_two_768_dimension_workers",
+    "gpu_required": false
+  }
+}

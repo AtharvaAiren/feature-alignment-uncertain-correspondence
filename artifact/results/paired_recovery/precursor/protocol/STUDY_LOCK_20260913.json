@@ -1,0 +1,87 @@
+{
+  "config": "configs/paired_recovery_bounds/imagenet_c_clip_v1.json",
+  "config_file_sha256": "10ca7867882dbacd98affdf6518cf1db97104f289579bc020cf53741015c89a3",
+  "date_utc": "2026-09-13",
+  "external_inputs": {
+    "external_input_manifest_file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "stores": {
+      "gaussian_noise": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "motion_blur": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b"
+    }
+  },
+  "failure_policy": "Any source, config, manifest, array, split, inventory, reconstruction, exact-diagnostic, or optimization consistency failure makes the study incomplete; do not retune or silently drop a unit.",
+  "feasibility_audit": "protocol/paired_recovery_bounds/FEASIBILITY_AUDIT_20260913.json",
+  "feasibility_audit_file_sha256": "cb5946ea1ceb48a460f7abd40b0532b99d2e011c117292e057f57a3dde6b9b6b",
+  "locked_axes": {
+    "batch_rows": 256,
+    "calibration_batches": 29,
+    "conformal_rank_one_indexed": 27,
+    "corruptions": [
+      "gaussian_noise",
+      "motion_blur"
+    ],
+    "cost_geometry": "full_reference_oas_mahalanobis_after_bures",
+    "dataset": "imagenet_c",
+    "delta": 0.1,
+    "encoder": "clip",
+    "endpoint_order": "reference_and_target_orders_independently_permuted_with_locked_rng_true_assignment_withheld_until_post_bound_scoring",
+    "evaluation_batches": 20,
+    "map_fit_rows": 4096,
+    "methods": [
+      "identity",
+      "diagonal",
+      "bures"
+    ],
+    "severity": 5
+  },
+  "manifest_sha256": "6e50c546da7c633ff8053d05caba0c0cbf58b98d8c2eb9a447f6e6f077f4b892",
+  "prospective_disclosure": "Historical base, Play-3, reviewer-follow-up, and cost-scale outcomes existed before design. No outcome from this paired conformal recovery-bound study was computed or inspected before this lock.",
+  "runtime_contract": {
+    "cuda_visible_devices": "",
+    "numerical_thread_environment": {
+      "BLIS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "numpy_minimum": "1.24",
+    "python_minimum": "3.10",
+    "scipy_minimum": "1.11"
+  },
+  "schema_version": "marginal_alignment.paired_recovery_bounds.lock.v1",
+  "source_files": {
+    "protocol/paired_recovery_bounds/FEASIBILITY_AUDIT_20260913.json": "cb5946ea1ceb48a460f7abd40b0532b99d2e011c117292e057f57a3dde6b9b6b",
+    "protocol/paired_recovery_bounds/THEORY_AND_PROTOCOL.md": "a2e6980b5a6a8d53651faf426abaa374e9e21da962845e5ef2773705114d3a21",
+    "pyproject.toml": "83fed7dd94f04a671d6628e2f92872884a01873fd47002c798af9a7f42d5a63a",
+    "requirements.txt": "a43d4b8c6407104ae8841dd587985ebb570cbcfc14eb0bd75339d4f90c2fdae6",
+    "scripts/paired_recovery_bounds/run_study.py": "aefceaca7d7eb42c96e44ef36da3bbd6d5bcbf69f97bf4348292af1b95f265ac",
+    "scripts/paired_recovery_bounds/verify_results.py": "278b5e95b908c4cf0e20f9b4f99976bfcd857e7f09f2a5a89e18cb4832818364",
+    "src/marginal_alignment/__init__.py": "e384f9975aa4998d050b154ada89ef80fa8c1b092b266e06b04e4a12576c2eb1",
+    "src/marginal_alignment/campaign/__init__.py": "a1ccfff918be567b7addd3b74795971d2ed570eed7528ceca92680a3747d1549",
+    "src/marginal_alignment/campaign/artifacts.py": "efd5d58653751e5979199751141b6759c229ccb1f2cf7b135658f2142b1ec4c8",
+    "src/marginal_alignment/campaign/feature_store.py": "f4e432230393901c782bd0bfe84b9aaff444c462fc5d31daa61ddf145d1e45b7",
+    "src/marginal_alignment/campaign/maps.py": "b47883cdbe14856dc58e3cec3e530e6213252941ff19187c4cd61a6b80fa0bce",
+    "src/marginal_alignment/campaign/method_registry.py": "8826c596570d899665f0c92d3ca4baa5ccbeceb28f4c2e3ac9dfeef033edc6fe",
+    "src/marginal_alignment/campaign/split_plan.py": "84e5693d6d27d587b58ec0981ae4fa0c2dfb7b22084c636f408970cc30978d5d",
+    "src/marginal_alignment/ceiling.py": "30b802bebad944026cd043936ffe7383432f9473e741bd3d332db151b2d9b99a",
+    "src/marginal_alignment/linalg.py": "f7574cbd8cb4fb7ca499f79268472020066a0492e02dd3a7b9ac44cfc0079815",
+    "src/marginal_alignment/paired_recovery_bounds/__init__.py": "4fc5cbdbe7a1130a7bf429099ba5db5057fb9b1724c78bc78d8464bb846fb747",
+    "src/marginal_alignment/paired_recovery_bounds/conformal.py": "21f2c550124e6244464cf60fe0455a3a224b536f4902aa2ec7affd45bc854525",
+    "src/marginal_alignment/paired_recovery_bounds/geometry.py": "63b1d24eb9e3a8f9ba7c6e7b363552a8cfd99106bbbc8529f40186b0ca930559",
+    "src/marginal_alignment/paired_recovery_bounds/optimization.py": "a52bab249431380dc1b48a148a75626693b59e9e817c517ee7fc5b541c389a0e",
+    "src/marginal_alignment/paired_recovery_bounds/protocol.py": "586ee07e2c8ede67ed8e1a22cc6422ecf7882f3e344338a23068d15ad7a9cf97",
+    "src/marginal_alignment/paired_recovery_bounds/runner.py": "efa33a219bd11a714a385803cc14f238db974b6b2d719ce3be27f66b878a032b",
+    "src/marginal_alignment/paired_recovery_bounds/splitting.py": "b3c05234dfdf123a9dc9fc940c790953ab6bbfe5606cad246088179b75276422",
+    "src/marginal_alignment/transforms.py": "4697fd51854f3b9fb0af61b75671ef67b99a1527dabc2d576daea73ff85c504a",
+    "tests/paired_recovery_bounds/test_conformal.py": "e2fbd3902aabc575bdec587e0bc8947b0777c27ebc8e6b0f4b9e26177bc18da8",
+    "tests/paired_recovery_bounds/test_geometry.py": "9f05c90d053dec0afa37bb6322a9dc503823086ea2ee306ec2ad741a0590ad2e",
+    "tests/paired_recovery_bounds/test_optimization.py": "0eaed04befa7b20ab9472b709b6f224f8d5e7ab1b7e28197e3cad100fc4da3a2",
+    "tests/paired_recovery_bounds/test_source_integrity.py": "3b35520ec8d314226a824628bafa057f424b64c66d83677cef1405a6d1f00deb",
+    "tests/paired_recovery_bounds/test_splitting.py": "043c3859a7bd28c98860dd945904a496ca21e04d03db8d5ab3e5fe117ce7d37e"
+  },
+  "status": "FROZEN_BEFORE_NEW_RECOVERY_BOUND_OUTCOMES",
+  "study_id": "imagenet_c_clip_paired_conformal_recovery_bounds_20260913_v1"
+}

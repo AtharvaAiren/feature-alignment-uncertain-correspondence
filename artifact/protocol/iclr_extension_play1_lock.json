@@ -1,0 +1,99 @@
+{
+  "config": "configs/iclr_extension/rotation.json",
+  "config_file_sha256": "2c75601932d079b8e3072de6a694c4cd748cccab2496db7a27ec098678339a46",
+  "date_utc": "2026-08-27",
+  "master_lock": "protocol/iclr_extension_master_lock.json",
+  "master_lock_file_sha256": "2d79054d35a16796246d7ee0961f2477c32c4cb7d7bcb52fca7cb8142c16036e",
+  "protocol_invariants": [
+    "The Play-1 config and the extension master lock are byte-bound before any rotation unit is planned or executed.",
+    "The imported base campaign manifest, external-input manifest, experiment lock, resolved config, and complete real-panel manifest are hash-verified before feature stores are discovered.",
+    "Every selected feature-store manifest must match the exact dataset/encoder/corruption/severity key and manifest SHA recorded by the base campaign external-input manifest.",
+    "The cleaned compressed rows copy is not consumed by Play 1; when present it must match its separately locked transport hash.",
+    "The original uncompressed rows identity is cross-checked between the base campaign manifest and real-panel manifest.",
+    "The source runtime manifest is byte-bound and cross-checked against the base campaign; the extension numerical runtime is embedded in every immutable unit.",
+    "The finite responsibility-permutation comparison is a conservative heuristic selection gate, not a significance test or an orientation-identification claim.",
+    "Every immutable unit and aggregate embeds the same validated Play-1 provenance binding.",
+    "Every direct local numerical or campaign dependency imported by the estimator and runner is byte-bound before execution."
+  ],
+  "required_imported_dependencies": [
+    "src/marginal_alignment/__init__.py",
+    "src/marginal_alignment/campaign/__init__.py",
+    "src/marginal_alignment/campaign/artifacts.py",
+    "src/marginal_alignment/campaign/feature_store.py",
+    "src/marginal_alignment/campaign/maps.py",
+    "src/marginal_alignment/campaign/method_registry.py",
+    "src/marginal_alignment/campaign/metrics.py",
+    "src/marginal_alignment/campaign/split_plan.py",
+    "src/marginal_alignment/ceiling.py",
+    "src/marginal_alignment/linalg.py",
+    "src/marginal_alignment/metrics.py",
+    "src/marginal_alignment/transforms.py"
+  ],
+  "schema_version": "marginal_alignment.iclr_extension.play1_lock.v1",
+  "source_campaign_config": {
+    "path": "configs/campaign/campaign_full.json",
+    "sha256": "2c2e33ca7b25d838b6728262ba185fd8b16e6e20d5e51bc439adbf863dfc5ba0"
+  },
+  "source_execution_evidence": {
+    "artifacts": {
+      "campaign_manifest": {
+        "path": "results/campaign/CAMPAIGN_MANIFEST.json",
+        "required_at_play1_runtime": true,
+        "sha256": "788b1efeedd1c3a067bb8106d5e2d18868b9bc5e975e0f40fa45b372dc5928f4"
+      },
+      "experiment_lock": {
+        "path": "results/campaign/experiment_lock.json",
+        "required_at_play1_runtime": true,
+        "sha256": "5a5c66f64ee7efff163771c791246d361f6d762c2421078953471d83eaef0715"
+      },
+      "external_input_manifest": {
+        "path": "results/campaign/external_input_manifest.json",
+        "required_at_play1_runtime": true,
+        "sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df"
+      },
+      "real_manifest": {
+        "path": "results/campaign/real/manifest.json",
+        "required_at_play1_runtime": true,
+        "sha256": "ab4d80d177e1368231a5d4c88a60a5edc7512694ecfe00103115df8864c4f470"
+      },
+      "real_rows": {
+        "path": "results/campaign/real/rows.jsonl.gz",
+        "required_at_play1_runtime": false,
+        "sha256": "a6bddc7b24c21830825eee48faf6fcae8f7b1b0df065473365a85df900737178"
+      },
+      "resolved_config": {
+        "path": "results/campaign/resolved_config.json",
+        "required_at_play1_runtime": true,
+        "sha256": "f19e7e878368f397c1915351c20ca20c98c7c3b0818b99741363b9b8930a72ab"
+      },
+      "runtime_manifest": {
+        "path": "results/campaign/runtime_manifest.json",
+        "required_at_play1_runtime": true,
+        "sha256": "d2516120d3e3b5c1b14e505e98fccf7ef15e5f699e179f00ffbec6255e3cf998"
+      }
+    },
+    "semantic_reconstruction_policy": "cleaned_transport_copies_bound_separately_from_original_campaign_members"
+  },
+  "source_files": {
+    "scripts/iclr_extension/__init__.py": "4633d980d46b44f0f24cf8d0b0fe77e63ad57ec9e9994d4f60c98ad18d608e3b",
+    "scripts/iclr_extension/run_rotation.py": "65b6f516389ebbcb848376b85b61a97529de1d920c9d0b56677ea5824a32d138",
+    "src/marginal_alignment/__init__.py": "e384f9975aa4998d050b154ada89ef80fa8c1b092b266e06b04e4a12576c2eb1",
+    "src/marginal_alignment/campaign/__init__.py": "a1ccfff918be567b7addd3b74795971d2ed570eed7528ceca92680a3747d1549",
+    "src/marginal_alignment/campaign/artifacts.py": "efd5d58653751e5979199751141b6759c229ccb1f2cf7b135658f2142b1ec4c8",
+    "src/marginal_alignment/campaign/feature_store.py": "f4e432230393901c782bd0bfe84b9aaff444c462fc5d31daa61ddf145d1e45b7",
+    "src/marginal_alignment/campaign/maps.py": "b47883cdbe14856dc58e3cec3e530e6213252941ff19187c4cd61a6b80fa0bce",
+    "src/marginal_alignment/campaign/method_registry.py": "8826c596570d899665f0c92d3ca4baa5ccbeceb28f4c2e3ac9dfeef033edc6fe",
+    "src/marginal_alignment/campaign/metrics.py": "4d3c9cb1c3e09e361bf5fa0d508ad430987c0f784bab722400ceedee06aaab0f",
+    "src/marginal_alignment/campaign/split_plan.py": "84e5693d6d27d587b58ec0981ae4fa0c2dfb7b22084c636f408970cc30978d5d",
+    "src/marginal_alignment/ceiling.py": "30b802bebad944026cd043936ffe7383432f9473e741bd3d332db151b2d9b99a",
+    "src/marginal_alignment/iclr_extension/__init__.py": "624fe83cf7b277bd647cb4ce89c00c7d1b71a2a4711253b919afcd65f33a42f8",
+    "src/marginal_alignment/iclr_extension/pseudo_orientation.py": "e04de3c673c1ca513bd168b8b709ba865c5c2b9dc70085c1c158fd41fac0b170",
+    "src/marginal_alignment/linalg.py": "f7574cbd8cb4fb7ca499f79268472020066a0492e02dd3a7b9ac44cfc0079815",
+    "src/marginal_alignment/metrics.py": "20a693d35048c3f8ab49cdf5bbd23d2f4006938d652f94f7afe06b4ec864d19a",
+    "src/marginal_alignment/transforms.py": "4697fd51854f3b9fb0af61b75671ef67b99a1527dabc2d576daea73ff85c504a",
+    "tests/iclr_extension/__init__.py": "99ba04993efc6b75b1aac8b1088f344c5299b8393ea56ef2e905fd2358115105",
+    "tests/iclr_extension/test_pseudo_orientation.py": "054f74a5d65a0dcd168a073a73f41842ba1d5f70f674f9f308be17e86d4c0b23",
+    "tests/iclr_extension/test_rotation_runner.py": "a0ab844609b00fa8bd209c7bc7ef6db38ce369d13eb52801894b769f92dff04d"
+  },
+  "status": "PRESPECIFIED_BEFORE_ROTATION_EXTENSION_OUTCOME_INSPECTION"
+}

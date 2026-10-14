@@ -1,0 +1,37 @@
+{
+  "schema_version": "marginal_alignment.paired_recovery_bounds.feasibility_audit.v1",
+  "status": "PASS_BEFORE_NEW_OUTCOME_INSPECTION",
+  "date_utc": "2026-09-13",
+  "inspection_scope": "read_only_configuration_external_input_manifest_and_feature_store_manifest_payloads_only",
+  "scientific_outcomes_used_to_choose_encoder_or_corruptions": false,
+  "authenticated_references": {
+    "external_input_manifest_file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "feature_store_index_file_sha256": "88710dc84e379ad4140f75183b3c0c48e2930c71e0ce6366d2c4e74989fbaaf7"
+  },
+  "locked_choice": {
+    "dataset": "imagenet_c",
+    "encoder": "clip",
+    "encoder_reason": "the authenticated projected CLIP store has the lower locked dimension among the previously used CLIP and DINOv3 encoders, reducing CPU covariance and assignment verification cost without outcome selection",
+    "corruptions": ["gaussian_noise", "motion_blur"],
+    "severity": 5,
+    "corruption_reason": "mechanistically distinct noise and blur conditions already prespecified in the base finite-sample and correspondence panels; no new recovery-bound outcome was read",
+    "store_manifest_file_sha256": {
+      "gaussian_noise": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "motion_blur": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b"
+    }
+  },
+  "eligibility": {
+    "endpoint_rows_per_store": 50000,
+    "verified_natural_clean_corruption_identity_pairs": 50000,
+    "excluded_head_fit_identities": 25000,
+    "eligible_pairs": 25000,
+    "map_fit_rows": 4096,
+    "calibration_rows": 7424,
+    "evaluation_rows": 5120,
+    "total_required": 16640,
+    "unused": 8360,
+    "arithmetic_passes": true
+  },
+  "boundary": "This audit establishes data and compute feasibility only. It contains no calibration score, qhat, true recovery error, optimization bound, coverage result, or method comparison."
+}

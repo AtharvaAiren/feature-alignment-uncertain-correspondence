@@ -1,0 +1,123 @@
+{
+  "analysis_status": "post_hoc_reviewer_requested",
+  "expected_condition_units": 102,
+  "expected_new_rows": 612,
+  "inference": {
+    "bootstrap_assumption": "corruption_cluster_exchangeability_within_each_fixed_dataset_panel",
+    "bootstrap_repetitions": 20000,
+    "cluster_unit": "corruption",
+    "confidence": 0.95,
+    "family": "separate_four_test_full_rank_confirmatory_family",
+    "metric": "reference_prediction_agreement",
+    "multiplicity": "holm",
+    "sign_flip_assumption": "corruption_cluster_effect_sign_symmetry_under_the_zero_effect_null",
+    "sign_flip_calibration": "exhaustive_all_cluster_sign_assignments",
+    "tests": [
+      "cifar100_c:paired_ridge-minus-bures_pair_endpoints",
+      "cifar100_c:paired_ridge-minus-paired_ridge_shuffled",
+      "imagenet_c:paired_ridge-minus-bures_pair_endpoints",
+      "imagenet_c:paired_ridge-minus-paired_ridge_shuffled"
+    ]
+  },
+  "methods": {
+    "paired_ridge": {
+      "implementation": "paired_ridge",
+      "information": "true_pairs",
+      "ridge": 0.01
+    },
+    "paired_ridge_shuffled": {
+      "implementation": "paired_ridge",
+      "information": "shuffled_pairs",
+      "pair_control": "shuffled",
+      "ridge": 0.01
+    }
+  },
+  "manifest_sha256": "9d7e8551a7f485beb7a8712e4c385f2838dda1022eb006f943d0dac12da644f1",
+  "original_protocol": {
+    "calibration_sizes": [
+      4096
+    ],
+    "condition_filter": {
+      "severities": [
+        5
+      ]
+    },
+    "datasets": {
+      "cifar100_c": {
+        "corruptions": [
+          "brightness",
+          "contrast",
+          "defocus_blur",
+          "elastic_transform",
+          "fog",
+          "frost",
+          "gaussian_blur",
+          "gaussian_noise",
+          "glass_blur",
+          "impulse_noise",
+          "jpeg_compression",
+          "motion_blur",
+          "pixelate",
+          "saturate",
+          "shot_noise",
+          "snow",
+          "spatter",
+          "speckle_noise",
+          "zoom_blur"
+        ],
+        "encoders": [
+          "dinov3",
+          "clip",
+          "vitb16"
+        ],
+        "evaluation_size": 3000
+      },
+      "imagenet_c": {
+        "corruptions": [
+          "brightness",
+          "contrast",
+          "defocus_blur",
+          "elastic_transform",
+          "fog",
+          "frost",
+          "gaussian_noise",
+          "glass_blur",
+          "impulse_noise",
+          "jpeg_compression",
+          "motion_blur",
+          "pixelate",
+          "shot_noise",
+          "snow",
+          "zoom_blur"
+        ],
+        "encoders": [
+          "dinov3",
+          "clip",
+          "vitb16"
+        ],
+        "evaluation_size": 10000
+      }
+    },
+    "global_seed": 20260812,
+    "original_methods": [
+      "bures_pair_endpoints",
+      "paired_reduced_rank",
+      "paired_reduced_rank_shuffled"
+    ],
+    "pair_budgets": [
+      4096
+    ],
+    "pair_noise_rates": [
+      0.0
+    ],
+    "split_seeds": [
+      35,
+      36,
+      37
+    ],
+    "suite_name": "correspondence_confirmatory"
+  },
+  "schema_version": "marginal_alignment.full_rank_paired_confirmatory_lock.v1",
+  "scientific_result": false,
+  "status": "LOCKED"
+}

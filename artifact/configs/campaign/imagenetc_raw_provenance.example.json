@@ -1,0 +1,11 @@
+{
+  "schema_version": "marginal_alignment.campaign.imagenetc_raw_provenance.v1",
+  "dataset": "ImageNet-C",
+  "source_url": "REPLACE_WITH_EXACT_DOWNLOAD_URL",
+  "archives": [
+    {
+      "file": "/REPLACE/WITH/LOCAL/ARCHIVE.tar",
+      "sha256": "REPLACE_WITH_64_HEX_SHA256"
+    }
+  ]
+}

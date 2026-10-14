@@ -1,0 +1,55 @@
+{
+  "schema_version": "marginal_alignment.campaign.lock.v2",
+  "status": "AMENDED_AFTER_NUMERICAL_FAILURES_BEFORE_OUTCOME_INSPECTION",
+  "date_utc": "2026-08-23",
+  "amendment": "The earlier clean-readout amendment from SAGA to deterministic L-BFGS remains in force. After the scientific runner entered the real stage, only technical failure traces and execution state were inspected; no partial condition outcomes, aggregates, inference results, or paper outputs were inspected. Two algebraically equivalent numerical corrections replace an ill-conditioned Bures Gram eigendecomposition with a factor SVD and replace a generic SVD of the symmetric Bures rank correction with eigenpairs ordered by absolute eigenvalue. The extra rank-256 diagnostic is removed because, at low n and high d, it provably splits a materially nonzero repeated OAS nullspace and therefore has no intrinsic rank-256 downstream value. Rank-64 remains prespecified but is evaluated only at n>=1024, where the calibration sample size reaches the encoder dimensions; rank-4 and the full/empirical covariance estimators retain the complete finite-sample grid. A fail-closed cutoff-tie gate prevents any retained rank result from silently selecting a solver-dependent slice of a nonzero repeated eigenspace. A subsequent failure of the paired readout-gauge SVD at 64 pairs exposed a distinct identifiability problem rather than a resource issue: its task-weighted cross matrix is rank bounded by both the centered pair span and centered readout rank, so a full orthogonal completion is not identified and a replacement decomposition would silently impose a solver-dependent estimator. The real paired readout-gauge diagnostic was therefore withdrawn. Full paired Procrustes was retained provisionally at 4096 pairs behind a mandatory full-centered-cross-rank gate. That gate subsequently rejected a DINOv3 condition because its centered cross rank was 1023 rather than the 1024-dimensional feature rank. Having more pairs than dimensions is necessary but not sufficient for a unique polar factor; choosing a numerical nullspace completion after this failure would define a new estimator. Paired Procrustes and its shuffled variant are therefore withdrawn uniformly from the real confirmatory suite. The correspondence-dose curve uses regularized paired ridge and reduced-rank ridge with estimator-matched shuffled controls. The confirmatory correspondence suite retains reduced-rank ridge, its shuffled control, and assignment-erased endpoint-matched Bures. The two locked correspondence contrasts were already reduced-rank ridge versus shuffled pairs and reduced-rank ridge versus endpoint-matched Bures, so their inferential family is unchanged. Reduced-rank ridge also fails closed if its rank-64 cutoff splits a materially nonzero repeated singular subspace. Primary marginal endpoints, all data, seeds, metrics, claim policies, and the number of locked correspondence contrasts are unchanged. Exact incidents are recorded in implementation_corrections.json, and the amended campaign starts in a fresh run directory.",
+  "config": "configs/campaign/campaign_full.json",
+  "config_file_sha256": "2c2e33ca7b25d838b6728262ba185fd8b16e6e20d5e51bc439adbf863dfc5ba0",
+  "feature_build_config": "configs/campaign/feature_build.json",
+  "feature_build_config_file_sha256": "20eabf192d8276010b00b6ed0d880e48e068eb13aab4da3a909a46725bfdf604",
+  "feature_build_config_canonical_sha256": "c627667f43905fab97d0a2ead4e493472206f700ca90c5ecaae0ee30aa3aebc4",
+  "scientific_question": "How much frozen-task recovery is identified by increasingly rich unpaired endpoint marginals, and what changes when sample correspondence is supplied?",
+  "claim_policy": [
+    "No universal pointwise accuracy ceiling is claimed from endpoint marginals alone.",
+    "Exact quantitative ceilings are minimax/Bayes values over explicitly indistinguishable compatible worlds.",
+    "Approximate-symmetry bounds are stated on the joint observable law available to the decision rule.",
+    "CORAL and Bures are parallel covariance-gauge representatives, not successive information tiers.",
+    "Paired diagnostics are not called oracles or upper bounds when estimated from finite samples.",
+    "All unfavorable, failed, and nonidentifiable conditions remain in raw outputs and aggregate reports."
+  ],
+  "protocol_invariants": [
+    "Frozen encoder and frozen reference-trained readout for every marginal/correspondence method.",
+    "Target labels are unavailable except to the explicitly labeled-ER comparator and evaluation.",
+    "One fixed held-out evaluation identity set per dataset/encoder/split seed across every calibration and pair budget.",
+    "Reference and target marginal endpoint samples are selected independently; their row assignment is not exposed.",
+    "Calibration pools are nested by budget and disjoint from evaluation identities.",
+    "Every true-pair estimator has an algorithm-matched shuffled-pair control.",
+    "Paired results require identity evidence stronger than label equality or assumed row order.",
+    "Feature/cache reuse requires a complete content-keyed manifest and exact hash match.",
+    "All aggregate results report their unit of variation and retain raw condition rows."
+  ],
+  "primary_real_endpoint": {
+    "suite": "primary_marginal",
+    "calibration_size": 4096,
+    "task_metric": "frozen-reference prediction agreement",
+    "split_seeds": [0, 1, 2, 3, 4],
+    "datasets": ["cifar100_c", "imagenet_c"],
+    "encoders": ["dinov3", "clip", "vitb16"],
+    "severity": 5
+  },
+  "secondary_analyses": [
+    "finite-sample fixed-evaluation curves",
+    "all-corruption severity breadth at levels 1, 3, and 5",
+    "covariance rank/shrinkage phase diagram",
+    "correspondence dose and pairing-noise curves",
+    "exact Gaussian-halfspace and finite-group ceilings over explicitly indistinguishable worlds",
+    "approximate two-world bounds using the joint law of all calibration observations",
+    "positive standardized asymmetric-mixture regime in which higher-order marginals identify the hidden swap",
+    "finite-pair centered-rank thresholds at d-1, d, d+1, and d+8",
+    "controlled real-embedding group orbits reporting unrestricted Bayes and achievable group-map minimax values separately",
+    "prespecified higher-order real-feature panel (descriptive, outside the Holm family)",
+    "all-corruption severity-5 matched true-versus-shuffled correspondence confirmation",
+    "strict predict-before-update streaming audit with cumulative and 64/256/1024-row windows"
+  ],
+  "failure_policy": "Fail closed, preserve FAILED stage manifest and logs, and resume only after all prior PASS output hashes verify. Missing required caches or pairing evidence is a technical failure, not a skipped condition."
+}

@@ -1,0 +1,31 @@
+{
+  "assignment_certificates_reconstructed": 1920,
+  "deterministic_aggregate_rederived": true,
+  "done_file_sha256": "df5fd39557ed1126dc02b60e174131ea026d6adb50f404d5e3def235dd15bc23",
+  "evaluation_units_fully_reconstructed": 160,
+  "exact_milp_diagnostics_rerun": 96,
+  "external_input_manifest_verified": true,
+  "feature_store_manifests_and_arrays_verified": true,
+  "manifest_sha256": "481a8b5c8c61e8b0eac4da26c2898ed34298e68b80b3a9112c3f1949c3ba735a",
+  "prepared_calibrations_reconstructed": 8,
+  "result_checksum_index_sha256": "22a159ec4f25c4790ade452780383f2608707bb9756cd6a744427fb41e44c9d7",
+  "runtime": {
+    "cuda_visible_devices": "",
+    "numpy": "2.5.1",
+    "platform": "Linux-6.8.0-137-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "python_executable": "artifact://local/python3.12",
+    "scipy": "1.18.0",
+    "thread_environment": {
+      "BLIS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "schema_version": "marginal_alignment.paired_recovery_followup.verification.v1",
+  "source_lock_verified": true,
+  "status": "PASS"
+}

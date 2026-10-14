@@ -1,0 +1,130 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.play3_natural.v1",
+  "extension_id": "play3_imagenet_sketch_correspondence_ceiling",
+  "lock_path": "protocol/iclr_extension_play3_lock.json",
+  "master_lock_path": "protocol/iclr_extension_master_lock.json",
+  "evidence_mode": "full_only_after_all_hashes_validate",
+  "dataset": {
+    "name": "imagenet_sketch",
+    "source_url": "https://github.com/HaohanWang/ImageNet-Sketch",
+    "dataset_root_environment": "MARGINAL_IMAGENET_SKETCH_ROOT",
+    "source_archive_environment": "MARGINAL_IMAGENET_SKETCH_ARCHIVE",
+    "provenance_environment": "MARGINAL_IMAGENET_SKETCH_PROVENANCE",
+    "reference_store_root_environment": "MARGINAL_IMAGENET_REFERENCE_STORE_ROOT",
+    "class_count": 1000,
+    "source_cardinality_policy": "at_least_50_images_per_wnid",
+    "selection_policy": "lexicographically_first_50_basenames_per_wnid",
+    "images_per_class": 50,
+    "row_count": 50000,
+    "reference_evaluation_policy": "exclude_frozen_readout_fit_ids",
+    "pairing": "unavailable"
+  },
+  "encoders": [
+    "dinov3",
+    "clip",
+    "vitb16"
+  ],
+  "feature_build_config": "configs/campaign/feature_build.json",
+  "base_campaign_feature_stores": {
+    "external_input_manifest": "results/campaign/external_input_manifest.json",
+    "external_input_manifest_file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+    "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+    "feature_store_count": 306,
+    "natural_reference_condition": {
+      "dataset": "imagenet_c",
+      "corruption": "brightness",
+      "severity": 5
+    }
+  },
+  "ceiling_protocol": {
+    "information_scope": "unpaired_features_and_frozen_readout",
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "calibration_rows": 4096,
+    "witness_rows": 1024,
+    "cost_geometry": "full_rank_reference_oas_mahalanobis_after_bures",
+    "cost_normalization": "squared_distance_divided_by_full_feature_dimension",
+    "discarded_feature_dimensions": 0,
+    "cost_budgets_prespecified_for_this_geometry": true,
+    "primary_cost_budget_relative": 0.05,
+    "cost_budget_relative_sensitivity": [
+      0.01,
+      0.1
+    ],
+    "split_seeds": [
+      201,
+      202,
+      203,
+      204,
+      205
+    ],
+    "maximum_witness_rows": 2048,
+    "swap_neighbors": 1024,
+    "swap_neighbor_sensitivity": [
+      64,
+      256
+    ],
+    "assignment_tie_relative_tolerance": 1e-12,
+    "world_zero": "deterministic_minimum_cost_bijection",
+    "world_one": "deterministic_greedy_disjoint_all_pair_swaps",
+    "world_one_optimality_claimed": false,
+    "ceiling_tightness": "conservative_witness_derived_equal_prior_randomized_minimax_ceiling",
+    "selection_labels": "never_available",
+    "target_labels": "posthoc_accuracy_and_uncertainty_only"
+  },
+  "marginal_frontier": {
+    "methods": [
+      "none",
+      "mean",
+      "diagonal",
+      "coordinate_quantile_257",
+      "coral_oas",
+      "bures_oas"
+    ],
+    "coordinate_quantile_knots": 257,
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "diagonal_standard_deviation_floor": 1e-6,
+    "fit_information": "unpaired_calibration_features_only",
+    "deployable_primary_reference": "bures_oas",
+    "reporting_policy": "report_all_six_fixed_methods",
+    "posthoc_oracle_envelope": "maximum_condition_level_externally_scored_method_mean_after_split_seed_averaging",
+    "posthoc_oracle_envelope_deployable": false
+  },
+  "positive_control": {
+    "dataset": "imagenet_c",
+    "severity": 5,
+    "pairing_used_for_split_administration_before_fit": true,
+    "labels_used_for_administrative_pair_validation_before_fit": true,
+    "pairing_unavailable_to_estimator": true,
+    "labels_unavailable_to_estimator": true,
+    "true_assignment_scored_only_after_witness_freeze": true,
+    "heldout_corruptions": [
+      "brightness",
+      "defocus_blur",
+      "fog",
+      "gaussian_noise",
+      "jpeg_compression",
+      "motion_blur"
+    ]
+  },
+  "reporting": {
+    "primary_quantity": "conservative_witness_derived_equal_prior_randomized_minimax_frozen_reference_prediction_recovery_ceiling_across_two_constructed_finite_batch_worlds",
+    "not_a_realized_world_performance_bound": true,
+    "report_disagreement": true,
+    "report_actual_cost_ratio": true,
+    "report_external_label_accuracy_separately": true,
+    "uncertainty": {
+      "replicates": 10000,
+      "rng": "numpy_pcg64",
+      "seed": 20260827,
+      "interval": "percentile_95",
+      "natural_cluster": "imagenet_wnid",
+      "positive_cluster": "corruption",
+      "split_seed_policy": "average_over_overlapping_repeats_not_independent_bootstrap_units",
+      "encoders_nested_within_cluster": true,
+      "zero_silent_drops": true,
+      "secondary_spearman_undefined_policy": "report_point_undefined_and_defined_fraction_plus_conditional_percentile_interval_over_nonconstant_resamples"
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.reviewer_followup.v1",
+  "status": "PRESPECIFIED_POST_HOC_REVIEWER_MOTIVATED_BEFORE_NEW_OUTCOMES",
+  "scientific_result": false,
+  "date_utc": "2026-09-10",
+  "extension_id": "reviewer_followup_common_random_gap_and_pair_structure_v1",
+  "analysis_timing": {
+    "classification": "post_hoc_reviewer_motivated",
+    "prior_outcomes_inspected": true,
+    "disclosure": "The completed marginal, Play-3, correspondence-cost-scale, and untruncated paired-ridge outcomes were inspected before this protocol was written.",
+    "claim_scope": "additive_supportive_analysis_not_a_new_confirmatory_family",
+    "freeze_policy": "Freeze this exact grid before reading any result produced by the follow-up; after launch, failures narrow the claim and never trigger budget, corruption, encoder, seed, or split changes."
+  },
+  "scientific_questions": [
+    "Does the realized ambiguity profile remain different across natural shifts and ImageNet-C when locality is placed on a common random-minus-minimum assignment-cost scale?",
+    "On the six legacy held-out ImageNet-C corruptions, how much does preserving true endpoint pair structure change the same cost-constrained ambiguity profile?"
+  ],
+  "common_protocol": {
+    "encoders": [
+      "clip",
+      "dinov3"
+    ],
+    "split_seeds": [
+      201,
+      202,
+      203
+    ],
+    "calibration_rows": 3840,
+    "witness_rows": 1024,
+    "exact_validation_rows": 64,
+    "exact_milp_time_limit_seconds": 900.0,
+    "exact_reported_mip_gap_tolerance": 1e-12,
+    "cost_geometry": "full_reference_oas_mahalanobis_after_bures",
+    "covariance_estimator": "oas",
+    "covariance_relative_floor": 1e-6,
+    "greedy_neighbors": 1024,
+    "dual_bisection_iterations": 48,
+    "maximum_primal_dual_gap": 0.05,
+    "assignment_tie_relative_tolerance": 1e-12,
+    "random_cost_reference": "exact_expectation_over_the_uniform_distribution_on_all_bijections_of_the_frozen_1024_by_1024_witness_endpoints",
+    "group_reuse_policy": "For one dataset, corruption or natural-shift condition, endpoint arm, encoder, and split seed, freeze the split and fitted geometry once and reuse the immutable dense cost and reward problem across every assigned budget.",
+    "selected_disagreement_role": "integer_feasible_lower_bound_on_maximum_disagreement",
+    "upper_bound_role": "sampled_lagrangian_computational_upper_bound_under_the_locked_floating_point_solver_model",
+    "exact_validation_role": "tractable_64_row_implementation_diagnostic_not_an_exact_solution_of_the_1024_row_problem",
+    "formal_real_arithmetic_certificate_claimed": false,
+    "external_ground_truth_labels_used_for_geometry_or_optimization": false,
+    "frozen_readout_predictions_used_as_optimization_reward": true
+  },
+  "budget_arms": {
+    "shared_random_gap": {
+      "parameter": "q",
+      "values": [
+        0.01,
+        0.05,
+        0.1,
+        0.2,
+        0.4
+      ],
+      "primary_value": 0.05,
+      "allowed_cost_formula": "C_min + q * (E_uniform_random_bijection[C] - C_min)",
+      "purpose": "primary_common_cost_scale_profile"
+    },
+    "direct_nominal": {
+      "parameter": "beta",
+      "values": [
+        0.01,
+        0.05,
+        0.1
+      ],
+      "primary_value": null,
+      "allowed_cost_formula": "C_min * (1 + beta)",
+      "purpose": "secondary_bridge_to_the_completed_legacy_1_5_10_percent_profile"
+    }
+  },
+  "panels": {
+    "natural_shared_profile": {
+      "endpoint_arm": "natural_unpaired",
+      "datasets": [
+        "imagenet_sketch",
+        "imagenet_v2",
+        "imagenet_r"
+      ],
+      "corruptions": null,
+      "budget_schedule": {
+        "shared_random_gap": "all",
+        "direct_nominal": "none"
+      },
+      "expected_geometry_groups": 18,
+      "expected_certificate_rows": 90
+    },
+    "imagenet_c_disjoint_unpaired_profile": {
+      "endpoint_arm": "disjoint_unpaired",
+      "dataset": "imagenet_c",
+      "severity": 5,
+      "corruptions": [
+        "brightness",
+        "contrast",
+        "defocus_blur",
+        "elastic_transform",
+        "fog",
+        "frost",
+        "gaussian_noise",
+        "glass_blur",
+        "impulse_noise",
+        "jpeg_compression",
+        "motion_blur",
+        "pixelate",
+        "shot_noise",
+        "snow",
+        "zoom_blur"
+      ],
+      "focus_corruptions": [
+        "brightness",
+        "defocus_blur",
+        "fog",
+        "gaussian_noise",
+        "jpeg_compression",
+        "motion_blur"
+      ],
+      "nonfocus_budget_schedule": {
+        "shared_random_gap": [
+          0.05
+        ],
+        "direct_nominal": "none"
+      },
+      "focus_budget_schedule": {
+        "shared_random_gap": "all",
+        "direct_nominal": "all"
+      },
+      "expected_focus_geometry_groups": 36,
+      "expected_nonfocus_geometry_groups": 54,
+      "expected_geometry_groups": 90,
+      "expected_focus_certificate_rows": 288,
+      "expected_nonfocus_certificate_rows": 54,
+      "expected_certificate_rows": 342
+    },
+    "imagenet_c_paired_structure_control": {
+      "endpoint_arm": "paired_endpoint_sets_pairing_withheld_until_postfit_scoring",
+      "dataset": "imagenet_c",
+      "severity": 5,
+      "corruptions": [
+        "brightness",
+        "defocus_blur",
+        "fog",
+        "gaussian_noise",
+        "jpeg_compression",
+        "motion_blur"
+      ],
+      "budget_schedule": {
+        "shared_random_gap": "all",
+        "direct_nominal": "all"
+      },
+      "expected_geometry_groups": 36,
+      "expected_certificate_rows": 288,
+      "pairing_role": "administrative_endpoint_construction_and_postfit_identity_cost_scoring_only",
+      "pairing_used_for_geometry_or_assignment_optimization": false
+    }
+  },
+  "reporting_profiles": {
+    "primary_realized_profile": {
+      "budget_arm": "shared_random_gap",
+      "budget_value": 0.05,
+      "included_panels": [
+        "natural_shared_profile",
+        "imagenet_c_disjoint_unpaired_profile"
+      ],
+      "expected_geometry_groups": 108,
+      "metrics": [
+        "maximum_disagreement_primal_lower_bound",
+        "maximum_disagreement_dual_upper_bound",
+        "selected_two_world_minimax_recovery",
+        "selected_world_prediction_agreement",
+        "external_target_accuracy_postfit"
+      ],
+      "association_bootstrap_replicates": 10000,
+      "association_permutation_replicates": 10000,
+      "association_rng_seed": 20260910,
+      "interpretation": "descriptive_fixed_panel_profile_not_a_population_comparison_of_three_natural_datasets_with_fifteen_corruption_types"
+    },
+    "paired_structure_contrast": {
+      "scope_corruptions": [
+        "brightness",
+        "defocus_blur",
+        "fog",
+        "gaussian_noise",
+        "jpeg_compression",
+        "motion_blur"
+      ],
+      "left_panel": "imagenet_c_paired_structure_control",
+      "right_panel": "imagenet_c_disjoint_unpaired_profile",
+      "primary_budget_arm": "shared_random_gap",
+      "primary_budget_value": 0.05,
+      "expected_matched_geometry_pairs": 36,
+      "primary_metric": "maximum_disagreement_primal_lower_bound",
+      "metric_interpretation": "difference_between_selected_feasible_witnesses_under_the_same_locked_search_not_a_difference_between_exact_maxima_unless_the_reported_numerical_bound_intervals_separate",
+      "secondary_budget_points_are_descriptive": true,
+      "causal_pairing_effect_claimed": false
+    }
+  },
+  "inference_and_multiplicity": {
+    "analysis_status": "post_hoc_reviewer_motivated_supportive",
+    "primary_statistical_contrast_count": 1,
+    "primary_statistical_contrast": "paired_minus_disjoint_unpaired_maximum_disagreement_primal_lower_bound_at_shared_random_gap_q_0.05_on_the_six_focus_corruptions",
+    "cluster_unit": "imagenet_c_corruption",
+    "cluster_count": 6,
+    "split_seed_policy": "average_the_three_overlapping_split_repeats_within_encoder_and_corruption_before_cluster_inference",
+    "encoder_policy": "encoders_nested_and_paired_within_corruption",
+    "interval": "descriptive_corruption_cluster_bootstrap_with_assignments_fixed_and_no_optimizer_refit",
+    "sign_flip_test": "exhaustive_over_all_2_power_6_corruption_cluster_sign_assignments",
+    "minimum_two_sided_sign_flip_p_value": 0.03125,
+    "multiplicity": "No adjustment is needed inside the one-test primary follow-up family; every other budget, encoder, dataset, and pair-structure comparison is descriptive. If additional null-hypothesis tests are nevertheless reported, they form a separately disclosed secondary family and require Holm correction over that entire family.",
+    "not_merged_with_prior_families": true,
+    "population_inference_claimed": false,
+    "natural_and_corruption_conditions_exchangeable": false,
+    "corruptions_random_sample_from_a_superpopulation": false,
+    "split_seeds_independent_experimental_replicates": false
+  },
+  "information_and_leakage_contract": {
+    "map_fit_inputs": "frozen_endpoint_features_only",
+    "assignment_cost_inputs": "frozen_transformed_endpoint_features_only",
+    "assignment_reward_inputs": "frozen_readout_predictions_only",
+    "ground_truth_labels": "files_hash_verified_at_input_authentication_but_label_values_neither_sliced_nor_interpreted_until_every_split_geometry_budget_and_assignment_is_frozen_then_used_only_for_reported_external_accuracy",
+    "true_pairing": "withheld_from_fit_cost_and_reward_and_revealed_only_for_the_six_corruption_paired_structure_control_after_assignment_freeze",
+    "wnids": "public_support_and_administrative_integrity_before_fit_then_descriptive_cluster_scoring_after_assignment_freeze_never_assignment_optimization",
+    "sample_ids": "opaque_indexed_atom_administration_and_exact_duplicate_feature_ties_only_never_parsed_for_semantics_or_used_in_cost_or_reward",
+    "budget_selection": "fixed_by_this_protocol_before_followup_outcomes",
+    "corruption_selection": "all_fifteen_for_the_disjoint_unpaired_realized_profile_and_the_preexisting_six_legacy_heldout_corruptions_only_for_the_pair_structure_contrast",
+    "profile_selection": "no_postoutcome_selection_of_encoder_seed_condition_or_budget_is_permitted"
+  },
+  "expected_counts": {
+    "natural_geometry_groups": 18,
+    "imagenet_c_disjoint_unpaired_focus_geometry_groups": 36,
+    "imagenet_c_disjoint_unpaired_nonfocus_geometry_groups": 54,
+    "imagenet_c_disjoint_unpaired_geometry_groups": 90,
+    "imagenet_c_paired_geometry_groups": 36,
+    "total_geometry_groups": 144,
+    "shared_random_gap_certificate_rows": 504,
+    "direct_nominal_certificate_rows": 216,
+    "natural_certificate_rows": 90,
+    "imagenet_c_disjoint_unpaired_certificate_rows": 342,
+    "imagenet_c_paired_certificate_rows": 288,
+    "total_certificate_rows": 720,
+    "primary_realized_profile_groups": 108,
+    "primary_pair_contrast_geometry_pairs": 36,
+    "primary_pair_contrast_corruption_clusters": 6,
+    "sketch_paired_bound_separation_rows": 180
+  },
+  "failure_and_reporting_policy": {
+    "zero_silent_drops": true,
+    "all_720_certificate_rows_required_for_complete_status": true,
+    "every_1024_row_certificate_requires_gap_at_most_0.05": true,
+    "every_64_row_diagnostic_requires_a_proven_optimum_and_containment_inside_its_numerical_bounds": true,
+    "failed_or_missing_row_policy": "Preserve the failure and report the panel incomplete; do not average around, replace, or retune a failed row.",
+    "curve_label": "feasible_disagreement_lower_bound_and_numerical_upper_bound_versus_budget",
+    "gamma_label_allowed_only_if": "both_bounds_are_displayed_and_their_nonzero_numerical_gap_is_explicit",
+    "lines_between_budget_points": "visual_guides_only_no_interpolation_or_monotonic_function_estimation_claim",
+    "min_max_ranges": "condition_heterogeneity_ranges_not_confidence_intervals",
+    "identity_cost": "postfit_pair_structure_diagnostic_not_an_optimization_input",
+    "pair_contrast_bound_caveat": "A contrast between feasible lower bounds describes the locked search outputs; it does not order the exact maximum-disagreement functionals unless the corresponding lower-and-upper numerical intervals establish that ordering.",
+    "not_a_realized_world_performance_bound": true,
+    "not_a_statement_that_marginal_fit_is_sufficient_or_insufficient_for_every_shift": true
+  }
+}

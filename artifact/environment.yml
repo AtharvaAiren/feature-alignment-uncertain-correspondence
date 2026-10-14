@@ -1,0 +1,22 @@
+name: anonymous-correspondence-audit
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.12
+  - numpy
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - pytorch
+  - torchvision
+  - pillow
+  - pytest
+  - pip
+  - pip:
+      - highspy
+      - timm
+      - transformers
+      - huggingface-hub
+      - safetensors
+

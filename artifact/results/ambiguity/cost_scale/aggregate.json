@@ -1,0 +1,2802 @@
+{
+  "analysis_timing": "post_hoc_after_inspection_of_correspondence_outcomes",
+  "audit_script": "artifact://local/audit_correspondence_cost_scale.py",
+  "audit_script_sha256": "cdbde103e5add9ab5440d8e0e31c195f211170297a5e2680a63b2aa1b7ed172a",
+  "completion_marker": "artifact://local/RTX_PROFILE_COMPLETE.json",
+  "completion_marker_sha256": "f2f11bafd2c5ec25be5d6a0d2931d062f4f16208617c01c620b8a1133688170c",
+  "condition_geometries": 42,
+  "conditions": [
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1583.001872542636,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.045168610850001956,
+          "allowed_to_random_mean_ratio": 0.8269248809352676,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.423828125,
+          "random_mean_minus_allowed_in_random_sd": 139.89583879322902,
+          "two_world_recovery_ceiling": 0.7880859375,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "bb8daf5971ded44d4c3a41c89dfc065368ef8ab392d0712374683b82cb627b07"
+        },
+        {
+          "allowed_cost": 1645.6950160096712,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.22584305425001044,
+          "allowed_to_random_mean_ratio": 0.8596743811703278,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.861328125,
+          "random_mean_minus_allowed_in_random_sd": 113.42456533578162,
+          "two_world_recovery_ceiling": 0.5693359375,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "bdd71f346cbcd6bad9aa564ff1a8f5c68f1c4e3999c6510dbbb0ea961f3a777b"
+        },
+        {
+          "allowed_cost": 1724.061445343465,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.4516861085000202,
+          "allowed_to_random_mean_ratio": 0.900611256464153,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 1.0,
+          "random_mean_minus_allowed_in_random_sd": 80.3354735139725,
+          "two_world_recovery_ceiling": 0.5,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "2339f49245e1201ec0ab4e77a0515fdde855156c76e1442dfb720959478f588c"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "0d1670f64b79469547659a3795e414ba0e65f6e2a0b97182dfbc35cc5d0962ea",
+      "identity_pairing": null,
+      "minimum_cost": 1567.3285866758772,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012371713165860744,
+        "expected_excess_relative_to_minimum": 0.22139268425164682,
+        "expected_to_minimum_ratio": 1.221392684251647,
+        "expected_total_cost": 1914.3236695843896,
+        "standard_deviation_total_cost": 2.3683463346716045,
+        "variance_total_cost": 5.6090643609524236
+      },
+      "severity": null,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "99cc8ac6bfb8b8ea7090a78dc56585c0cd3fbcfeff492789653ade232e11b831",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1628.9029629500176,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04349703585912223,
+          "allowed_to_random_mean_ratio": 0.8212044931499184,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.416015625,
+          "random_mean_minus_allowed_in_random_sd": 144.03906911344606,
+          "two_world_recovery_ceiling": 0.7919921875,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "afb7d305a7cd8e8042eab9bfb15bff15a66753ec9217e612231e402753b2747a"
+        },
+        {
+          "allowed_cost": 1693.4139713836819,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.21748517929561237,
+          "allowed_to_random_mean_ratio": 0.8537274433736777,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.84765625,
+          "random_mean_minus_allowed_in_random_sd": 117.83832415299692,
+          "two_world_recovery_ceiling": 0.576171875,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "788fe61e7ad0dcabdf2e12b933730cf66f1cece9e24c1d856db45dfb5e083442"
+        },
+        {
+          "allowed_cost": 1774.052731925762,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.4349703585912241,
+          "allowed_to_random_mean_ratio": 0.8943811311533766,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 1.0,
+          "random_mean_minus_allowed_in_random_sd": 85.08739295243562,
+          "two_world_recovery_ceiling": 0.5,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "6c6428948b7abda6ecff7a5258b6bd437a22c656dc265507da64f763ce1c9eff"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "ab83dcda006af4a0ca4c8a44762de4999d5a2150dc99ef819cff417b6e500505",
+      "identity_pairing": null,
+      "minimum_cost": 1612.7752108416016,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012412986834097156,
+        "expected_excess_relative_to_minimum": 0.22990072317543356,
+        "expected_to_minimum_ratio": 1.2299007231754335,
+        "expected_total_cost": 1983.5533981334981,
+        "standard_deviation_total_cost": 2.4621822215759788,
+        "variance_total_cost": 6.062341292244823
+      },
+      "severity": null,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "99cc8ac6bfb8b8ea7090a78dc56585c0cd3fbcfeff492789653ade232e11b831",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1599.8875510307194,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04444046463067499,
+          "allowed_to_random_mean_ratio": 0.8244762343870754,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.416015625,
+          "random_mean_minus_allowed_in_random_sd": 141.78266421900565,
+          "two_world_recovery_ceiling": 0.7919921875,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "2864df1a355548feb0f70f9f4a5b641b0ed55704e344ef85d47264a5e9b6efe8"
+        },
+        {
+          "allowed_cost": 1663.2494342398568,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.22220232315337368,
+          "allowed_to_random_mean_ratio": 0.857128758521217,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.857421875,
+          "random_mean_minus_allowed_in_random_sd": 115.40696603906025,
+          "two_world_recovery_ceiling": 0.5712890625,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "6912bca57fb4bad9df9c10fc999e27d84314d0e5df08233811b02a2c4d347108"
+        },
+        {
+          "allowed_cost": 1742.4517882512785,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.44440464630674675,
+          "allowed_to_random_mean_ratio": 0.897944413688894,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 1.0,
+          "random_mean_minus_allowed_in_random_sd": 82.43734331412855,
+          "two_world_recovery_ceiling": 0.5,
+          "unit_result": "artifact://local/imagenet_sketch__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "671dada9f0bdddcdc7bb012ea4f5284f5054467e64e7d00236045c07b4013cc2"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "b11b6fd01d0699d70aaf29e3e7bcb443577eaede8713b476af217e1d4839a265",
+      "identity_pairing": null,
+      "minimum_cost": 1584.0470802284349,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001237977622862274,
+        "expected_excess_relative_to_minimum": 0.2250201496115229,
+        "expected_to_minimum_ratio": 1.225020149611523,
+        "expected_total_cost": 1940.4895912131333,
+        "standard_deviation_total_cost": 2.4022826913190207,
+        "variance_total_cost": 5.770962129010958
+      },
+      "severity": null,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "99cc8ac6bfb8b8ea7090a78dc56585c0cd3fbcfeff492789653ade232e11b831",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1641.3581009657435,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.039792778114492215,
+          "allowed_to_random_mean_ratio": 0.8071593395175428,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.419921875,
+          "random_mean_minus_allowed_in_random_sd": 193.62809337507312,
+          "two_world_recovery_ceiling": 0.7900390625,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "2a9031a87e199fa081465d2b8d21e097674a9f67ed2c2f8b3983a48d80a49da8"
+        },
+        {
+          "allowed_cost": 1706.3623821921096,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.1989638905724605,
+          "allowed_to_random_mean_ratio": 0.8391260460330892,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.798828125,
+          "random_mean_minus_allowed_in_random_sd": 161.5308561088233,
+          "two_world_recovery_ceiling": 0.6005859375,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "3566596e6b0c67098b41c3dbdda1b14d35382bafe879719df77bb26ce8c1c0d6"
+        },
+        {
+          "allowed_cost": 1787.6177337250672,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.39792778114492044,
+          "allowed_to_random_mean_ratio": 0.8790844291775219,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.94921875,
+          "random_mean_minus_allowed_in_random_sd": 121.40930952601106,
+          "two_world_recovery_ceiling": 0.525390625,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "5306b631e7ab36948a3d96f9395993eb94cb742b81ac310547382e7220cfdbf8"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "0fba70178efe4a4121ad54c0194e39103f5ea057acd5969d4e405aa9990ed2a9",
+      "identity_pairing": null,
+      "minimum_cost": 1625.1070306591519,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0009959332714644326,
+        "expected_excess_relative_to_minimum": 0.25130188124156455,
+        "expected_to_minimum_ratio": 1.2513018812415646,
+        "expected_total_cost": 2033.4994846826896,
+        "standard_deviation_total_cost": 2.0252297943012687,
+        "variance_total_cost": 4.101555719725559
+      },
+      "severity": null,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9ceebfacd81e0555865f0b75b047d6c96d07da2321523a7a2918eb3e3d24ab2b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1617.1360648648783,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.03893421500134938,
+          "allowed_to_random_mean_ratio": 0.803600449098418,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.392578125,
+          "random_mean_minus_allowed_in_random_sd": 196.03423790725617,
+          "two_world_recovery_ceiling": 0.8037109375,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "7404b63066ebd36d90b8569d74d4186abf0be7e0813eb6b6dc3324f4248d88bc"
+        },
+        {
+          "allowed_cost": 1681.1810575327945,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.194671075006748,
+          "allowed_to_random_mean_ratio": 0.8354262094587515,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.77734375,
+          "random_mean_minus_allowed_in_random_sd": 164.2676750540481,
+          "two_world_recovery_ceiling": 0.611328125,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "63101e1d15f2bd54ac024b83504ebbb627aec800a1dcc7682d763b04124efe61"
+        },
+        {
+          "allowed_cost": 1761.2372983676894,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.3893421500134954,
+          "allowed_to_random_mean_ratio": 0.8752084099091682,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.93359375,
+          "random_mean_minus_allowed_in_random_sd": 124.55947148753825,
+          "two_world_recovery_ceiling": 0.533203125,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "024469c1f90f56fd3f8a026c2f410c92642223d044828a44b544c172fde6b509"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "5150642429dcb3fb2ee1e9c17b6b3976c2f22b81f0283f33560ab9c0fcf06415",
+      "identity_pairing": null,
+      "minimum_cost": 1601.1248166978994,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0010018635162827969,
+        "expected_excess_relative_to_minimum": 0.2568434986978261,
+        "expected_to_minimum_ratio": 1.256843498697826,
+        "expected_total_cost": 2012.3633164705034,
+        "standard_deviation_total_cost": 2.0161133882776494,
+        "variance_total_cost": 4.064713194392384
+      },
+      "severity": null,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9ceebfacd81e0555865f0b75b047d6c96d07da2321523a7a2918eb3e3d24ab2b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1658.948993815435,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.041230048956119376,
+          "allowed_to_random_mean_ratio": 0.8128500810403084,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.40234375,
+          "random_mean_minus_allowed_in_random_sd": 188.38221763955826,
+          "two_world_recovery_ceiling": 0.798828125,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "f9b36c3ff4369aff830478156a90f48a1a19d29d7aa518bd16d3ad25547b57e2"
+        },
+        {
+          "allowed_cost": 1724.6499440655514,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.206150244780598,
+          "allowed_to_random_mean_ratio": 0.8450421634577464,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.787109375,
+          "random_mean_minus_allowed_in_random_sd": 155.97816472870147,
+          "two_world_recovery_ceiling": 0.6064453125,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "b68b5d06830454ae56fde0e4a2ab11a085ff474cef47b39001553497dd4a0c20"
+        },
+        {
+          "allowed_cost": 1806.7761318781968,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.412300489561196,
+          "allowed_to_random_mean_ratio": 0.885282266479544,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.94921875,
+          "random_mean_minus_allowed_in_random_sd": 115.4730985901305,
+          "two_world_recovery_ceiling": 0.525390625,
+          "unit_result": "artifact://local/imagenet_sketch__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "fab93447483c8e7f12dd09e593ab2f92cc3d73738614f35f9e77eee99adeeaa1"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": null,
+      "dataset": "imagenet_sketch",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "a657e4dcc418f2094a312043d72c43dc39d7cde9b7b1e85833015d5771eac14f",
+      "identity_pairing": null,
+      "minimum_cost": 1642.523756252906,
+      "panel": "natural",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0009934585190932168,
+        "expected_excess_relative_to_minimum": 0.2425415504755484,
+        "expected_to_minimum_ratio": 1.2425415504755484,
+        "expected_total_cost": 2040.9040147874075,
+        "standard_deviation_total_cost": 2.0275534801420982,
+        "variance_total_cost": 4.110973114836334
+      },
+      "severity": null,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9ceebfacd81e0555865f0b75b047d6c96d07da2321523a7a2918eb3e3d24ab2b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 692.8904026545331,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.005480341177511002,
+          "allowed_to_random_mean_ratio": 0.357559599353486,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.033203125,
+          "random_mean_minus_allowed_in_random_sd": 436.817986192175,
+          "two_world_recovery_ceiling": 0.9833984375,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "27816c69362ae588a09b78163e228531d769404abc3717c31470d68c4605df47"
+        },
+        {
+          "allowed_cost": 720.3316067200592,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.027401705887555007,
+          "allowed_to_random_mean_ratio": 0.3717203755655053,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.109375,
+          "random_mean_minus_allowed_in_random_sd": 427.18957281464236,
+          "two_world_recovery_ceiling": 0.9453125,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "cdaa3ba58eb252503cb01e2efc75aed0972ba188fdcd0c409748517156f5eef3"
+        },
+        {
+          "allowed_cost": 754.6331118019668,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.054803411775110014,
+          "allowed_to_random_mean_ratio": 0.3894213458305294,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.181640625,
+          "random_mean_minus_allowed_in_random_sd": 415.1540560927266,
+          "two_world_recovery_ceiling": 0.9091796875,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "1906076222221c0f6d2e5f13cde67bc5ef19e2f819d396bee7540d8818d33a22"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "ff3bdd178ea455f89abd983a2594216cbe36164b431085848a9bf371ecf61a1d",
+      "identity_pairing": {
+        "cost": 686.0420712013861,
+        "cost_to_minimum_ratio": 1.000017447577309,
+        "excess_fraction_of_random_minus_minimum": 9.561867637338298e-06,
+        "random_mean_minus_identity_in_random_sd": 439.220889724389
+      },
+      "minimum_cost": 686.0301016381516,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001470727902591165,
+        "expected_excess_relative_to_minimum": 1.82470391460951,
+        "expected_to_minimum_ratio": 2.82470391460951,
+        "expected_total_cost": 1937.8319136372468,
+        "standard_deviation_total_cost": 2.8500234659179315,
+        "variance_total_cost": 8.122633756282859
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "a306a9d61899777bedaf643fb215354f84b7ac7bfba87bdf0f40d1130ec3306e",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 677.8705617947344,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0054991527841055645,
+          "allowed_to_random_mean_ratio": 0.35835147825901736,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.03125,
+          "random_mean_minus_allowed_in_random_sd": 437.7490385487345,
+          "two_world_recovery_ceiling": 0.984375,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "87883b0a1774a4926807936000826591b19b9360d07ae8601a9423981368c48f"
+        },
+        {
+          "allowed_cost": 704.7169206776941,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.027495763920527636,
+          "allowed_to_random_mean_ratio": 0.3725436160118497,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.107421875,
+          "random_mean_minus_allowed_in_random_sd": 428.06679905818453,
+          "two_world_recovery_ceiling": 0.9462890625,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "cce834a9d819630ba4db79e834a5f386f4438f5d57176b10b6c8d95fa1983f5c"
+        },
+        {
+          "allowed_cost": 738.2748692813939,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05499152784105527,
+          "allowed_to_random_mean_ratio": 0.3902837882028902,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.181640625,
+          "random_mean_minus_allowed_in_random_sd": 415.963999694997,
+          "two_world_recovery_ceiling": 0.9091796875,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "81cde9d109372997c718953f8f612e505f5e5d386447901d8ac881a38fe1ef0b"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "c31d530b6d8e18d9a7dc790a718f33bc780bd49cd36337e7cd3095679c8cdbc1",
+      "identity_pairing": {
+        "cost": 671.1625351375029,
+        "cost_to_minimum_ratio": 1.0000053088219882,
+        "excess_fraction_of_random_minus_minimum": 2.919402321671848e-06,
+        "random_mean_minus_identity_in_random_sd": 440.16831338922447
+      },
+      "minimum_cost": 671.1589720739944,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0014657908190232336,
+        "expected_excess_relative_to_minimum": 1.8184619327005245,
+        "expected_to_minimum_ratio": 2.8184619327005245,
+        "expected_total_cost": 1891.6360135809675,
+        "standard_deviation_total_cost": 2.772742701640691,
+        "variance_total_cost": 7.688102089501717
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "a306a9d61899777bedaf643fb215354f84b7ac7bfba87bdf0f40d1130ec3306e",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 682.3239601311473,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.005621379254588436,
+          "allowed_to_random_mean_ratio": 0.36345017649236455,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.025390625,
+          "random_mean_minus_allowed_in_random_sd": 436.53194796122744,
+          "two_world_recovery_ceiling": 0.9873046875,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "52a3dfa7ab0c3cd711a164b877c8472ac0c84b2121e05866ed274500cddfee55"
+        },
+        {
+          "allowed_cost": 709.3466912254502,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.028106896272942276,
+          "allowed_to_random_mean_ratio": 0.37784424288810176,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.099609375,
+          "random_mean_minus_allowed_in_random_sd": 426.66081201747676,
+          "two_world_recovery_ceiling": 0.9501953125,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "ca5d57d8e17c4c9a0eb0615eab714602122d83007c16b9b79030af839d45cad3"
+        },
+        {
+          "allowed_cost": 743.1251050933288,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05621379254588455,
+          "allowed_to_random_mean_ratio": 0.3958368258827733,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.17578125,
+          "random_mean_minus_allowed_in_random_sd": 414.3218920877883,
+          "two_world_recovery_ceiling": 0.912109375,
+          "unit_result": "artifact://local/positive__brightness__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "5a01150edd92b0348397313de2aef25cf56dc0dda24cff80b20203e68f2a779c"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "409be5bae2d1421e4e75fcc0f701dc05b773c96fe9264d54df196a2858eadc3c",
+      "identity_pairing": {
+        "cost": 675.5682773575714,
+        "cost_to_minimum_ratio": 0.9999999999999998,
+        "excess_fraction_of_random_minus_minimum": -9.45984073716059e-17,
+        "random_mean_minus_identity_in_random_sd": 438.9997319471652
+      },
+      "minimum_cost": 675.5682773575716,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0014581975648759926,
+        "expected_excess_relative_to_minimum": 1.7789228491988869,
+        "expected_to_minimum_ratio": 2.778922849198887,
+        "expected_total_cost": 1877.3521221428866,
+        "standard_deviation_total_cost": 2.7375502929235345,
+        "variance_total_cost": 7.494181606285729
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "a306a9d61899777bedaf643fb215354f84b7ac7bfba87bdf0f40d1130ec3306e",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1380.8030708068088,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.023383429252175108,
+          "allowed_to_random_mean_ratio": 0.7074546885610346,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.21484375,
+          "random_mean_minus_allowed_in_random_sd": 225.42125896455616,
+          "two_world_recovery_ceiling": 0.892578125,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "e12d24a3d821227b39667c03dfa480ba7c28ca52036ed373f776aec594dc3ea6"
+        },
+        {
+          "allowed_cost": 1435.4883409377717,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.11691714626087593,
+          "allowed_to_random_mean_ratio": 0.7354726960287984,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.498046875,
+          "random_mean_minus_allowed_in_random_sd": 203.83193837009725,
+          "two_world_recovery_ceiling": 0.7509765625,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "7ffd3ddf1d63fa7705e2fba1714d572c57896f388c797d3c76e524e0292d838d"
+        },
+        {
+          "allowed_cost": 1503.8449286014752,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.23383429252175186,
+          "allowed_to_random_mean_ratio": 0.7704952053635031,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.6953125,
+          "random_mean_minus_allowed_in_random_sd": 176.84528762702362,
+          "two_world_recovery_ceiling": 0.65234375,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "40bbc7a2008284b839339535c4682d52ba9b57f45d1758533f92cf2e2ad5c3b0"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "8d8c964f9e693c8dba7d2baf0ed25aaa40d50c71ba2fc147c81968ecc24c3453",
+      "identity_pairing": {
+        "cost": 1376.0798537666935,
+        "cost_to_minimum_ratio": 1.0065451632377027,
+        "excess_fraction_of_random_minus_minimum": 0.015304836151275706,
+        "random_mean_minus_identity_in_random_sd": 227.28594842612515
+      },
+      "minimum_cost": 1367.1317532740682,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012977716156086392,
+        "expected_excess_relative_to_minimum": 0.427653270705356,
+        "expected_to_minimum_ratio": 1.427653270705356,
+        "expected_total_cost": 1951.7901190468713,
+        "standard_deviation_total_cost": 2.5329778161244363,
+        "variance_total_cost": 6.415976616978519
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "7d78a24f381984bc06c74feaba39b276697e6ca2d1a9b31d7b051ac4d14f18e0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1350.8089894052157,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.02462019933909442,
+          "allowed_to_random_mean_ratio": 0.718262800538102,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.21875,
+          "random_mean_minus_allowed_in_random_sd": 218.35298263900125,
+          "two_world_recovery_ceiling": 0.890625,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "7666bf0158a72ddc01307d9f026397f2fd65a705b1b5c151aa3ca0f2ce310211"
+        },
+        {
+          "allowed_cost": 1404.3063751242341,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.12310099669547127,
+          "allowed_to_random_mean_ratio": 0.7467088520445615,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.51171875,
+          "random_mean_minus_allowed_in_random_sd": 196.30662098494466,
+          "two_world_recovery_ceiling": 0.744140625,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "b77565ce53ac8699cfc28d17a3df783b1784b13a02629c1728ddf321dab62646"
+        },
+        {
+          "allowed_cost": 1471.1781072730073,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.24620199339094254,
+          "allowed_to_random_mean_ratio": 0.7822664164276358,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.708984375,
+          "random_mean_minus_allowed_in_random_sd": 168.7486689173739,
+          "two_world_recovery_ceiling": 0.6455078125,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "f6e866dd4c2742f5272256f489213de0e3228082d7878c17b3f9baef492966bd"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "ae93792b41e9d70f551c856a7c80dbc0b12803cc1eb1f4c46eb2cf6b77df1526",
+      "identity_pairing": {
+        "cost": 1350.0006272340895,
+        "cost_to_minimum_ratio": 1.0093955875336624,
+        "excess_fraction_of_random_minus_minimum": 0.02313212379866781,
+        "random_mean_minus_identity_in_random_sd": 218.68611003452875
+      },
+      "minimum_cost": 1337.434642975461,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001290283265457787,
+        "expected_excess_relative_to_minimum": 0.4061705537908088,
+        "expected_to_minimum_ratio": 1.4061705537908087,
+        "expected_total_cost": 1880.6612125718166,
+        "standard_deviation_total_cost": 2.4265856905769647,
+        "variance_total_cost": 5.888318113712884
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "7d78a24f381984bc06c74feaba39b276697e6ca2d1a9b31d7b051ac4d14f18e0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1349.9676392924132,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.023633508799183956,
+          "allowed_to_random_mean_ratio": 0.7097042425664167,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.22265625,
+          "random_mean_minus_allowed_in_random_sd": 224.07094524434504,
+          "two_world_recovery_ceiling": 0.888671875,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "9b55829b7c91cb51821d66e55cd9c30c875ed552659ac096bce645407ece4a8c"
+        },
+        {
+          "allowed_cost": 1403.431704214885,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.11816754399591937,
+          "allowed_to_random_mean_ratio": 0.7378113412819184,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.513671875,
+          "random_mean_minus_allowed_in_random_sd": 202.37588420405584,
+          "two_world_recovery_ceiling": 0.7431640625,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "5fd3596665f193f0c64662403592f8d82413902162e8cc0d98bd26b19d06e6f4"
+        },
+        {
+          "allowed_cost": 1470.2617853679749,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.23633508799183875,
+          "allowed_to_random_mean_ratio": 0.7729452146762955,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.703125,
+          "random_mean_minus_allowed_in_random_sd": 175.25705790369432,
+          "two_world_recovery_ceiling": 0.6484375,
+          "unit_result": "artifact://local/positive__defocus_blur__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "78d4e03ec7666dc0da11e0b25bcd74a4563c2922a3fe36bf44bd0e4ac4255e5e"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "768f3f453dfad87d368f550c1fabbbc334b88141f7d73d496e4c572fc754206f",
+      "identity_pairing": {
+        "cost": 1346.2108096895288,
+        "cost_to_minimum_ratio": 1.007189267513922,
+        "excess_fraction_of_random_minus_minimum": 0.016990761704996256,
+        "random_mean_minus_identity_in_random_sd": 225.59542056567972
+      },
+      "minimum_cost": 1336.6016230617952,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012955528755279775,
+        "expected_excess_relative_to_minimum": 0.42312802914586,
+        "expected_to_minimum_ratio": 1.42312802914586,
+        "expected_total_cost": 1902.1552335810902,
+        "standard_deviation_total_cost": 2.4643426825665733,
+        "variance_total_cost": 6.0729848571194145
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "7d78a24f381984bc06c74feaba39b276697e6ca2d1a9b31d7b051ac4d14f18e0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1039.6463883181054,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.01115982666778198,
+          "allowed_to_random_mean_ratio": 0.5326804000536415,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.107421875,
+          "random_mean_minus_allowed_in_random_sd": 335.029529963358,
+          "two_world_recovery_ceiling": 0.9462890625,
+          "unit_result": "artifact://local/positive__fog__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "8746729ca0698aa5ef7c54941a61e3df3647fde4d9c50b78456e68fe2a3b6096"
+        },
+        {
+          "allowed_cost": 1080.8205027069414,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05579913333891015,
+          "allowed_to_random_mean_ratio": 0.5537766535211125,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.2734375,
+          "random_mean_minus_allowed_in_random_sd": 319.90525979791676,
+          "two_world_recovery_ceiling": 0.86328125,
+          "unit_result": "artifact://local/positive__fog__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "403e50fb4682f285b39809d9189c4ae01b0d1563533c1615bc908f1e6e50771a"
+        },
+        {
+          "allowed_cost": 1132.2881456929863,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.1115982666778203,
+          "allowed_to_random_mean_ratio": 0.5801469703554512,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.41015625,
+          "random_mean_minus_allowed_in_random_sd": 300.99992209111514,
+          "two_world_recovery_ceiling": 0.794921875,
+          "unit_result": "artifact://local/positive__fog__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "76c606ea1cf214d549daa31b3f911684e28710320d9c2dce3d19b62bc0801417"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "21eae4e2012f6ad7deb1299cc16d05672290414fae035ca307241c48bf7d139e",
+      "identity_pairing": {
+        "cost": 1031.1425109682832,
+        "cost_to_minimum_ratio": 1.001738617841769,
+        "excess_fraction_of_random_minus_minimum": 0.0019402673755655377,
+        "random_mean_minus_identity_in_random_sd": 338.1532143558841
+      },
+      "minimum_cost": 1029.3528597208965,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013948609246398937,
+        "expected_excess_relative_to_minimum": 0.8960712650555416,
+        "expected_to_minimum_ratio": 1.8960712650555416,
+        "expected_total_cost": 1951.7263789195397,
+        "standard_deviation_total_cost": 2.7223868615437805,
+        "variance_total_cost": 7.411390223906196
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "003a35ac3ee1e345bd42244c039a7a9915a7e164b34c2a3caaae4b23cc6503c9",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1021.819154403075,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.011318056829140295,
+          "allowed_to_random_mean_ratio": 0.536223235027968,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.119140625,
+          "random_mean_minus_allowed_in_random_sd": 332.75087069511903,
+          "two_world_recovery_ceiling": 0.9404296875,
+          "unit_result": "artifact://local/positive__fog__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "4c9ea293e99b7f6e5f64cea643faa919f3c5108918768466b2c3f6aaa5296b73"
+        },
+        {
+          "allowed_cost": 1062.2872397259691,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05659028414570135,
+          "allowed_to_random_mean_ratio": 0.5574597987914519,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.294921875,
+          "random_mean_minus_allowed_in_random_sd": 317.51404639388903,
+          "two_world_recovery_ceiling": 0.8525390625,
+          "unit_result": "artifact://local/positive__fog__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "03eacb596cdc5874828dda2b1d644f2c9fd707725739ffa2eafcb21bf6ee7813"
+        },
+        {
+          "allowed_cost": 1112.8723463795866,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.11318056829140244,
+          "allowed_to_random_mean_ratio": 0.5840055034958067,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.431640625,
+          "random_mean_minus_allowed_in_random_sd": 298.4680160173516,
+          "two_world_recovery_ceiling": 0.7841796875,
+          "unit_result": "artifact://local/positive__fog__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "fbae79a6f7b573fe006293056d498a04deccc571bd669383f5a9f970dd2b0406"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "19f1db10ac0efe9571281670e24c463c7447ac3d4eb80f9043d90b582b368387",
+      "identity_pairing": {
+        "cost": 1013.4002660661914,
+        "cost_to_minimum_ratio": 1.0016784910680014,
+        "excess_fraction_of_random_minus_minimum": 0.0018997257294844942,
+        "random_mean_minus_identity_in_random_sd": 335.92070493306846
+      },
+      "minimum_cost": 1011.7021330723514,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013937657443335878,
+        "expected_excess_relative_to_minimum": 0.8835438937056151,
+        "expected_to_minimum_ratio": 1.8835438937056153,
+        "expected_total_cost": 1905.5853749973733,
+        "standard_deviation_total_cost": 2.655939618574413,
+        "variance_total_cost": 7.054015257513199
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "003a35ac3ee1e345bd42244c039a7a9915a7e164b34c2a3caaae4b23cc6503c9",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1032.9220108907741,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.011958473738104453,
+          "allowed_to_random_mean_ratio": 0.5500408917094478,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.11328125,
+          "random_mean_minus_allowed_in_random_sd": 326.9117331217522,
+          "two_world_recovery_ceiling": 0.943359375,
+          "unit_result": "artifact://local/positive__fog__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "db4ce772cfb7570c5fb3011f490fd6532617dc9a66af56c58d134a489e4cead4"
+        },
+        {
+          "allowed_cost": 1073.82981330229,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.059792368690522,
+          "allowed_to_random_mean_ratio": 0.571824689400911,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.28125,
+          "random_mean_minus_allowed_in_random_sd": 311.08500814590974,
+          "two_world_recovery_ceiling": 0.859375,
+          "unit_result": "artifact://local/positive__fog__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "21fcbf06c70999af511396490e5f065d39ccb30c11f9570283c38a765439756c"
+        },
+        {
+          "allowed_cost": 1124.9645663166848,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.119584737381044,
+          "allowed_to_random_mean_ratio": 0.5990544365152403,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.421875,
+          "random_mean_minus_allowed_in_random_sd": 291.3016019261066,
+          "two_world_recovery_ceiling": 0.7890625,
+          "unit_result": "artifact://local/positive__fog__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "da7bacd0d7a2eee1a7e80398ea502a15a6f17efbf4964af3ea163055a4c8a9ac"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "dc9625980d7ab0aec428d53264f1bbaaa77daefe0327a64ee9a41a9b50a1c43a",
+      "identity_pairing": {
+        "cost": 1024.0613304249935,
+        "cost_to_minimum_ratio": 1.0013359506564095,
+        "excess_fraction_of_random_minus_minimum": 0.0015975930840076166,
+        "random_mean_minus_identity_in_random_sd": 330.3398212752056
+      },
+      "minimum_cost": 1022.6950602878951,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013763932667506104,
+        "expected_excess_relative_to_minimum": 0.8362271155169313,
+        "expected_to_minimum_ratio": 1.8362271155169314,
+        "expected_total_cost": 1877.9004006058558,
+        "standard_deviation_total_cost": 2.5847294670221737,
+        "variance_total_cost": 6.680826417692729
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "003a35ac3ee1e345bd42244c039a7a9915a7e164b34c2a3caaae4b23cc6503c9",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1410.3711913455552,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.02342057887074034,
+          "allowed_to_random_mean_ratio": 0.7077909916203597,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.291015625,
+          "random_mean_minus_allowed_in_random_sd": 222.49021976456402,
+          "two_world_recovery_ceiling": 0.8544921875,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "172bed89df9b233080fb3b6f84f580b60feb4494521690f5942808fb9a6926b1"
+        },
+        {
+          "allowed_cost": 1466.22747615132,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.11710289435370207,
+          "allowed_to_random_mean_ratio": 0.7358223180211662,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.58984375,
+          "random_mean_minus_allowed_in_random_sd": 201.14694904956647,
+          "two_world_recovery_ceiling": 0.705078125,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "c72bda78ff61af61877a1c8ce303ea96ef35094b6d7a095c4103520c26d45995"
+        },
+        {
+          "allowed_cost": 1536.0478321585256,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.23420578870740377,
+          "allowed_to_random_mean_ratio": 0.770861476022174,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.7578125,
+          "random_mean_minus_allowed_in_random_sd": 174.46786065581966,
+          "two_world_recovery_ceiling": 0.62109375,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "40b59ee6e3d098546ca84ca32725c9c0bd10d6bd184308f663b6910e6ba43cf4"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "e72da99731b481ee253f08ddc7e3a1440236ebec81dbfb44a40617ae26cd2e16",
+      "identity_pairing": {
+        "cost": 1419.118652915385,
+        "cost_to_minimum_ratio": 1.0162642630817629,
+        "excess_fraction_of_random_minus_minimum": 0.03809184562809004,
+        "random_mean_minus_identity_in_random_sd": 219.14772319496322
+      },
+      "minimum_cost": 1396.407120144114,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013133566441205894,
+        "expected_excess_relative_to_minimum": 0.42697492897979283,
+        "expected_to_minimum_ratio": 1.4269749289797928,
+        "expected_total_cost": 1992.6379510945242,
+        "standard_deviation_total_cost": 2.6170442923968316,
+        "variance_total_cost": 6.848920828366832
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1368.13644361345,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.023530519891068268,
+          "allowed_to_random_mean_ratio": 0.7087818848973332,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.29296875,
+          "random_mean_minus_allowed_in_random_sd": 220.67112663918184,
+          "two_world_recovery_ceiling": 0.853515625,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "62ea8def9856064365376468db38323bbee6b16c92ad284399b87c7606219bdc"
+        },
+        {
+          "allowed_cost": 1422.3200651426955,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.11765259945534054,
+          "allowed_to_random_mean_ratio": 0.7368524545962375,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.615234375,
+          "random_mean_minus_allowed_in_random_sd": 199.4005946234207,
+          "two_world_recovery_ceiling": 0.6923828125,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "b0b2c7ec8dc148732557e52296ae1664b65650dade829b43dbf79ce52c564906"
+        },
+        {
+          "allowed_cost": 1490.0495920542523,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.2353051989106807,
+          "allowed_to_random_mean_ratio": 0.7719406667198678,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.78125,
+          "random_mean_minus_allowed_in_random_sd": 172.8124296037193,
+          "two_world_recovery_ceiling": 0.609375,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "c588756aa4e4d25395f7f427b3cecd9153afc95dcaa20e3eb4df4ca201215668"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "743078cf439cb5170589d4529e9c09c7b672fc8695b8bf729daacc15962f127b",
+      "identity_pairing": {
+        "cost": 1378.9281095493425,
+        "cost_to_minimum_ratio": 1.0179667365386922,
+        "excess_fraction_of_random_minus_minimum": 0.042276665150127436,
+        "random_mean_minus_identity_in_random_sd": 216.43470852399727
+      },
+      "minimum_cost": 1354.5905382311385,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013196928820635241,
+        "expected_excess_relative_to_minimum": 0.4249799854101777,
+        "expected_to_minimum_ratio": 1.4249799854101777,
+        "expected_total_cost": 1930.2644054053724,
+        "standard_deviation_total_cost": 2.5473561963140505,
+        "variance_total_cost": 6.489023590899588
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1355.9883131096647,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.024028909281648324,
+          "allowed_to_random_mean_ratio": 0.7131935429841438,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.29296875,
+          "random_mean_minus_allowed_in_random_sd": 218.73040090926148,
+          "two_world_recovery_ceiling": 0.853515625,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "9cec262b8c6e6343fd457b8a70402506fde099c761412406f25e78c022721221"
+        },
+        {
+          "allowed_cost": 1409.6908205595523,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.12014454640824122,
+          "allowed_to_random_mean_ratio": 0.741438831815199,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.609375,
+          "random_mean_minus_allowed_in_random_sd": 197.1893818746969,
+          "two_world_recovery_ceiling": 0.6953125,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "68c758f7d1f98cf1252b3d7995371683e190b18323de7446ef38d0928ae15fbd"
+        },
+        {
+          "allowed_cost": 1476.8189548719122,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.24028909281648284,
+          "allowed_to_random_mean_ratio": 0.7767454428540181,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.775390625,
+          "random_mean_minus_allowed_in_random_sd": 170.26310808149108,
+          "two_world_recovery_ceiling": 0.6123046875,
+          "unit_result": "artifact://local/positive__gaussian_noise__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "1c73fccf3d5f7e9a0f5c8ac812ba008059708ce660fd077963eae8a041e9b599"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "5dc9969565864ae7eaf59023f7622f801e59af10af81da61fa1f95c5e48af0f3",
+      "identity_pairing": {
+        "cost": 1368.5396820417964,
+        "cost_to_minimum_ratio": 1.0193488140708096,
+        "excess_fraction_of_random_minus_minimum": 0.04649308980149641,
+        "random_mean_minus_identity_in_random_sd": 213.6958263630136
+      },
+      "minimum_cost": 1342.5626862471927,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013112327130732756,
+        "expected_excess_relative_to_minimum": 0.41616537325051894,
+        "expected_to_minimum_ratio": 1.4161653732505188,
+        "expected_total_cost": 1901.290787681475,
+        "standard_deviation_total_cost": 2.4930346778728056,
+        "variance_total_cost": 6.215221905076363
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "438764ca0658d746239f1d861128361dbe14b47ba79699627815be06d38f109b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1192.968341695803,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.015155307583534004,
+          "allowed_to_random_mean_ratio": 0.6084942753547887,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.1640625,
+          "random_mean_minus_allowed_in_random_sd": 290.31255992435365,
+          "two_world_recovery_ceiling": 0.91796875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "d012cb3fe17f29b2ff89f5d5d98129070b3e2d5a6bdf0864d004df195e1d617c"
+        },
+        {
+          "allowed_cost": 1240.2146126540526,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.07577653791767001,
+          "allowed_to_random_mean_ratio": 0.6325930585371565,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.380859375,
+          "random_mean_minus_allowed_in_random_sd": 272.44263109234174,
+          "two_world_recovery_ceiling": 0.8095703125,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "18110e75af829ecae6061e49471bab5217065947448cbe826eebac52a3fec7a7"
+        },
+        {
+          "allowed_cost": 1299.2724513518647,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.15155307583534003,
+          "allowed_to_random_mean_ratio": 0.6627165375151164,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.5390625,
+          "random_mean_minus_allowed_in_random_sd": 250.10522005232687,
+          "two_world_recovery_ceiling": 0.73046875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "29bc0bd2578ece300de199018cef04200f431bddab4906645ef385a0179f545c"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "c24be08d9a7726ec6ae941a08afe50ae3ba8e101d00d25bd7dc8283e62f408a8",
+      "identity_pairing": {
+        "cost": 1184.3460498408788,
+        "cost_to_minimum_ratio": 1.0027001291911113,
+        "excess_fraction_of_random_minus_minimum": 0.0040921288406571485,
+        "random_mean_minus_identity_in_random_sd": 293.5737642202967
+      },
+      "minimum_cost": 1181.1567739562406,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013485662650876194,
+        "expected_excess_relative_to_minimum": 0.6598348430001406,
+        "expected_to_minimum_ratio": 1.6598348430001406,
+        "expected_total_cost": 1960.5251684582092,
+        "standard_deviation_total_cost": 2.643898104037963,
+        "variance_total_cost": 6.9901971845355355
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c5c737277a063da1f8df86c1ce73df3a73cfd1d9f9d1e9b5f8359e2327066b4a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1177.3938345212644,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.015697054106621294,
+          "allowed_to_random_mean_ratio": 0.6169588382351745,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.185546875,
+          "random_mean_minus_allowed_in_random_sd": 283.50722419333124,
+          "two_world_recovery_ceiling": 0.9072265625,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "91d619d93c9c88937e5cf2a24f08b1b3e24c8020dfbaaccad96ddff4ffd1052c"
+        },
+        {
+          "allowed_cost": 1224.0232933141858,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.07848527053310646,
+          "allowed_to_random_mean_ratio": 0.641392851630627,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.4140625,
+          "random_mean_minus_allowed_in_random_sd": 265.4224333010655,
+          "two_world_recovery_ceiling": 0.79296875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "9139d012519455b007af28be612c7cbc60ceddd24d7297411af756fbecf1b541"
+        },
+        {
+          "allowed_cost": 1282.3101168053374,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.1569705410662126,
+          "allowed_to_random_mean_ratio": 0.6719353683749425,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.568359375,
+          "random_mean_minus_allowed_in_random_sd": 242.8164446857334,
+          "two_world_recovery_ceiling": 0.7158203125,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "fa22f4cd5c6674fb543e371eb19a268cf9d580bbdbf15f0a1a680ca7468851d5"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "64ead740e09c2ea07410e2421519d50013b205d842da8b753f249275e70745bc",
+      "identity_pairing": {
+        "cost": 1170.547728355805,
+        "cost_to_minimum_ratio": 1.0041272265707715,
+        "excess_fraction_of_random_minus_minimum": 0.006478529879168568,
+        "random_mean_minus_identity_in_random_sd": 286.1624211789626
+      },
+      "minimum_cost": 1165.736469823034,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013510807805857511,
+        "expected_excess_relative_to_minimum": 0.6370622112961851,
+        "expected_to_minimum_ratio": 1.637062211296185,
+        "expected_total_cost": 1908.3831230771045,
+        "standard_deviation_total_cost": 2.578379759583688,
+        "variance_total_cost": 6.648042184630835
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c5c737277a063da1f8df86c1ce73df3a73cfd1d9f9d1e9b5f8359e2327066b4a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1164.7751588126528,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.015804851434616442,
+          "allowed_to_random_mean_ratio": 0.6186007305412676,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.166015625,
+          "random_mean_minus_allowed_in_random_sd": 283.6168269410721,
+          "two_world_recovery_ceiling": 0.9169921875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "292d5a8fd028d8d9ce7db106ef380d21ca9af83f5222de73b002f7f9db5b4339"
+        },
+        {
+          "allowed_cost": 1210.9048680725598,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.07902425717308222,
+          "allowed_to_random_mean_ratio": 0.6430997693745851,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.390625,
+          "random_mean_minus_allowed_in_random_sd": 265.39880657917564,
+          "two_world_recovery_ceiling": 0.8046875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "e1a6f92d42643effca2436af8a49b5219367e1a6b0f3412cb7ae71ad7ce30031"
+        },
+        {
+          "allowed_cost": 1268.5670046474438,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.15804851434616474,
+          "allowed_to_random_mean_ratio": 0.6737235679162321,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.556640625,
+          "random_mean_minus_allowed_in_random_sd": 242.62628112680497,
+          "two_world_recovery_ceiling": 0.7216796875,
+          "unit_result": "artifact://local/positive__jpeg_compression__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "c0d54c81f903952718bc3d6d83b7b8c8cdca2146945fc31274ea4f15f09e22c3"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "753417e75f3b1917741f5b4632131e242bab1b560c12855c81a84f471988d353",
+      "identity_pairing": {
+        "cost": 1156.6514479748596,
+        "cost_to_minimum_ratio": 1.0029557667124915,
+        "excess_fraction_of_random_minus_minimum": 0.004671545376631262,
+        "random_mean_minus_identity_in_random_sd": 286.82512657771656
+      },
+      "minimum_cost": 1153.242731497676,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001344769538437777,
+        "expected_excess_relative_to_minimum": 0.6327171148282724,
+        "expected_to_minimum_ratio": 1.6327171148282724,
+        "expected_total_cost": 1882.9191452675616,
+        "standard_deviation_total_cost": 2.5320923098971124,
+        "variance_total_cost": 6.411491465840095
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c5c737277a063da1f8df86c1ce73df3a73cfd1d9f9d1e9b5f8359e2327066b4a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1290.6974258436094,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.018357656832346515,
+          "allowed_to_random_mean_ratio": 0.6538351708777522,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.16796875,
+          "random_mean_minus_allowed_in_random_sd": 262.02193607385584,
+          "two_world_recovery_ceiling": 0.916015625,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "797290da3041b11a7e148c5b5fc9a04d412825e419aaf44ea0350f75d0b483a4"
+        },
+        {
+          "allowed_cost": 1341.81415557999,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.09178828416173225,
+          "allowed_to_random_mean_ratio": 0.6797296330907325,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.39453125,
+          "random_mean_minus_allowed_in_random_sd": 242.42168627424286,
+          "two_world_recovery_ceiling": 0.802734375,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "f0dbfbf41fdc33987795a58359ad0d6cbcb0408fe7fa76eb40394432346e0444"
+        },
+        {
+          "allowed_cost": 1405.7100677504657,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.18357656832346417,
+          "allowed_to_random_mean_ratio": 0.7120977108569578,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.568359375,
+          "random_mean_minus_allowed_in_random_sd": 217.92137402472665,
+          "two_world_recovery_ceiling": 0.7158203125,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "c4065d61c95f3f749dd6d701a5fc97f01398809bc165c9e6a4add54ee5efa9c9"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "98026e70f57b9d3e180a0a32a190cddc78785f805bc89c7bb8b0339209245d40",
+      "identity_pairing": {
+        "cost": 1282.199938552981,
+        "cost_to_minimum_ratio": 1.003350523529614,
+        "excess_fraction_of_random_minus_minimum": 0.0061507761165358835,
+        "random_mean_minus_identity_in_random_sd": 265.2802210702612
+      },
+      "minimum_cost": 1277.9182434095142,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013211291936438276,
+        "expected_excess_relative_to_minimum": 0.544731829956636,
+        "expected_to_minimum_ratio": 1.5447318299566362,
+        "expected_total_cost": 1974.0409866769487,
+        "standard_deviation_total_cost": 2.6079631769483833,
+        "variance_total_cost": 6.801471932318705
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1251.5637330442642,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.019351323954531666,
+          "allowed_to_random_mean_ratio": 0.6658928648109388,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.177734375,
+          "random_mean_minus_allowed_in_random_sd": 254.94236487891803,
+          "two_world_recovery_ceiling": 0.9111328125,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "70b0c8be4be1b1662c9e0a2b7011da7cd1af53c2bbe65ec054aef87698389071"
+        },
+        {
+          "allowed_cost": 1301.1306135608688,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.09675661977265904,
+          "allowed_to_random_mean_ratio": 0.6922648594569166,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.41796875,
+          "random_mean_minus_allowed_in_random_sd": 234.81906317865585,
+          "two_world_recovery_ceiling": 0.791015625,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "acda5e378e033df419818de50c92b90e95e01aa61fc49f166ea9abffa9f96fb5"
+        },
+        {
+          "allowed_cost": 1363.0892142066245,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.19351323954531807,
+          "allowed_to_random_mean_ratio": 0.7252298527643889,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.599609375,
+          "random_mean_minus_allowed_in_random_sd": 209.6649360533282,
+          "two_world_recovery_ceiling": 0.7001953125,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "83c92e3c9b02e186c81672ba1d50f56e6b9480c2a790bc7fb1c790b07bc549a4"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "4a08de91cb1215c74dec46ca4bfd1a95e0f348f8173752b19ff5c1f13315bdd5",
+      "identity_pairing": {
+        "cost": 1243.4586714755385,
+        "cost_to_minimum_ratio": 1.0034592925887191,
+        "excess_fraction_of_random_minus_minimum": 0.006694189153781442,
+        "random_mean_minus_identity_in_random_sd": 258.2328805931766
+      },
+      "minimum_cost": 1239.172012915113,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013105202634632405,
+        "expected_excess_relative_to_minimum": 0.5167605081438447,
+        "expected_to_minimum_ratio": 1.5167605081438447,
+        "expected_total_cost": 1879.5271719867578,
+        "standard_deviation_total_cost": 2.463158444618405,
+        "variance_total_cost": 6.067149523294961
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1237.0441681055013,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.01821236084326815,
+          "allowed_to_random_mean_ratio": 0.6520008925835764,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.166015625,
+          "random_mean_minus_allowed_in_random_sd": 264.1700155235669,
+          "two_world_recovery_ceiling": 0.9169921875,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "5c0d7bcfabbc9e1aa6013f99cbce23cd47c16496f07163fe9428091d82c386cf"
+        },
+        {
+          "allowed_cost": 1286.0360163473033,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.09106180421634007,
+          "allowed_to_random_mean_ratio": 0.6778227101116389,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.400390625,
+          "random_mean_minus_allowed_in_random_sd": 244.56838496802536,
+          "two_world_recovery_ceiling": 0.7998046875,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "40244773d5aa770b2a62dee4ed2bfbbb9646ec1fb141609f2617cf15ef247581"
+        },
+        {
+          "allowed_cost": 1347.275826649556,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.18212360843268013,
+          "allowed_to_random_mean_ratio": 0.7100999820217169,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.578125,
+          "random_mean_minus_allowed_in_random_sd": 220.06634677359835,
+          "two_world_recovery_ceiling": 0.7109375,
+          "unit_result": "artifact://local/positive__motion_blur__clip__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "a808c67250a689e005417315acd7176871dcded84fb28870b3d688748cd4449a"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "clip",
+      "feature_dimension": 768,
+      "fitted_geometry_sha256": "51863d9fc3435f162c9755e1ef0889e6f3245df2c70cde23ff55d7cbea678063",
+      "identity_pairing": {
+        "cost": 1227.965233279978,
+        "cost_to_minimum_ratio": 1.0025873914527874,
+        "excess_fraction_of_random_minus_minimum": 0.004712250678095149,
+        "random_mean_minus_identity_in_random_sd": 267.80249587844975
+      },
+      "minimum_cost": 1224.7962060450507,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013173300789899001,
+        "expected_excess_relative_to_minimum": 0.5490776339244563,
+        "expected_to_minimum_ratio": 1.5490776339244563,
+        "expected_total_cost": 1897.304408899918,
+        "standard_deviation_total_cost": 2.499376166844015,
+        "variance_total_cost": 6.246881223387881
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "6a657488e6404724b7589a3098d13095674e3baf065376a7d673dc1f4fa2d08b",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 351.2424559567907,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0020901644689426727,
+          "allowed_to_random_mean_ratio": 0.17461020642481842,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.0078125,
+          "random_mean_minus_allowed_in_random_sd": 612.4515859093351,
+          "two_world_recovery_ceiling": 0.99609375,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "b54784334c7c4095784aa97feb053a9086d405fb1f5d6d07e9aa8358d81b1fe9"
+        },
+        {
+          "allowed_cost": 365.15304827191113,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.010450822344713296,
+          "allowed_to_random_mean_ratio": 0.18152546212481124,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.029296875,
+          "random_mean_minus_allowed_in_random_sd": 607.3203626335006,
+          "two_world_recovery_ceiling": 0.9853515625,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "4cbd5ff8701f1d81cc0e0fd3507e1387abab7fbb4fa06e0497472b1dd884f1cd"
+        },
+        {
+          "allowed_cost": 382.54128866581163,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.020901644689426558,
+          "allowed_to_random_mean_ratio": 0.19016953174980222,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.05078125,
+          "random_mean_minus_allowed_in_random_sd": 600.9063335387076,
+          "two_world_recovery_ceiling": 0.974609375,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "a2e5741223ed4b1d6f54c46f9a4fab3331d9940664766f65683427a2a121021f"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "028601f1fca35a5d67d6e65262cca375d1f06d124c3cf7432186a8823b77e699",
+      "identity_pairing": {
+        "cost": 347.7648078780105,
+        "cost_to_minimum_ratio": 0.9999999999999999,
+        "excess_fraction_of_random_minus_minimum": -3.416449614929489e-17,
+        "random_mean_minus_identity_in_random_sd": 613.7343917282938
+      },
+      "minimum_cost": 347.7648078780106,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013476816985455058,
+        "expected_excess_relative_to_minimum": 4.7843125020007,
+        "expected_to_minimum_ratio": 5.7843125020007,
+        "expected_total_cost": 2011.580325964648,
+        "standard_deviation_total_cost": 2.7109699904567592,
+        "variance_total_cost": 7.34935828915712
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c366812fd64e0fdc7fdfde5f1fc48a74e6f64ecfd6552aab5c1ae62aeb402424",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 352.27755004126686,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.002127652232544236,
+          "allowed_to_random_mean_ratio": 0.17719247828553902,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.005859375,
+          "random_mean_minus_allowed_in_random_sd": 610.670342843915,
+          "two_world_recovery_ceiling": 0.9970703125,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "965d292636b46aaa1b93d0508f6110b4ca2b824a87cc7d6aa162377a44727566"
+        },
+        {
+          "allowed_cost": 366.22913618151506,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.01063826116272111,
+          "allowed_to_random_mean_ratio": 0.18421000217803563,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.025390625,
+          "random_mean_minus_allowed_in_random_sd": 605.4620850093039,
+          "two_world_recovery_ceiling": 0.9873046875,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "29ddf1bd98ef152e33912bebc99a27c6e718d1c5c3378532c3687993b436d824"
+        },
+        {
+          "allowed_cost": 383.6686188568253,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.021276522325442186,
+          "allowed_to_random_mean_ratio": 0.19298190704365634,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.046875,
+          "random_mean_minus_allowed_in_random_sd": 598.95176271604,
+          "two_world_recovery_ceiling": 0.9765625,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "1601e8d620fbd8574f3bad0ddaa017ed3951de3fd6eab886be8e148100582416"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "edb7d5e04f0efd87aab476be5b59cb065517f6500d8d93ce75be3d52886f19d6",
+      "identity_pairing": {
+        "cost": 348.78965350620473,
+        "cost_to_minimum_ratio": 0.9999999999999999,
+        "excess_fraction_of_random_minus_minimum": -3.4675061553250106e-17,
+        "random_mean_minus_identity_in_random_sd": 611.9724073025677
+      },
+      "minimum_cost": 348.7896535062048,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013473841187089833,
+        "expected_excess_relative_to_minimum": 4.700016218365787,
+        "expected_to_minimum_ratio": 5.700016218365787,
+        "expected_total_cost": 1988.1066817835508,
+        "standard_deviation_total_cost": 2.6787433693343705,
+        "variance_total_cost": 7.175666038752856
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c366812fd64e0fdc7fdfde5f1fc48a74e6f64ecfd6552aab5c1ae62aeb402424",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 350.6427590086538,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.00212200767154258,
+          "allowed_to_random_mean_ratio": 0.17680468502667285,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.005859375,
+          "random_mean_minus_allowed_in_random_sd": 611.3791765293059,
+          "two_world_recovery_ceiling": 0.9970703125,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "c88fb8a3917ae9c24faadb3999dfc010f2abff5e8c6f2f48a20f8a131279cd11"
+        },
+        {
+          "allowed_cost": 364.5296009495906,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.010610038357712867,
+          "allowed_to_random_mean_ratio": 0.18380685077030348,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.025390625,
+          "random_mean_minus_allowed_in_random_sd": 606.1787359432207,
+          "two_world_recovery_ceiling": 0.9873046875,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "c70450dda4e149d44f0a8446b9402f5fb92dd8568a3b858abfa97000febfcfe8"
+        },
+        {
+          "allowed_cost": 381.8881533757616,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.021220076715425733,
+          "allowed_to_random_mean_ratio": 0.19255955794984175,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.046875,
+          "random_mean_minus_allowed_in_random_sd": 599.6781852106141,
+          "two_world_recovery_ceiling": 0.9765625,
+          "unit_result": "artifact://local/positive__brightness__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "3f7b9cf4a02914e9eca0f8aacaf0402a79917b7f09e944f9af0e775a8b2d0d25"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "brightness",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "1c17cc0cbdc38c8e6d871c282816cbddb41b2df4d19994b2e98fb2cf03a48eb1",
+      "identity_pairing": {
+        "cost": 347.1710485234196,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 612.6792866758274
+      },
+      "minimum_cost": 347.1710485234196,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0013464562526425332,
+        "expected_excess_relative_to_minimum": 4.712518307123088,
+        "expected_to_minimum_ratio": 5.712518307123088,
+        "expected_total_cost": 1983.2209703931524,
+        "standard_deviation_total_cost": 2.670320275957652,
+        "variance_total_cost": 7.1306103761905515
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "c366812fd64e0fdc7fdfde5f1fc48a74e6f64ecfd6552aab5c1ae62aeb402424",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1045.5091482238106,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.009564522243117874,
+          "allowed_to_random_mean_ratio": 0.49375943585574655,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.07421875,
+          "random_mean_minus_allowed_in_random_sd": 436.2456357622457,
+          "two_world_recovery_ceiling": 0.962890625,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "1efcaa50f69861c68a40f7ca5ff7ba59099906c5c047b8a3598aa3097a540716"
+        },
+        {
+          "allowed_cost": 1086.9154511237637,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04782261121558979,
+          "allowed_to_random_mean_ratio": 0.5133142649985485,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.189453125,
+          "random_mean_minus_allowed_in_random_sd": 419.3945387229478,
+          "two_world_recovery_ceiling": 0.9052734375,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "43c37c2901ed874473845a50fa41ded040803ba5f039b324836b9a24e01c3b67"
+        },
+        {
+          "allowed_cost": 1138.6733297487049,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.09564522243117958,
+          "allowed_to_random_mean_ratio": 0.5377578014270509,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.29296875,
+          "random_mean_minus_allowed_in_random_sd": 398.3306674238255,
+          "two_world_recovery_ceiling": 0.853515625,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "15356d4d6b343e0ebc7ffe2bd68251591104ec6fa4f27a90bab720ee3632267f"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "b0e1fa5f772cdcd027b8e44ba8d158e95207935fa24335ab2889a2b0bfb7b08f",
+      "identity_pairing": {
+        "cost": 1035.3012664479643,
+        "cost_to_minimum_ratio": 1.0001388135999383,
+        "excess_fraction_of_random_minus_minimum": 0.0001327685764256046,
+        "random_mean_minus_identity_in_random_sd": 440.3999309859968
+      },
+      "minimum_cost": 1035.1575724988224,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0011604484323601465,
+        "expected_excess_relative_to_minimum": 1.0455305289498806,
+        "expected_to_minimum_ratio": 2.0455305289498806,
+        "expected_total_cost": 2117.4464168199906,
+        "standard_deviation_total_cost": 2.4571873750053674,
+        "variance_total_cost": 6.037769795885769
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "e964393e297772e5fc3f5e3af9dbe80b70dd706307cf041432c6651779709ba8",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1078.412862373032,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.01075591186824276,
+          "allowed_to_random_mean_ratio": 0.5233916512984729,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.08203125,
+          "random_mean_minus_allowed_in_random_sd": 415.0860699921075,
+          "two_world_recovery_ceiling": 0.958984375,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "f873f295a84b7df53764da97c93d001b4adb8e23d093a35cf6b57dcf5311cbca"
+        },
+        {
+          "allowed_cost": 1121.1222826650333,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05377955934121334,
+          "allowed_to_random_mean_ratio": 0.5441200335281152,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.208984375,
+          "random_mean_minus_allowed_in_random_sd": 397.0333801044095,
+          "two_world_recovery_ceiling": 0.8955078125,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "4d55fe73386fd3e4734008e0be2221c47ab4f18b4c6569b986944f4225eb4d9c"
+        },
+        {
+          "allowed_cost": 1174.509058030035,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.10755911868242692,
+          "allowed_to_random_mean_ratio": 0.5700305113151685,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.322265625,
+          "random_mean_minus_allowed_in_random_sd": 374.4675177447868,
+          "two_world_recovery_ceiling": 0.8388671875,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "05236d2ebb98e82a577ab0595c078d7a027e8b9efb99b1fdb8d68c50716056ed"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "aa29092934cde4678a6f951c9b47a8536ace0da7b57593dc2d76a462c54bdf5e",
+      "identity_pairing": {
+        "cost": 1068.2111459775604,
+        "cost_to_minimum_ratio": 1.0004454648873966,
+        "excess_fraction_of_random_minus_minimum": 0.0004791381069233369,
+        "random_mean_minus_identity_in_random_sd": 419.3981964773314
+      },
+      "minimum_cost": 1067.7355073000317,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0011482157151421377,
+        "expected_excess_relative_to_minimum": 0.929721266081164,
+        "expected_to_minimum_ratio": 1.929721266081164,
+        "expected_total_cost": 2060.431914986831,
+        "standard_deviation_total_cost": 2.3658203047682886,
+        "variance_total_cost": 5.597105714453917
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "e964393e297772e5fc3f5e3af9dbe80b70dd706307cf041432c6651779709ba8",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 1056.4610431569613,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.010194731151536499,
+          "allowed_to_random_mean_ratio": 0.5098695489327416,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.076171875,
+          "random_mean_minus_allowed_in_random_sd": 424.70590845328286,
+          "two_world_recovery_ceiling": 0.9619140625,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "e7e225f243fe8e934f39659649581054e62646ea18cf3d480be2d2111926ef86"
+        },
+        {
+          "allowed_cost": 1098.3010844701084,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.05097365575768294,
+          "allowed_to_random_mean_ratio": 0.5300624023558206,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.205078125,
+          "random_mean_minus_allowed_in_random_sd": 407.2084766192916,
+          "two_world_recovery_ceiling": 0.8974609375,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "62cdf70219c714751e38a3495301540f3ef2ed99258f716224466a0e775657e7"
+        },
+        {
+          "allowed_cost": 1150.6011361115422,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.10194731151536587,
+          "allowed_to_random_mean_ratio": 0.5553034691346692,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.31640625,
+          "random_mean_minus_allowed_in_random_sd": 385.33668682680263,
+          "two_world_recovery_ceiling": 0.841796875,
+          "unit_result": "artifact://local/positive__defocus_blur__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "e4d93fe19e7c979c8152c05b93eeed38099d7843c53863f7c1bbd0918eefcd24"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "defocus_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "0afdb6412751549d89d9be812f2892b612332e6fac8156e849db70bcc0c8f68a",
+      "identity_pairing": {
+        "cost": 1046.1478416549526,
+        "cost_to_minimum_ratio": 1.0001403524677992,
+        "excess_fraction_of_random_minus_minimum": 0.00014308556756668648,
+        "random_mean_minus_identity_in_random_sd": 429.0188712183294
+      },
+      "minimum_cost": 1046.0010328286746,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.00115404669751886,
+        "expected_excess_relative_to_minimum": 0.980898843859436,
+        "expected_to_minimum_ratio": 1.980898843859436,
+        "expected_total_cost": 2072.0222366060975,
+        "standard_deviation_total_cost": 2.391210419340909,
+        "variance_total_cost": 5.717887269564527
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "e964393e297772e5fc3f5e3af9dbe80b70dd706307cf041432c6651779709ba8",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 661.7514874939675,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.004620115383644338,
+          "allowed_to_random_mean_ratio": 0.31917097882148315,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.037109375,
+          "random_mean_minus_allowed_in_random_sd": 539.7847880591315,
+          "two_world_recovery_ceiling": 0.9814453125,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "275f8ce6bf901320bd269fd2c475cceaeae873a4e0940dab841e0e5a6677ae10"
+        },
+        {
+          "allowed_cost": 687.9594671966989,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.023100576918221767,
+          "allowed_to_random_mean_ratio": 0.3318114136262944,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.0859375,
+          "random_mean_minus_allowed_in_random_sd": 529.7630142953172,
+          "two_world_recovery_ceiling": 0.95703125,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "22f61696c5c09d110ac8824289a502226c5feb7cae2a050dfb7210634a5c1c2c"
+        },
+        {
+          "allowed_cost": 720.7194418251132,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.046201153836443534,
+          "allowed_to_random_mean_ratio": 0.3476119571323084,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.134765625,
+          "random_mean_minus_allowed_in_random_sd": 517.2357970905491,
+          "two_world_recovery_ceiling": 0.9326171875,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "daaa75a70e0c5e40818f47fd662fe46b6f1b7eb7de51949f6d0044dad9b55782"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "d14c2e555da02810fc4571e987e701e604adc852d32c94ee45b1152a90536b40",
+      "identity_pairing": {
+        "cost": 655.1994925682847,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 542.2902315000852
+      },
+      "minimum_cost": 655.1994925682847,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012612971618309746,
+        "expected_excess_relative_to_minimum": 2.1644481078115416,
+        "expected_to_minimum_ratio": 3.1644481078115416,
+        "expected_total_cost": 2073.3447944967907,
+        "standard_deviation_total_cost": 2.6151039047958275,
+        "variance_total_cost": 6.8387684328783855
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "42f06bd67f7fb912672380066d933edb5f41276a5cd379e3b51cc6be57c64694",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 677.6771847315454,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0049393778909559306,
+          "allowed_to_random_mean_ratio": 0.3339343650237014,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.046875,
+          "random_mean_minus_allowed_in_random_sd": 530.9201705386542,
+          "two_world_recovery_ceiling": 0.9765625,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "d347b041f20fd07a26ef12df8585e049d0c6a57f41d414f79875a532a5265e5a"
+        },
+        {
+          "allowed_cost": 704.5158851169531,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.02469688945477965,
+          "allowed_to_random_mean_ratio": 0.34715948839097666,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.103515625,
+          "random_mean_minus_allowed_in_random_sd": 520.3784395367262,
+          "two_world_recovery_ceiling": 0.9482421875,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "ebaaa375ff55da64545273bf04aec732c58c0069700a6e753a894fcc65b47844"
+        },
+        {
+          "allowed_cost": 738.0642605987128,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.049393778909559385,
+          "allowed_to_random_mean_ratio": 0.36369089260007087,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.15625,
+          "random_mean_minus_allowed_in_random_sd": 507.2012757843162,
+          "two_world_recovery_ceiling": 0.921875,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "41e36378cda4808e691cd4fc7d6a6ca84b2b1b79c50ce7ddea87ec48bbdf46bc"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "67fd3624c59cadde7a6f3a78db8976a130c1b8593d50ce63f6a6fdb9c63443d1",
+      "identity_pairing": {
+        "cost": 671.5182283867821,
+        "cost_to_minimum_ratio": 1.0008207830389404,
+        "excess_fraction_of_random_minus_minimum": 0.0004054157595813842,
+        "random_mean_minus_identity_in_random_sd": 533.3392914389499
+      },
+      "minimum_cost": 670.9675096351934,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012545495009174924,
+        "expected_excess_relative_to_minimum": 2.0245464551943138,
+        "expected_to_minimum_ratio": 3.0245464551943138,
+        "expected_total_cost": 2029.3724028176807,
+        "standard_deviation_total_cost": 2.5459481351306534,
+        "variance_total_cost": 6.481851906775252
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "42f06bd67f7fb912672380066d933edb5f41276a5cd379e3b51cc6be57c64694",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 672.5494417778442,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.004915062617920242,
+          "allowed_to_random_mean_ratio": 0.33283220937570746,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.037109375,
+          "random_mean_minus_allowed_in_random_sd": 531.4394387644892,
+          "two_world_recovery_ceiling": 0.9814453125,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "aa81337d800fabac4b9867c7ce0418047b5f04c88db7ce33670763dc316cef12"
+        },
+        {
+          "allowed_cost": 699.1850632343925,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.024575313089601043,
+          "allowed_to_random_mean_ratio": 0.34601368301434937,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.09765625,
+          "random_mean_minus_allowed_in_random_sd": 520.939598917524,
+          "two_world_recovery_ceiling": 0.951171875,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "001e8da51aca4192f0ea78dfac60ecfac372c61cabb6d0afabe93cc55126626a"
+        },
+        {
+          "allowed_cost": 732.4795900550779,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04915062617920209,
+          "allowed_to_random_mean_ratio": 0.3624905250626517,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.150390625,
+          "random_mean_minus_allowed_in_random_sd": 507.81479910881734,
+          "two_world_recovery_ceiling": 0.9248046875,
+          "unit_result": "artifact://local/positive__fog__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "1df74ca551ed2df0635a30c126e39efad236b57c5b4204f16d909cc09f4fffef"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "fog",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "1f574106517b9b161d1b7add4f9fea28150cfe6a8445f47ddb624dfaa038a8a8",
+      "identity_pairing": {
+        "cost": 665.9723614850831,
+        "cost_to_minimum_ratio": 1.0001228806641653,
+        "excess_fraction_of_random_minus_minimum": 6.039661589046913e-05,
+        "random_mean_minus_identity_in_random_sd": 534.03214304388
+      },
+      "minimum_cost": 665.8905364137071,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001255397589940539,
+        "expected_excess_relative_to_minimum": 2.034562075270463,
+        "expected_to_minimum_ratio": 3.034562075270463,
+        "expected_total_cost": 2020.6861680825407,
+        "standard_deviation_total_cost": 2.5367645454370047,
+        "variance_total_cost": 6.435174358986214
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "42f06bd67f7fb912672380066d933edb5f41276a5cd379e3b51cc6be57c64694",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 930.2135862338591,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.007909741036998721,
+          "allowed_to_random_mean_ratio": 0.4460610809986033,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.068359375,
+          "random_mean_minus_allowed_in_random_sd": 463.017897144006,
+          "two_world_recovery_ceiling": 0.9658203125,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "d1af84129e459e9bedbbfa697643193fa8ab73ff49ccf873603b9d9c5ba4a69b"
+        },
+        {
+          "allowed_cost": 967.0537282629228,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.03954870518499351,
+          "allowed_to_random_mean_ratio": 0.46372686638468663,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.17578125,
+          "random_mean_minus_allowed_in_random_sd": 448.2516936506547,
+          "two_world_recovery_ceiling": 0.912109375,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "67bdc39e90da16a065bf8bb82ca18296e3fdf1812fd61cc9fccd57d398779ca3"
+        },
+        {
+          "allowed_cost": 1013.1039057992526,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.07909741036998712,
+          "allowed_to_random_mean_ratio": 0.4858090981172908,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.263671875,
+          "random_mean_minus_allowed_in_random_sd": 429.7939392839658,
+          "two_world_recovery_ceiling": 0.8681640625,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "dc13f6234a779f914ba287263a68933c88790173430076c66d150e1978656927"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "ea40f5da5c3579b6704c89f89d42c03b4ee614001a4b0bbb41fb4bec8445d5c9",
+      "identity_pairing": {
+        "cost": 921.1304918766573,
+        "cost_to_minimum_ratio": 1.00013782916468,
+        "excess_fraction_of_random_minus_minimum": 0.0001090192999965956,
+        "random_mean_minus_identity_in_random_sd": 466.65856768001913
+      },
+      "minimum_cost": 921.0035507265932,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0011963661068356344,
+        "expected_excess_relative_to_minimum": 1.2642638934983939,
+        "expected_to_minimum_ratio": 2.264263893498394,
+        "expected_total_cost": 2085.3950856940414,
+        "standard_deviation_total_cost": 2.494895999885945,
+        "variance_total_cost": 6.224506050246889
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9fb684a57a62c3169face903829537655603e261fa0b1c81ce7182f6c745e73a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 948.8338859971917,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.008626532725302139,
+          "allowed_to_random_mean_ratio": 0.4677627436651028,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.08984375,
+          "random_mean_minus_allowed_in_random_sd": 448.2420019542194,
+          "two_world_recovery_ceiling": 0.955078125,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "3b9256c795c327ea402e179f71d015c504fe053b352e3072bf34a937e9b14e7e"
+        },
+        {
+          "allowed_cost": 986.4114656406449,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04313266362651069,
+          "allowed_to_random_mean_ratio": 0.4862880008399584,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.203125,
+          "random_mean_minus_allowed_in_random_sd": 432.6403163075666,
+          "two_world_recovery_ceiling": 0.8984375,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "52a011920287f6b1c5eb9938a9c6a2f94ef3e2a1ceb1578ae09600d492805dd0"
+        },
+        {
+          "allowed_cost": 1033.3834401949614,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.08626532725302138,
+          "allowed_to_random_mean_ratio": 0.5094445723085279,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.294921875,
+          "random_mean_minus_allowed_in_random_sd": 413.1382092492506,
+          "two_world_recovery_ceiling": 0.8525390625,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "5b895be5b0f86e955dd132c3635eb4c9f84ad769619f959aeb55f3a11c19b539"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "1d2172662a821e49253d0a20d0eda6be68c91dcd91722d99f24bd4552641c27d",
+      "identity_pairing": {
+        "cost": 939.9873755296437,
+        "cost_to_minimum_ratio": 1.0005832035469169,
+        "excess_fraction_of_random_minus_minimum": 0.0005031024482990388,
+        "random_mean_minus_identity_in_random_sd": 451.91494940570743
+      },
+      "minimum_cost": 939.4394910863284,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0011873881832012174,
+        "expected_excess_relative_to_minimum": 1.159214289035201,
+        "expected_to_minimum_ratio": 2.159214289035201,
+        "expected_total_cost": 2028.4511728375578,
+        "standard_deviation_total_cost": 2.4085589528279665,
+        "variance_total_cost": 5.80115622924775
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9fb684a57a62c3169face903829537655603e261fa0b1c81ce7182f6c745e73a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 940.133069644093,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.008578733223236417,
+          "allowed_to_random_mean_ratio": 0.4663676716468528,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.07421875,
+          "random_mean_minus_allowed_in_random_sd": 449.6854554586452,
+          "two_world_recovery_ceiling": 0.962890625,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "d07a9bcf0d61fd83535b88636961e440e0ea1631d25d4bcf78498ee2fc3e307c"
+        },
+        {
+          "allowed_cost": 977.3660625012849,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04289366611618229,
+          "allowed_to_random_mean_ratio": 0.484837678444748,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.185546875,
+          "random_mean_minus_allowed_in_random_sd": 434.12100597173327,
+          "two_world_recovery_ceiling": 0.9072265625,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "5f5dedb9c4b74c6c21e39f45718a6b498062175c9c287a03133ef59736ba2476"
+        },
+        {
+          "allowed_cost": 1023.9073035727747,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.08578733223236458,
+          "allowed_to_random_mean_ratio": 0.507925186942117,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.283203125,
+          "random_mean_minus_allowed_in_random_sd": 414.6654441130933,
+          "two_world_recovery_ceiling": 0.8583984375,
+          "unit_result": "artifact://local/positive__gaussian_noise__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "9f98c5559b79e1a1223d60c86943632f9d97178c7866b7c9682dde642841a90e"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "gaussian_noise",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "b7bc6b92ef5471a0aa64cdcb0ea779ad3d05bcd3a46ad5689647dea675245cfc",
+      "identity_pairing": {
+        "cost": 930.9550321276433,
+        "cost_to_minimum_ratio": 1.000139887436229,
+        "excess_fraction_of_random_minus_minimum": 0.0001200056996692373,
+        "random_mean_minus_identity_in_random_sd": 453.52213605699717
+      },
+      "minimum_cost": 930.8248214297951,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0011866790928536537,
+        "expected_excess_relative_to_minimum": 1.165673268975645,
+        "expected_to_minimum_ratio": 2.1656732689756453,
+        "expected_total_cost": 2015.8624338695354,
+        "standard_deviation_total_cost": 2.3921818043420586,
+        "variance_total_cost": 5.722533785025228
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "9fb684a57a62c3169face903829537655603e261fa0b1c81ce7182f6c745e73a",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 574.0506747746603,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.003884767948119175,
+          "allowed_to_random_mean_ratio": 0.28258417009640213,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.015625,
+          "random_mean_minus_allowed_in_random_sd": 560.0087460328328,
+          "two_world_recovery_ceiling": 0.9921875,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "b614418f9f1d36d3a8033dce7c253cf471091d99f401e8e4d054e10f8ec41255"
+        },
+        {
+          "allowed_cost": 596.7853549637557,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.019423839740595954,
+          "allowed_to_random_mean_ratio": 0.29377562237744775,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.056640625,
+          "random_mean_minus_allowed_in_random_sd": 551.2727927725922,
+          "two_world_recovery_ceiling": 0.9716796875,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "7e62aa7ad06feb9616567027ec3ad18a017106805d16474c5838a8cb909a1467"
+        },
+        {
+          "allowed_cost": 625.2037052001251,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.038847679481191985,
+          "allowed_to_random_mean_ratio": 0.3077649377287548,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.09765625,
+          "random_mean_minus_allowed_in_random_sd": 540.3528511972912,
+          "two_world_recovery_ceiling": 0.951171875,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "acac54bf2fc955c7964468da181f928e6346d468333f1fffef4e47990b3f16d7"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "744f17776e441702d7034cd258abacc219f24c3f8c686d99ea6e87f25dacd7e7",
+      "identity_pairing": {
+        "cost": 568.3670047273863,
+        "cost_to_minimum_ratio": 0.9999999999999998,
+        "excess_fraction_of_random_minus_minimum": -7.770454295034162e-17,
+        "random_mean_minus_identity_in_random_sd": 562.1927343478931
+      },
+      "minimum_cost": 568.3670047273864,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012810796884617519,
+        "expected_excess_relative_to_minimum": 2.5741563289105818,
+        "expected_to_minimum_ratio": 3.5741563289105818,
+        "expected_total_cost": 2031.4325270903387,
+        "standard_deviation_total_cost": 2.6024269489359604,
+        "variance_total_cost": 6.772626024548132
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "38067a1d67f8b3f083d1c581eb129694a26ff4c091c6f7cc6afb43371285d2c0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 602.4308550724271,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.004276292974685057,
+          "allowed_to_random_mean_ratio": 0.3025334316191539,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.01953125,
+          "random_mean_minus_allowed_in_random_sd": 549.5254114190258,
+          "two_world_recovery_ceiling": 0.990234375,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "df642cf30378cfa095a3cfba39e1a81d9a6566f6657aa61a2587fa9ebab45835"
+        },
+        {
+          "allowed_cost": 626.2895027980678,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.021381464873425203,
+          "allowed_to_random_mean_ratio": 0.31451495366347687,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.06640625,
+          "random_mean_minus_allowed_in_random_sd": 540.085316181031,
+          "two_world_recovery_ceiling": 0.966796875,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "1ba54e92fab2f02f2ffaeec3669805a46caa303de767c420a11c95314a1906c6"
+        },
+        {
+          "allowed_cost": 656.1128124551186,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.04276292974685032,
+          "allowed_to_random_mean_ratio": 0.3294918562188805,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.11328125,
+          "random_mean_minus_allowed_in_random_sd": 528.2851971335373,
+          "two_world_recovery_ceiling": 0.943359375,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "d926849871317549fa1185aa44087c050adf04e526b8f922bdad524d625407d1"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "6c9fc2fa939e24844c7cbfe949d471ebfd42f12d552fd8b56adb33f60925cba4",
+      "identity_pairing": {
+        "cost": 596.4661931410169,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 551.8854352285246
+      },
+      "minimum_cost": 596.4661931410169,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.001269216225287554,
+        "expected_excess_relative_to_minimum": 2.338474014572528,
+        "expected_to_minimum_ratio": 3.338474014572528,
+        "expected_total_cost": 1991.2868863722833,
+        "standard_deviation_total_cost": 2.5273736253860357,
+        "variance_total_cost": 6.387617442296953
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "38067a1d67f8b3f083d1c581eb129694a26ff4c091c6f7cc6afb43371285d2c0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 597.1345143095967,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.004218694974388624,
+          "allowed_to_random_mean_ratio": 0.2996675807313835,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.017578125,
+          "random_mean_minus_allowed_in_random_sd": 550.5429273927683,
+          "two_world_recovery_ceiling": 0.9912109375,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "b9056fd2d2ff1e7081bf266806fc912d931495e6c152a207ffdc6ab8ea220faa"
+        },
+        {
+          "allowed_cost": 620.7834059654224,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0210934748719432,
+          "allowed_to_random_mean_ratio": 0.3115356037306462,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.0625,
+          "random_mean_minus_allowed_in_random_sd": 541.2132777226839,
+          "two_world_recovery_ceiling": 0.96875,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "9555b540eb31b84779ccaaa69b544e7c4c36e73cd9bca991486b15f0886ed33c"
+        },
+        {
+          "allowed_cost": 650.3445205352044,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0421869497438864,
+          "allowed_to_random_mean_ratio": 0.3263706324797246,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.107421875,
+          "random_mean_minus_allowed_in_random_sd": 529.5512156350785,
+          "two_world_recovery_ceiling": 0.9462890625,
+          "unit_result": "artifact://local/positive__jpeg_compression__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "7bb11d8bac0d4aef2cd42af38e6d034ce444af6475ceeebf9e6520f32f7dfe29"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "jpeg_compression",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "d6a6e17971487757fdcfc452fdb6945c30ad752e3020439351b3aa869b645ac4",
+      "identity_pairing": {
+        "cost": 591.2222913956402,
+        "cost_to_minimum_ratio": 0.9999999999999998,
+        "excess_fraction_of_random_minus_minimum": -8.112178751213013e-17,
+        "random_mean_minus_identity_in_random_sd": 552.8753398102893
+      },
+      "minimum_cost": 591.2222913956404,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012720759534323933,
+        "expected_excess_relative_to_minimum": 2.370401287770082,
+        "expected_to_minimum_ratio": 3.370401287770082,
+        "expected_total_cost": 1992.656372278245,
+        "standard_deviation_total_cost": 2.5348102546289826,
+        "variance_total_cost": 6.425263026972248
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "38067a1d67f8b3f083d1c581eb129694a26ff4c091c6f7cc6afb43371285d2c0",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 802.0258900681703,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.00624305669764597,
+          "allowed_to_random_mean_ratio": 0.38819585389591293,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.03515625,
+          "random_mean_minus_allowed_in_random_sd": 500.99202492696946,
+          "two_world_recovery_ceiling": 0.982421875,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_201__budget_0100bp.json",
+          "unit_result_sha256": "80a1e163985d66107dacf72603f72c83c42e134da3ebb7a54ab146db041738c2"
+        },
+        {
+          "allowed_cost": 833.7892916550285,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.031215283488229672,
+          "allowed_to_random_mean_ratio": 0.40356994711951344,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.107421875,
+          "random_mean_minus_allowed_in_random_sd": 488.40254160202767,
+          "two_world_recovery_ceiling": 0.9462890625,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_201__budget_0500bp.json",
+          "unit_result_sha256": "aea8095f284b6c5fa09ae17ca0330ce11a8f772d06e2a4d4311bd973cfe054e4"
+        },
+        {
+          "allowed_cost": 873.4935436386013,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.062430566976459344,
+          "allowed_to_random_mean_ratio": 0.4227875636490141,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.177734375,
+          "random_mean_minus_allowed_in_random_sd": 472.6656874458505,
+          "two_world_recovery_ceiling": 0.9111328125,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_201__budget_1000bp.json",
+          "unit_result_sha256": "aa7d5d542c3cdb3011ce45f2b49500312bae3cf309c41d7d666ebc5aa17d3360"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "7e9994f9f36c71851b71fbb457ba20604f7188a58edad4d81c096147ea0b788e",
+      "identity_pairing": {
+        "cost": 794.0850396714557,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 504.13939575820484
+      },
+      "minimum_cost": 794.0850396714557,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012211853994946746,
+        "expected_excess_relative_to_minimum": 1.6017794622577595,
+        "expected_to_minimum_ratio": 2.6017794622577592,
+        "expected_total_cost": 2066.0341475033315,
+        "standard_deviation_total_cost": 2.523010735788495,
+        "variance_total_cost": 6.365583172904004
+      },
+      "severity": 5,
+      "split_seed": 201,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "02043c73159768fe4273538c569adbd206aeabaacad3202637bc02157d1d2532",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 822.098808247563,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.006710026340135845,
+          "allowed_to_random_mean_ratio": 0.40557246682844533,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.037109375,
+          "random_mean_minus_allowed_in_random_sd": 490.7952458325678,
+          "two_world_recovery_ceiling": 0.9814453125,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_202__budget_0100bp.json",
+          "unit_result_sha256": "e9825f6bc23389c2632b45a9d88944d0b272ba01f1aab7fe26070e2bce2c421a"
+        },
+        {
+          "allowed_cost": 854.6571768910309,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.03355013170067913,
+          "allowed_to_random_mean_ratio": 0.42163474274244317,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.115234375,
+          "random_mean_minus_allowed_in_random_sd": 477.5332614595022,
+          "two_world_recovery_ceiling": 0.9423828125,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_202__budget_0500bp.json",
+          "unit_result_sha256": "dab98fd2b75ca12a3ce2040d6922827f0fedf5b4fc2a28734e203bad8868b29a"
+        },
+        {
+          "allowed_cost": 895.3551376953658,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.06710026340135836,
+          "allowed_to_random_mean_ratio": 0.44171258763494053,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.189453125,
+          "random_mean_minus_allowed_in_random_sd": 460.9557809931701,
+          "two_world_recovery_ceiling": 0.9052734375,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_202__budget_1000bp.json",
+          "unit_result_sha256": "9d6606bcb18f49195be57403ba7fff3b226d9454a0719b44651f2f026a653be9"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "5195c0c4823d921ba76e1c326f79058b20e9acd06eb84ee81f2980abce3994ef",
+      "identity_pairing": {
+        "cost": 813.9592160866961,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 494.11074192583425
+      },
+      "minimum_cost": 813.9592160866961,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012111517750405033,
+        "expected_excess_relative_to_minimum": 1.490307115515373,
+        "expected_to_minimum_ratio": 2.490307115515373,
+        "expected_total_cost": 2027.0084275600143,
+        "standard_deviation_total_cost": 2.455014855061371,
+        "variance_total_cost": 6.027097938572004
+      },
+      "severity": 5,
+      "split_seed": 202,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "02043c73159768fe4273538c569adbd206aeabaacad3202637bc02157d1d2532",
+      "witness_rows": 1024
+    },
+    {
+      "budgets": [
+        {
+          "allowed_cost": 809.2347401017275,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.006495778137248833,
+          "allowed_to_random_mean_ratio": 0.3977221240510418,
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": 0.033203125,
+          "random_mean_minus_allowed_in_random_sd": 495.1739830090273,
+          "two_world_recovery_ceiling": 0.9833984375,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_203__budget_0100bp.json",
+          "unit_result_sha256": "80447d74bcf2c9c57a349c97658aa4f35da26f87a717de318eb840fd7c9f4651"
+        },
+        {
+          "allowed_cost": 841.2836406998158,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.03247889068624435,
+          "allowed_to_random_mean_ratio": 0.413473495300588,
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": 0.109375,
+          "random_mean_minus_allowed_in_random_sd": 482.223699508737,
+          "two_world_recovery_ceiling": 0.9453125,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_203__budget_0500bp.json",
+          "unit_result_sha256": "c0fff170c3c9660af402b7a068a03d6da788b03797b9c20818bc127359ca0ff4"
+        },
+        {
+          "allowed_cost": 881.3447664474262,
+          "allowed_excess_fraction_of_random_minus_minimum": 0.0649577813724888,
+          "allowed_to_random_mean_ratio": 0.4331627093625208,
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": 0.18359375,
+          "random_mean_minus_allowed_in_random_sd": 466.03584513337415,
+          "two_world_recovery_ceiling": 0.908203125,
+          "unit_result": "artifact://local/positive__motion_blur__dinov3__seed_203__budget_1000bp.json",
+          "unit_result_sha256": "f5adb7e4ac3b5ed9674c19cccf4c7607b357429880b11ae0731703437a8beedb"
+        }
+      ],
+      "calibration_rows": 4096,
+      "corruption": "motion_blur",
+      "dataset": "imagenet_c",
+      "encoder": "dinov3",
+      "feature_dimension": 1024,
+      "fitted_geometry_sha256": "d4644652f72cd9814f0610808182128361403323b4db06a6b40ff03be63fa8b4",
+      "identity_pairing": {
+        "cost": 801.2225149522055,
+        "cost_to_minimum_ratio": 1.0,
+        "excess_fraction_of_random_minus_minimum": 0.0,
+        "random_mean_minus_identity_in_random_sd": 498.4115538840999
+      },
+      "minimum_cost": 801.2225149522055,
+      "panel": "positive_control",
+      "random_bijection": {
+        "coefficient_of_variation": 0.0012162954771757026,
+        "expected_excess_relative_to_minimum": 1.5394614453743118,
+        "expected_to_minimum_ratio": 2.539461445374312,
+        "expected_total_cost": 2034.673685886969,
+        "standard_deviation_total_cost": 2.474764401672737,
+        "variance_total_cost": 6.124458843786619
+      },
+      "severity": 5,
+      "split_seed": 203,
+      "store_manifest": "artifact://local/FEATURE_STORE_MANIFEST.json",
+      "store_manifest_sha256": "02043c73159768fe4273538c569adbd206aeabaacad3202637bc02157d1d2532",
+      "witness_rows": 1024
+    }
+  ],
+  "fit_information": "the audit reproduces each sealed split and full-reference-OAS Mahalanobis-after-Bures geometry; labels and pairing do not fit maps",
+  "historical_source_files": 26,
+  "historical_source_identity_verified": true,
+  "interpretation": "descriptive finite-batch cost-scale audit; random-bijection moments are exact over the uniform permutation law, while identity pairing is available only in the ImageNet-C positive control",
+  "manifest_sha256": "a415920f7c3c00c8051223b739a29e10a39b5333276bd39f520cec614b57aa48",
+  "results_root": "artifact://local/play3_ceiling",
+  "schema_version": "marginal_alignment.iclr_extension.cost_scale_audit.v1",
+  "scientific_result": true,
+  "status": "PASS",
+  "summaries": [
+    {
+      "budgets": [
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.045168610850001956,
+            "mean": 0.04217719223529336,
+            "minimum": 0.03893421500134938
+          },
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": {
+            "maximum": 0.423828125,
+            "mean": 0.4117838541666667,
+            "minimum": 0.392578125
+          }
+        },
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.22584305425001044,
+            "mean": 0.21088596117646716,
+            "minimum": 0.194671075006748
+          },
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": {
+            "maximum": 0.861328125,
+            "mean": 0.8216145833333334,
+            "minimum": 0.77734375
+          }
+        },
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.4516861085000202,
+            "mean": 0.42177192235293387,
+            "minimum": 0.3893421500134954
+          },
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": {
+            "maximum": 1.0,
+            "mean": 0.9720052083333334,
+            "minimum": 0.93359375
+          }
+        }
+      ],
+      "condition_geometries": 6,
+      "identity_pairing": null,
+      "panel": "natural",
+      "random_cost_coefficient_of_variation": {
+        "maximum": 0.0012412986834097156,
+        "mean": 0.0011179504882830851,
+        "minimum": 0.0009934585190932168
+      },
+      "random_expected_to_minimum_ratio": {
+        "maximum": 1.256843498697826,
+        "mean": 1.2378334145755903,
+        "minimum": 1.221392684251647
+      }
+    },
+    {
+      "budgets": [
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.02462019933909442,
+            "mean": 0.011236280561840782,
+            "minimum": 0.0020901644689426727
+          },
+          "cost_budget_relative": 0.01,
+          "feasible_disagreement": {
+            "maximum": 0.29296875,
+            "mean": 0.1042751736111111,
+            "minimum": 0.005859375
+          }
+        },
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.12310099669547127,
+            "mean": 0.056181402809203855,
+            "minimum": 0.010450822344713296
+          },
+          "cost_budget_relative": 0.05,
+          "feasible_disagreement": {
+            "maximum": 0.615234375,
+            "mean": 0.2487521701388889,
+            "minimum": 0.025390625
+          }
+        },
+        {
+          "allowed_excess_fraction_of_random_minus_minimum": {
+            "maximum": 0.24620199339094254,
+            "mean": 0.11236280561840771,
+            "minimum": 0.020901644689426558
+          },
+          "cost_budget_relative": 0.1,
+          "feasible_disagreement": {
+            "maximum": 0.78125,
+            "mean": 0.3573133680555556,
+            "minimum": 0.046875
+          }
+        }
+      ],
+      "condition_geometries": 36,
+      "identity_pairing": {
+        "cost_to_minimum_ratio": {
+          "maximum": 1.0193488140708096,
+          "mean": 1.0028665331331554,
+          "minimum": 0.9999999999999998
+        },
+        "excess_fraction_of_random_minus_minimum": {
+          "maximum": 0.04649308980149641,
+          "mean": 0.006180326161469216,
+          "minimum": -9.45984073716059e-17
+        }
+      },
+      "panel": "positive_control",
+      "random_cost_coefficient_of_variation": {
+        "maximum": 0.001470727902591165,
+        "mean": 0.0012971649279906845,
+        "minimum": 0.0011482157151421377
+      },
+      "random_expected_to_minimum_ratio": {
+        "maximum": 5.7843125020007,
+        "mean": 2.4717631295495917,
+        "minimum": 1.4061705537908087
+      }
+    }
+  ]
+}

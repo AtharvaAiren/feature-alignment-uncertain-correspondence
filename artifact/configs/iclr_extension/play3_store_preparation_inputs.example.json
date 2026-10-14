@@ -1,0 +1,36 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.play3_store_preparation_inputs.v1",
+  "v2_config": "/absolute/server/path/beyond-marginals/configs/iclr_extension/play3_optimization_gate.json",
+  "v1_config": "/absolute/server/path/beyond-marginals/configs/iclr_extension/play3_natural.json",
+  "official_class_index": "/absolute/server/path/imagenet_class_index.json",
+  "reference_stores": {
+    "dinov3": "/absolute/server/path/base-stores/imagenet_c/dinov3/brightness/severity_5/FEATURE_STORE_MANIFEST.json",
+    "clip": "/absolute/server/path/base-stores/imagenet_c/clip/brightness/severity_5/FEATURE_STORE_MANIFEST.json"
+  },
+  "datasets": {
+    "imagenet_sketch": {
+      "provenance": "/absolute/server/path/imagenet_sketch_provenance.json",
+      "dataset_root": "/absolute/server/path/ImageNet-Sketch/data",
+      "archive": "/absolute/server/path/ImageNet-Sketch.zip",
+      "source_stores": {
+        "dinov3": "/absolute/server/path/completed-play3-stores/imagenet_sketch/dinov3/FEATURE_STORE_MANIFEST.json",
+        "clip": "/absolute/server/path/completed-play3-stores/imagenet_sketch/clip/FEATURE_STORE_MANIFEST.json"
+      }
+    },
+    "imagenet_v2": {
+      "provenance": "/absolute/server/path/imagenet_v2_provenance.json",
+      "dataset_root": "/absolute/server/path/imagenetv2-matched-frequency-format-val",
+      "archive": "/absolute/server/path/imagenetv2-matched-frequency-format-val.tar.gz"
+    },
+    "imagenet_r": {
+      "provenance": "/absolute/server/path/imagenet_r_provenance.json",
+      "dataset_root": "/absolute/server/path/imagenet-r",
+      "archive": "/absolute/server/path/imagenet-r.tar"
+    }
+  },
+  "output_root": "/absolute/server/path/play3_v2_feature_stores",
+  "device": "cuda:0",
+  "batch_size": 128,
+  "workers": 8,
+  "checkpoint_rows": 5000
+}

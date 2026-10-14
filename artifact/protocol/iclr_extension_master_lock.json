@@ -1,0 +1,449 @@
+{
+  "schema_version": "beyond_marginals.iclr_extension_lock.v1",
+  "status": "PRESPECIFIED_BEFORE_EXTENSION_RESULTS",
+  "locked_utc_date": "2026-08-27",
+  "base_release": {
+    "git_commit": "fd51183",
+    "campaign_id": "beyond_marginals_v2",
+    "base_campaign_manifest_sha256": "788b1efeedd1c3a067bb8106d5e2d18868b9bc5e975e0f40fa45b372dc5928f4",
+    "feature_store_count": 306,
+    "feature_store_root_environment": "MARGINAL_FEATURE_ROOT"
+  },
+  "global_rules": {
+    "target_or_evaluation_labels_available_to_fit": false,
+    "sample_correspondence_available_to_unpaired_estimators": false,
+    "evaluation_disjoint_from_calibration": true,
+    "failed_or_missing_units_may_be_silently_dropped": false,
+    "nonfinite_metrics_may_be_silently_dropped": false,
+    "condition_macro_before_repeat_summary": true,
+    "all_selection_uses_calibration_data_only": true,
+    "manuscript_updates_before_results_complete": false
+  },
+  "play1_rotation_breaker": {
+    "role": "primary_constructive_extension",
+    "datasets": [
+      "cifar100_c",
+      "imagenet_c"
+    ],
+    "encoders": [
+      "dinov3",
+      "clip",
+      "vitb16"
+    ],
+    "severity": 5,
+    "primary_corruptions": [
+      "contrast",
+      "defocus_blur",
+      "glass_blur",
+      "motion_blur",
+      "zoom_blur"
+    ],
+    "diagnostic_corruptions": [
+      "brightness",
+      "fog",
+      "gaussian_noise"
+    ],
+    "calibration_size": 4096,
+    "split_seeds": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "methods": {
+      "bures_oas": {
+        "information": "unpaired_reference_and_target_features",
+        "role": "primary_baseline"
+      },
+      "bures_pseudo_orientation": {
+        "information": "unpaired_reference_and_target_features_plus_frozen_classifier_predictions",
+        "role": "primary_constructive_method",
+        "covariance_estimator": "oas",
+        "candidate_ranks": [
+          2,
+          4,
+          8,
+          16,
+          32
+        ],
+        "procrustes_shrinkages": [
+          0.1,
+          1.0,
+          10.0
+        ],
+        "confidence_threshold": 0.6,
+        "temperature": 1.0,
+        "validation_fraction": 0.25,
+        "minimum_relative_validation_improvement": 0.01,
+        "minimum_active_classes": 8,
+        "minimum_effective_class_mass": 1.0,
+        "rank_support_rule": "active_classes_at_least_max_8_2r_plus_1",
+        "minimum_explained_discrepancy_energy": 0.5,
+        "minimum_fit_validation_subspace_stability": 0.05,
+        "null_calibration": {
+          "kind": "deterministic_independent_fit_responsibility_row_permutations_with_fixed_validation",
+          "permutations": 19,
+          "quantile": 0.95,
+          "acceptance_rule": "observed_heldout_gain_strictly_exceeds_null_quantile_plus_0.01",
+          "interpretation": "conservative_heuristic_selection_gate_not_a_significance_test_or_identification_claim"
+        },
+        "selection_fit_policy": "bures_whitening_and_orientation_fit_on_orientation_fit_rows_only",
+        "selection_validation_policy": "rank_and_regularization_selected_on_disjoint_validation_rows",
+        "final_refit_policy": "selected_specification_refit_on_all_calibration_rows_before_evaluation",
+        "dataset_mass_thresholds": {
+          "cifar100_c": {
+            "fit": 8.0,
+            "validation": 2.0
+          },
+          "imagenet_c": {
+            "fit": 0.75,
+            "validation": 0.2
+          }
+        },
+        "failure_policy": "return_exact_bures_map"
+      }
+    },
+    "primary_metric": "reference_prediction_agreement",
+    "secondary_metrics": [
+      "aligned_accuracy",
+      "centered_logit_mse",
+      "paired_feature_mse",
+      "negative_log_likelihood",
+      "expected_calibration_error"
+    ],
+    "metric_directions": {
+      "reference_prediction_agreement": "higher_is_better",
+      "aligned_accuracy": "higher_is_better",
+      "centered_logit_mse": "lower_is_better",
+      "paired_feature_mse": "lower_is_better",
+      "negative_log_likelihood": "lower_is_better",
+      "expected_calibration_error": "lower_is_better"
+    },
+    "primary_estimand": "condition_macro_mean_of_paired_split_differences_bures_pseudo_orientation_minus_bures_oas",
+    "uncertainty": {
+      "cluster_unit": "dataset_corruption_condition_cluster",
+      "panel_cluster_counts": {
+        "primary": 10,
+        "diagnostic": 6
+      },
+      "split_seed_policy": "mean_within_condition_before_cluster_resampling",
+      "encoders": "paired_and_nested_within_cluster",
+      "bootstrap": "dataset_corruption_cluster_bootstrap",
+      "replicates": 10000,
+      "seed": 20260827,
+      "confidence_level": 0.95,
+      "interval_interpretation": "descriptive_finite_prespecified_panel_heterogeneity_not_population_sampling_inference"
+    },
+    "must_report": [
+      "fallback_rate",
+      "selected_rank_distribution",
+      "selected_shrinkage_distribution",
+      "active_class_count",
+      "orientation_orthogonality_error",
+      "fitted_covariance_relative_error"
+    ]
+  },
+  "play2_tta_baselines": {
+    "role": "mandatory_empirical_comparison",
+    "datasets": [
+      "cifar100_c",
+      "imagenet_c"
+    ],
+    "encoders": [
+      "dinov3",
+      "clip",
+      "vitb16"
+    ],
+    "severity": 5,
+    "corruptions": "all_dataset_declared_corruptions",
+    "calibration_size": 4096,
+    "evaluation_sizes": {
+      "cifar100_c": 3000,
+      "imagenet_c": 10000
+    },
+    "split_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "split_identity": "recompute_and_hash_verify_primary_marginal_split_plan",
+    "aggregation": {
+      "cluster_unit": "dataset_by_corruption_condition_cell",
+      "cluster_count": 34,
+      "split_seed_policy": "average_split_seeds_before_cluster_resampling",
+      "encoders_and_methods": "paired_and_nested_within_cluster",
+      "interval_interpretation": "descriptive_finite_panel_heterogeneity_not_population_sampling_inference"
+    },
+    "primary_methods": [
+      "source",
+      "tent",
+      "eta",
+      "eata",
+      "sar",
+      "cotta_published",
+      "rotta"
+    ],
+    "diagnostic_methods": [
+      "cotta_fixed_head"
+    ],
+    "diagnostic_launch_policy": "diagnostics_must_be_included_in_the_initial_immutable_plan_no_separate_diagnostics_only_merge",
+    "primary_protocol": "reset_per_condition_then_adapt_on_ordered_unlabeled_calibration_then_freeze_then_evaluate",
+    "secondary_protocol": "disabled_not_implemented_in_v1_harness",
+    "canonical_online_cotta_or_rotta_claims_allowed": false,
+    "batch_size": 64,
+    "physical_batch_size": 8,
+    "microbatch_execution": "exact_gradient_accumulation_with_one_method_event_per_logical_batch",
+    "augmentation_microbatch_policy": "draw_once_per_logical_batch_view_then_slice_model_forward",
+    "runtime_batch_change_allowed": false,
+    "runtime_identity": {
+      "plan_and_every_unit_capture_exact_versions": [
+        "python",
+        "numpy",
+        "torch",
+        "torchvision",
+        "transformers",
+        "timm",
+        "Pillow",
+        "safetensors"
+      ],
+      "threads_and_accelerator_state_captured": true,
+      "aggregation_rejects_cross_shard_or_unit_runtime_drift": true,
+      "torch_deterministic_algorithms": true,
+      "torch_deterministic_warn_only": false,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true,
+      "allow_tf32": false,
+      "float32_matmul_precision": "highest",
+      "cublas_workspace_config": ":4096:8",
+      "numerical_threads": 1,
+      "cuda_visible_device_policy": "one_visible_gpu_per_shard_exposed_as_cuda_0",
+      "cuda_visible_physical_ordinal_in_scientific_identity": "exactly_one_physical_gpu_redacted_after_validation",
+      "host_specific_values": "captured_in_run_plan_not_prespecified"
+    },
+    "fisher_source_rows": 2000,
+    "fisher_labels": "frozen_model_pseudo_labels_not_ground_truth",
+    "fisher_shared_artifact_scope": "one_immutable_artifact_per_dataset_encoder",
+    "fisher_global_cache_root": "required_user_or_config_declared_root_shared_by_all_shards_and_disjoint_from_run_outputs",
+    "fisher_identity_bindings": [
+      "exact_selected_clean_source_bytes_and_sample_ids",
+      "frozen_model_state_and_model_evidence",
+      "feature_build_config",
+      "eata_algorithm_and_hyperparameters",
+      "tta_config_and_prespecification_source_evidence"
+    ],
+    "fisher_microbatch_semantics": "mean_gradient_per_logical_batch_then_square",
+    "fisher_compute_accounting": "one_time_shared_initialization_not_multiplied_per_scientific_unit",
+    "raw_source_shared_artifact_scope": "one_immutable_artifact_per_dataset_encoder_corruption_severity_split",
+    "raw_source_global_cache_root": "required_user_or_config_declared_root_shared_by_all_shards_and_disjoint_from_outputs_and_fisher_cache",
+    "raw_source_identity_bindings": [
+      "exact_clean_and_target_evaluation_ids_and_current_raw_content_identity",
+      "split_and_feature_store_identity",
+      "frozen_model_checkpoint_and_preprocessing_identity",
+      "tta_config_runtime_and_prespecification_source_evidence"
+    ],
+    "raw_source_compute_accounting": "one_time_shared_condition_split_evaluation_not_multiplied_per_method",
+    "raw_source_used_for_adaptation": false,
+    "raw_source_prediction_origin": "raw_fp32_no_adaptation_same_execution_path",
+    "interrupted_shared_cache_publication_policy": "content_addressed_quarantine_with_sealed_recovery_record_never_reuse_orphan_then_fresh_recompute",
+    "frozen_reference_prediction_origin": "verified_sealed_feature_store_and_frozen_head_after_dual_endpoint_raw_store_preflight",
+    "source_controls": {
+      "primary_baseline": "raw fp32 no-adaptation source on the full exact evaluation panel",
+      "raw_execution_path": "same model preprocessing precision and evaluation path as adaptive methods",
+      "sealed_cached_source": "separately labeled frozen-base parity reference",
+      "clean_forgetting_baseline": "raw source clean accuracy on the same evaluation IDs",
+      "paired_method_minus_raw_source_intervals_required": true,
+      "raw_source_inference_counted": true,
+      "raw_source_inference_counted_once_per_condition_split": true,
+      "adaptive_units_reference_same_immutable_source_artifact": true
+    },
+    "raw_store_preflight": {
+      "required_endpoints": [
+        "corrupted_target",
+        "clean_reference"
+      ],
+      "sample_size_per_endpoint": 32,
+      "must_pass_before_adaptation": true,
+      "matched_checks": [
+        "sample_ids",
+        "features",
+        "frozen_head_logits",
+        "checkpoint_and_preprocessing_identity"
+      ]
+    },
+    "pristine_gpu_model_copy_used": false,
+    "rotta_microbatch_guard": "fail_on_train_mode_batch_coupling_or_active_stochasticity",
+    "method_hyperparameter_policy": "official_or_common_reference_defaults_frozen_before_sentinel_results",
+    "source_lock_closure": "tta_package_tests_upstream_attribution_and_behavior_critical_base_runtime_imports_are_all_byte_bound",
+    "comparison_references": [
+      "raw fp32 no-adaptation source (primary baseline)",
+      "posthoc oracle marginal-method envelope (nondeployable reference)",
+      "fixed deployable Bures-OAS",
+      "one_hundred_percent_clean_reference_prediction_agreement"
+    ],
+    "formal_scope": "parameter_updating_tta_methods_are_outside_the_endpoint_marginal_only_theorem_class",
+    "forbidden_plot_label": "marginal_only_ceiling",
+    "required_frontier_plot_label": "posthoc oracle marginal-method envelope (nondeployable reference)",
+    "primary_metrics": [
+      "reference_prediction_agreement",
+      "target_accuracy",
+      "clean_forgetting"
+    ],
+    "secondary_metrics": [
+      "negative_log_likelihood",
+      "brier_score",
+      "expected_calibration_error"
+    ],
+    "compute_accounting": [
+      "unique_target_samples",
+      "forward_equivalent_images",
+      "backward_passes",
+      "physical_forward_calls",
+      "physical_backward_calls",
+      "parameter_only_backward_calls",
+      "optimizer_steps",
+      "augmentation_views",
+      "skipped_updates",
+      "trainable_parameter_count",
+      "wall_seconds",
+      "peak_vram_bytes",
+      "raw_source_full_evaluation_forward_examples_and_calls",
+      "dual_endpoint_preflight_verification_forward_examples_and_calls_reported_separately"
+    ],
+    "launch_order": [
+      "six_contrast_sentinel_condition_encoder_cells_seed_zero",
+      "full_seed_major_plan_with_complete_seed_zero_panel_as_its_first_714_primary_units",
+      "remaining_four_seeds_continue_in_the_same_immutable_full_plan"
+    ],
+    "stopping_rule": "no_result_dependent_stopping_after_a_stage_has_started"
+  },
+  "play3_empirical_ceiling_and_natural_shift": {
+    "role": "conditional_decision_tool_and_natural_shift_validation",
+    "quantity_name": "conservative_witness_derived_equal_prior_randomized_minimax_frozen_reference_prediction_recovery_ceiling_across_two_constructed_finite_batch_worlds",
+    "base_campaign_feature_stores": {
+      "external_input_manifest": "results/campaign/external_input_manifest.json",
+      "external_input_manifest_file_sha256": "7ece44d711cd150cc410195117ecfa261b9e8a0103755e4c8c903bdd553559df",
+      "external_input_sha256": "3a8348746ec7a924968c68a29c34e9fa4ac0ea32c6d728d40dc82e0e6844ba97",
+      "feature_store_count": 306,
+      "natural_reference_condition": {
+        "dataset": "imagenet_c",
+        "corruption": "brightness",
+        "severity": 5
+      }
+    },
+    "not_a_claim_about": [
+      "ground_truth_target_accuracy",
+      "unrestricted_population_minimax_risk",
+      "all_natural_corruptions_satisfying_exact_symmetry",
+      "realized_fixed_world_method_performance"
+    ],
+    "witness": {
+      "canonical_map": "bures_oas",
+      "batch_size": 1024,
+      "cost_geometry": "full_rank_reference_oas_mahalanobis_after_bures",
+      "cost_normalization": "squared_distance_divided_by_full_feature_dimension",
+      "discarded_feature_dimensions": 0,
+      "primary_cost_slack_fraction": 0.05,
+      "sensitivity_cost_slack_fractions": [
+        0.01,
+        0.1
+      ],
+      "candidate_worlds": 2,
+      "ceiling_formula": "1_minus_prediction_disagreement_fraction_divided_by_2",
+      "assignment_rule": "deterministic_minimum_cost_bijection_plus_conservative_greedy_disjoint_all_pair_disagreement_witness",
+      "alternative_search_optimality_claimed": false,
+      "tie_breaking": "pinned_scipy_on_content_canonical_order",
+      "swap_neighbor_sensitivity": [
+        64,
+        256
+      ],
+      "fitted_geometry_hashes_required": [
+        "bures_matrix_sha256",
+        "bures_offset_sha256",
+        "reference_mean_sha256",
+        "reference_inverse_sqrt_sha256",
+        "full_geometry_sha256"
+      ]
+    },
+    "marginal_frontier": {
+      "methods": [
+        "none",
+        "mean",
+        "diagonal",
+        "coordinate_quantile_257",
+        "coral_oas",
+        "bures_oas"
+      ],
+      "coordinate_quantile_knots": 257,
+      "covariance_estimator": "oas",
+      "covariance_relative_floor": 1e-6,
+      "diagonal_standard_deviation_floor": 1e-6,
+      "fit_information": "unpaired_calibration_features_only",
+      "external_scores_used": "only_after_all_maps_and_two_world_witness_are_frozen",
+      "deployable_primary_reference": "bures_oas",
+      "all_fixed_methods_reported": true,
+      "posthoc_oracle_envelope": "maximum_condition_level_externally_scored_method_mean_after_split_seed_averaging",
+      "posthoc_oracle_envelope_deployable": false
+    },
+    "positive_control": {
+      "dataset": "imagenet_c",
+      "pairing_used_for_split_administration_before_fit": true,
+      "labels_used_for_administrative_pair_validation_before_fit": true,
+      "pairing_unavailable_to_estimator": true,
+      "labels_unavailable_to_estimator": true,
+      "true_assignment_scored_only_after_witness_freeze": true,
+      "heldout_corruptions": [
+        "brightness",
+        "defocus_blur",
+        "fog",
+        "gaussian_noise",
+        "jpeg_compression",
+        "motion_blur"
+      ]
+    },
+    "natural_shift": {
+      "dataset": "imagenet_sketch",
+      "classes": 1000,
+      "expected_images": 50000,
+      "source_cardinality_policy": "at_least_50_images_per_wnid",
+      "selection_policy": "lexicographically_first_50_basenames_per_wnid",
+      "encoders": [
+        "dinov3",
+        "clip",
+        "vitb16"
+      ],
+      "split_seeds": [
+        201,
+        202,
+        203,
+        204,
+        205
+      ],
+      "pairing_status": "unavailable",
+      "target_labels_use": "posthoc_accuracy_only",
+      "provenance_policy": "fail_closed_on_complete_official_archive_and_extracted_source_tree_hashes_deterministic_lexicographic_50_per_wnid_subset_hash_class_order_id_label_parity_checkpoint_architecture_preprocessing_or_feature_hash_mismatch"
+    },
+    "validation_metrics": [
+      "prediction_disagreement_fraction",
+      "equal_prior_randomized_minimax_prediction_recovery_ceiling_across_two_constructed_worlds",
+      "actual_assignment_cost_ratio",
+      "best_method_reference_prediction_agreement_on_paired_positive_controls",
+      "rank_correlation_across_heldout_positive_control_conditions",
+      "natural_shift_external_label_accuracy_reported_separately"
+    ],
+    "uncertainty": {
+      "replicates": 10000,
+      "rng": "numpy_pcg64",
+      "seed": 20260827,
+      "interval": "percentile_95",
+      "natural": "wnid_cluster_bootstrap_with_encoders_nested_and_overlapping_split_seeds_averaged",
+      "positive_control": "corruption_cluster_bootstrap_with_encoders_nested_and_overlapping_split_seeds_averaged",
+      "positive_control_cluster_count": 6,
+      "six_cluster_inference_is_weak": true,
+      "zero_silent_drops": true,
+      "secondary_spearman_undefined_policy": "report_point_undefined_and_defined_fraction_plus_conditional_percentile_interval_over_nonconstant_resamples"
+    }
+  }
+}

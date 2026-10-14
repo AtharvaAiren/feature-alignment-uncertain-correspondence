@@ -1,0 +1,11 @@
+{
+  "schema_version": "marginal_alignment.iclr_extension.play3_optimization_store_map.v1",
+  "stores": [
+    {"dataset": "imagenet_sketch", "encoder": "dinov3", "manifest": "/absolute/server/path/imagenet_sketch/dinov3/FEATURE_STORE_MANIFEST.json"},
+    {"dataset": "imagenet_sketch", "encoder": "clip", "manifest": "/absolute/server/path/imagenet_sketch/clip/FEATURE_STORE_MANIFEST.json"},
+    {"dataset": "imagenet_v2", "encoder": "dinov3", "manifest": "/absolute/server/path/imagenet_v2/dinov3/FEATURE_STORE_MANIFEST.json"},
+    {"dataset": "imagenet_v2", "encoder": "clip", "manifest": "/absolute/server/path/imagenet_v2/clip/FEATURE_STORE_MANIFEST.json"},
+    {"dataset": "imagenet_r", "encoder": "dinov3", "manifest": "/absolute/server/path/imagenet_r/dinov3/FEATURE_STORE_MANIFEST.json"},
+    {"dataset": "imagenet_r", "encoder": "clip", "manifest": "/absolute/server/path/imagenet_r/clip/FEATURE_STORE_MANIFEST.json"}
+  ]
+}
